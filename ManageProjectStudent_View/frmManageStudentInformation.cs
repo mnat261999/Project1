@@ -37,6 +37,7 @@ namespace ManageProjectStudent_View
         private BindingList<ClassModel> _lstClass = new BindingList<ClassModel>();
         private BindingList<ClassModel> _LstClass = new BindingList<ClassModel>();
         private IClass _Class = Config.Container.Resolve<IClass>();
+        private ICourse _Course= Config.Container.Resolve<ICourse>();
         private IFaculty _Faculty = Config.Container.Resolve<IFaculty>();
 
         private StaffModel StaffModel = null;
@@ -55,6 +56,19 @@ namespace ManageProjectStudent_View
             DateTime date = DateTime.Parse(s1);
             int year1 = date.Year;
             if((year - year1) >= 18)
+            {
+                return true;
+            }
+            return false;
+        }
+        private bool CheckStartDay()
+        {
+            string s = dteStartYear.EditValue.ToString();
+            DateTime date = DateTime.Parse(s);
+            int year = date.Year;
+            DateTime date1 = _Course.getStartYear(lkeClass.EditValue.ToString());
+            int year1 = date1.Year;
+            if((year - year1) != 0)
             {
                 return true;
             }
@@ -401,6 +415,11 @@ namespace ManageProjectStudent_View
                 else if(CheckBirthday() == false)
                 {
                     DevExpress.XtraEditors.XtraMessageBox.Show("Sinh viên chưa đủ 18 tuổi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                } 
+                else if(CheckStartDay() == true)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Kiểm tra dữ liệu Lớp học và Ngày bắt đầu");
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Hai số đầu Mã lớp tương đương với hai số cuối Ngày bắt đầu", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }    
                 else
                 {

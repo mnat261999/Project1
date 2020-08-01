@@ -30,7 +30,15 @@ namespace ManageProjectStudent_ViewModel
                 return new BindingList<CourseModel>(result);
             }
         }
-
+        public DateTime getStartYear(string ClassID)
+        {
+            using (var _Context = new DBManageProjectStudentViewModel())
+            {
+                var query = _Context.ClassModels.SingleOrDefault(c => c.StrClassID == ClassID);
+                var Result = _Context.CourseModels.Where(c => c.StrCourseID == query.StrCourseID).Select(c => c.DtStartYear).SingleOrDefault();
+                return Result;
+            }
+        }
         public string getByIDMaxCourse()
         {
             using (var _Context = new DBManageProjectStudentViewModel())

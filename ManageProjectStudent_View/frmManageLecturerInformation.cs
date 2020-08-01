@@ -44,6 +44,18 @@ namespace ManageProjectStudent_View
         private DecentralizeModel Decentralize = null;
         #endregion
         #region Method
+        private bool CheckBirthday()
+        {
+            int year = DateTime.Now.Year;
+            string s1 = dteBirthday.EditValue.ToString();
+            DateTime date = DateTime.Parse(s1);
+            int year1 = date.Year;
+            if ((year - year1) >= 23)
+            {
+                return true;
+            }
+            return false;
+        }
         private string getMaxID()
         {
             string _STR_MAX = GarenaViewModel.returnMaxCode(_Staff.lstStaffID());
@@ -453,8 +465,7 @@ namespace ManageProjectStudent_View
             }
             else if (txtEmail.Text == "")
             {
-                string _STRMesge = "Bạn chưa nhập Email";
-                MessageBox.Show(_STRMesge, "Thông báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập Email", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (lkeFaculty.EditValue == null)
             {
@@ -471,27 +482,47 @@ namespace ManageProjectStudent_View
             else
             {
                 _getData();
-                bool bresult = false;
-                if (_IStatusForm == 1)
+                if (GarenaViewModel.checkPhoneNumber(_LecturerModelNow.StrPhone) == false)
                 {
-                    bresult = _Staff.addNewStaff(_LecturerModelNow);
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Số Điện Thoại Phải 10 Số!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                else if (GarenaViewModel.checkIDCard(_LecturerModelNow.StrCardID) == false)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show("CMND Phải Trên 8 Số!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (GarenaViewModel.checkEmail(_LecturerModelNow.StrEmail) == false)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Email không đúng định dạng !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (CheckBirthday() == false)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Nhân viên phải trên 18 tuổi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }    
                 else
                 {
-                    bresult = _Staff.updateCurrentStaff(_LecturerModelNow);
-                }
+                    _getData();
+                    bool bresult = false;
+                    if (_IStatusForm == 1)
+                    {
+                        bresult = _Staff.addNewStaff(_LecturerModelNow);
+                    }
+                    else
+                    {
+                        bresult = _Staff.updateCurrentStaff(_LecturerModelNow);
+                    }
 
-                if (!bresult)
-                {
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Lưu Thất Bại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    _lstLoadListLecturer();
-                    _IStatusForm = 0;
-                    _setStatusForm();
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Lưu Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                    if (!bresult)
+                    {
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Lưu Thất Bại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        _lstLoadListLecturer();
+                        _IStatusForm = 0;
+                        _setStatusForm();
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Lưu Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }    
             }
         }
         private void btnExitFormManageLecturer_Click(object sender, EventArgs e)

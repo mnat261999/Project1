@@ -123,7 +123,7 @@ namespace ManageProjectStudent_View
         private void _loadData()
         {
             
-            if(_StaffTypeModelNow!= null)
+            if(_StaffTypeModelNow == null)
             {
                 txtID.Text = string.Empty;
                 txtName.Text = string.Empty;

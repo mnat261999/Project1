@@ -15,5 +15,6 @@ namespace ManageProjectStudent_Interface
         bool updateCurrentCourse(CourseModel Course);
         bool deleteCurrentCourse(CourseModel Course);
         List<string> lstCourseID();
+        DateTime getStartYear(string ClassID);
     }
 }
