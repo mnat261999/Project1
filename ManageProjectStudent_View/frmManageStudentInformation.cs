@@ -21,6 +21,7 @@ using DevExpress.Export;
 using System.IO;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
+using DevExpress.Data.Svg;
 
 namespace ManageProjectStudent_View
 {
@@ -47,6 +48,18 @@ namespace ManageProjectStudent_View
             InitializeComponent();
         }
         #region Method
+        private bool CheckBirthday()
+        {
+            int year = DateTime.Now.Year;
+            string s1 = dteBirthday.EditValue.ToString();
+            DateTime date = DateTime.Parse(s1);
+            int year1 = date.Year;
+            if((year - year1) >= 18)
+            {
+                return true;
+            }
+            return false;
+        }
         private string getMaxID()
         {
             string _STR_MAX = GarenaViewModel.returnMaxCode(_Student.lstStudentID());
@@ -328,6 +341,7 @@ namespace ManageProjectStudent_View
             if (txtFullName.Text == "")
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập tên Sinh viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtFullName.Focus();
             }
             else if (dteBirthday.EditValue == null)
             {
@@ -376,10 +390,18 @@ namespace ManageProjectStudent_View
                 {
                     DevExpress.XtraEditors.XtraMessageBox.Show("Số Điện Thoại Phải 10 Số!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if(GarenaViewModel.checkIDCard(_StudentModelNow.StrCardID) == true)
+                else if(GarenaViewModel.checkIDCard(_StudentModelNow.StrCardID) == false)
                 {
                     DevExpress.XtraEditors.XtraMessageBox.Show("CMND Phải Trên 8 Số!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 } 
+                else if(GarenaViewModel.checkEmail(_StudentModelNow.StrEmail) == false)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Email không đúng định dạng !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }  
+                else if(CheckBirthday() == false)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Sinh viên chưa đủ 18 tuổi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }    
                 else
                 {
                     _getData();

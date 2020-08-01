@@ -39,13 +39,13 @@
             this.btnExitFormManageLecturer = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.txtIDLanguage = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.gcListStudent = new DevExpress.XtraGrid.GridControl();
             this.gvStudentList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colWordID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,7 +71,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(174, 552);
+            this.panelMenu.Size = new System.Drawing.Size(174, 551);
             this.panelMenu.TabIndex = 47;
             // 
             // btnUpdate
@@ -93,7 +93,7 @@
             this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
             this.btnUpdate.Location = new System.Drawing.Point(0, 384);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(171, 54);
+            this.btnUpdate.Size = new System.Drawing.Size(171, 53);
             this.btnUpdate.TabIndex = 15;
             this.btnUpdate.TabStop = false;
             this.btnUpdate.Text = "Sửa Từ";
@@ -117,7 +117,7 @@
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
             this.btnDelete.Location = new System.Drawing.Point(0, 470);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(170, 54);
+            this.btnDelete.Size = new System.Drawing.Size(170, 53);
             this.btnDelete.TabIndex = 14;
             this.btnDelete.TabStop = false;
             this.btnDelete.Text = "Xóa từ";
@@ -154,7 +154,7 @@
             this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
             this.btnAdd.Location = new System.Drawing.Point(0, 298);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(171, 54);
+            this.btnAdd.Size = new System.Drawing.Size(171, 53);
             this.btnAdd.TabIndex = 13;
             this.btnAdd.TabStop = false;
             this.btnAdd.Text = "Thêm Từ";
@@ -229,6 +229,23 @@
             this.groupControl2.TabIndex = 49;
             this.groupControl2.Text = "Thông Tin";
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(293, 90);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(209, 21);
+            this.textBox2.TabIndex = 124;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(193, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 17);
+            this.label1.TabIndex = 123;
+            this.label1.Text = "Module";
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(293, 63);
@@ -285,23 +302,6 @@
             this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã từ";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(293, 90);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(209, 21);
-            this.textBox2.TabIndex = 124;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(193, 90);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 17);
-            this.label1.TabIndex = 123;
-            this.label1.Text = "Module";
             // 
             // gcListStudent
             // 
@@ -386,7 +386,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 552);
+            this.ClientSize = new System.Drawing.Size(938, 551);
             this.Controls.Add(this.gcListStudent);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.panelTitleBar);
