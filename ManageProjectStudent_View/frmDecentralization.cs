@@ -85,14 +85,14 @@ namespace ManageProjectStudent_View
                         LookUpEdit_Function.Columns["colFormName"].FieldName = "StrFormName";
             foreach (StaffTypeModel staff in _lstStaffType)
             {
-                if(staff.StrStaffTypeID == _StaffModel.StrStaffTypeID || staff.StrStaffTypeID == "Adms")
+                if (staff.StrStaffTypeID == _StaffModel.StrStaffTypeID || staff.StrStaffTypeID == "Adms")
                 {
                     _lstStaffType.Remove(staff);
                     _lstStaffType = _StaffType.loadStaffType();
                     break;
-                }    
-            }    
-                    
+                }
+            }
+
         }
 
         private void lkeStaffType_EditValueChanged(object sender, EventArgs e)

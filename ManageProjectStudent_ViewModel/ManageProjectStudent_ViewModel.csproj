@@ -84,21 +84,9 @@
     <Compile Include="ManageFacultyViewModel.cs" />
     <Compile Include="ManageMultiLanguageViewModel.cs" />
     <Compile Include="ManageSubjectViewModel.cs" />
-    <Compile Include="Migrations\202007160718545_v1.cs" />
-    <Compile Include="Migrations\202007160718545_v1.designer.cs">
-      <DependentUpon>202007160718545_v1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007160728185_v2.cs" />
-    <Compile Include="Migrations\202007160728185_v2.designer.cs">
-      <DependentUpon>202007160728185_v2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007160733175_v3.cs" />
-    <Compile Include="Migrations\202007160733175_v3.designer.cs">
-      <DependentUpon>202007160733175_v3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007170915308_v4.cs" />
-    <Compile Include="Migrations\202007170915308_v4.designer.cs">
-      <DependentUpon>202007170915308_v4.cs</DependentUpon>
+    <Compile Include="Migrations\202008021326426_v1.cs" />
+    <Compile Include="Migrations\202008021326426_v1.designer.cs">
+      <DependentUpon>202008021326426_v1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProjectTaskViewModel.cs" />
@@ -143,17 +131,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202007160718545_v1.resx">
-      <DependentUpon>202007160718545_v1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007160728185_v2.resx">
-      <DependentUpon>202007160728185_v2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007160733175_v3.resx">
-      <DependentUpon>202007160733175_v3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007170915308_v4.resx">
-      <DependentUpon>202007170915308_v4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008021326426_v1.resx">
+      <DependentUpon>202008021326426_v1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

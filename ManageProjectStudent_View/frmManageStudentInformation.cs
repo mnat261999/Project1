@@ -192,7 +192,7 @@ namespace ManageProjectStudent_View
                     radNam.Checked = false;
                     radNu.Checked = true;
                 }
-                if (_StudentModelNow.BStatus == true)
+                if (_StudentModelNow.StrStatus == "Đang học")
                 {
                     radAvailable.Checked = true;
                     radUnavailable.Checked = false;
@@ -232,11 +232,11 @@ namespace ManageProjectStudent_View
 
             if (radAvailable.Checked)
             {
-                _StudentModelNow.BStatus = true;
+                _StudentModelNow.StrStatus = radAvailable.Text;
             }
             else
             {
-                _StudentModelNow.BStatus = false;
+                _StudentModelNow.StrStatus = radUnavailable.Text;
             }
             _StudentModelNow.StrClassID = lkeClass.GetColumnValue("StrClassID").ToString();
             _StudentModelNow.StrFacultyID = lkeFaculty.GetColumnValue("StrFacultyID").ToString();

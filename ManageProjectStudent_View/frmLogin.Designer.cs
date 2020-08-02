@@ -93,7 +93,7 @@
             this.txtUsers.SelectedText = "";
             this.txtUsers.Size = new System.Drawing.Size(277, 32);
             this.txtUsers.TabIndex = 6;
-            this.txtUsers.Text = "NV2";
+            this.txtUsers.Text = "NV1";
             // 
             // txtPassword
             // 
@@ -113,7 +113,7 @@
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(277, 32);
             this.txtPassword.TabIndex = 8;
-            this.txtPassword.Text = "025823468";
+            this.txtPassword.Text = "025823465";
             // 
             // label3
             // 

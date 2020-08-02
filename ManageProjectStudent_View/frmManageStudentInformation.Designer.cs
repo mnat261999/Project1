@@ -672,7 +672,7 @@
             this.colStatus.AppearanceHeader.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colStatus.AppearanceHeader.Options.UseFont = true;
             this.colStatus.Caption = "Trạng Thái";
-            this.colStatus.FieldName = "BStatus";
+            this.colStatus.FieldName = "StrStatus";
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
             this.colStatus.VisibleIndex = 9;

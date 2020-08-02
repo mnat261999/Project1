@@ -30,7 +30,7 @@ namespace ManageProjectStudent_ViewModel
                                   StrAddress = x.StrAddress,
                                   StrPhone = x.StrPhone,
                                   StrSex = x.StrSex,
-                                  BStatus = x.BStatus,
+                                  StrStatus = x.StrStatus,
                                   DtBirthDay = x.DtBirthDay,
                                   StrFacultyID = x.StrFacultyID,
                                   StrStaffTypeID = x.StrStaffTypeID,
@@ -124,7 +124,7 @@ namespace ManageProjectStudent_ViewModel
                     StaffToUpdate.StrCardID = staff.StrCardID;
                     StaffToUpdate.StrFacultyID = staff.StrFacultyID;
                     StaffToUpdate.StrStaffTypeID = staff.StrStaffTypeID;
-                    StaffToUpdate.BStatus = staff.BStatus;
+                    StaffToUpdate.StrStatus = staff.StrStatus;
                     StaffToUpdate.StrSex = staff.StrSex;
 
                     return (_Context.SaveChanges() != 0);

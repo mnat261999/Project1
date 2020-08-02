@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             this.panelMenuHome = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -51,8 +51,9 @@
             this.tileControl2 = new DevExpress.XtraEditors.TileControl();
             this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
             this.itemDecentralization = new DevExpress.XtraEditors.TileItem();
-            this.itemManageProject = new DevExpress.XtraEditors.TileItem();
             this.itemStatic = new DevExpress.XtraEditors.TileItem();
+            this.tileItem1 = new DevExpress.XtraEditors.TileItem();
+            this.itemManageProject = new DevExpress.XtraEditors.TileItem();
             this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
             this.itemManagStaffType = new DevExpress.XtraEditors.TileItem();
             this.itemManageLecturer = new DevExpress.XtraEditors.TileItem();
@@ -60,7 +61,6 @@
             this.itemManageFaculty = new DevExpress.XtraEditors.TileItem();
             this.itemManageClass = new DevExpress.XtraEditors.TileItem();
             this.itemManagSubject = new DevExpress.XtraEditors.TileItem();
-            this.tileItem1 = new DevExpress.XtraEditors.TileItem();
             this.panelMenuHome.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panUser.SuspendLayout();
@@ -265,25 +265,6 @@
             this.itemDecentralization.Name = "itemDecentralization";
             this.itemDecentralization.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.itemDecentralization_ItemClick);
             // 
-            // itemManageProject
-            // 
-            this.itemManageProject.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(50)))));
-            this.itemManageProject.AppearanceItem.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.itemManageProject.AppearanceItem.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(50)))));
-            this.itemManageProject.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.itemManageProject.AppearanceItem.Normal.Options.UseBorderColor = true;
-            tileItemElement4.Appearance.Normal.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemElement4.Appearance.Normal.Options.UseFont = true;
-            tileItemElement4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            tileItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemElement4.Text = "Quản lý đồ án";
-            tileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
-            this.itemManageProject.Elements.Add(tileItemElement4);
-            this.itemManageProject.Id = 45;
-            this.itemManageProject.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.itemManageProject.Name = "itemManageProject";
-            this.itemManageProject.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.itemManageProject_ItemClick);
-            // 
             // itemStatic
             // 
             this.itemStatic.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
@@ -302,6 +283,41 @@
             this.itemStatic.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.itemStatic.Name = "itemStatic";
             this.itemStatic.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.itemStatic_ItemClick);
+            // 
+            // tileItem1
+            // 
+            this.tileItem1.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(66)))), ((int)(((byte)(123)))));
+            this.tileItem1.AppearanceItem.Normal.BackColor2 = System.Drawing.Color.Fuchsia;
+            this.tileItem1.AppearanceItem.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(66)))), ((int)(((byte)(123)))));
+            this.tileItem1.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.tileItem1.AppearanceItem.Normal.Options.UseBorderColor = true;
+            tileItemElement3.Appearance.Normal.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemElement3.Appearance.Normal.Options.UseFont = true;
+            tileItemElement3.Text = "Quản lý đa ngôn ngữ";
+            tileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
+            this.tileItem1.Elements.Add(tileItemElement3);
+            this.tileItem1.Id = 58;
+            this.tileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.tileItem1.Name = "tileItem1";
+            // 
+            // itemManageProject
+            // 
+            this.itemManageProject.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(50)))));
+            this.itemManageProject.AppearanceItem.Normal.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.itemManageProject.AppearanceItem.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(50)))));
+            this.itemManageProject.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.itemManageProject.AppearanceItem.Normal.Options.UseBorderColor = true;
+            tileItemElement4.Appearance.Normal.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileItemElement4.Appearance.Normal.Options.UseFont = true;
+            tileItemElement4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            tileItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
+            tileItemElement4.Text = "Quản lý đồ án";
+            tileItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
+            this.itemManageProject.Elements.Add(tileItemElement4);
+            this.itemManageProject.Id = 45;
+            this.itemManageProject.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.itemManageProject.Name = "itemManageProject";
+            this.itemManageProject.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.itemManageProject_ItemClick);
             // 
             // tileGroup1
             // 
@@ -349,7 +365,7 @@
             tileItemElement6.Appearance.Normal.Options.UseFont = true;
             tileItemElement6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             tileItemElement6.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
-            tileItemElement6.Text = "Quản lý giảng viên";
+            tileItemElement6.Text = "Quản lý nhân viên";
             tileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
             this.itemManageLecturer.Elements.Add(tileItemElement6);
             this.itemManageLecturer.Id = 43;
@@ -437,22 +453,6 @@
             this.itemManagSubject.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.itemManagSubject.Name = "itemManagSubject";
             this.itemManagSubject.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.itemManagSubject_ItemClick);
-            // 
-            // tileItem1
-            // 
-            this.tileItem1.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(66)))), ((int)(((byte)(123)))));
-            this.tileItem1.AppearanceItem.Normal.BackColor2 = System.Drawing.Color.Fuchsia;
-            this.tileItem1.AppearanceItem.Normal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(66)))), ((int)(((byte)(123)))));
-            this.tileItem1.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem1.AppearanceItem.Normal.Options.UseBorderColor = true;
-            tileItemElement3.Appearance.Normal.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileItemElement3.Appearance.Normal.Options.UseFont = true;
-            tileItemElement3.Text = "Quản lý đa ngôn ngữ";
-            tileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
-            this.tileItem1.Elements.Add(tileItemElement3);
-            this.tileItem1.Id = 58;
-            this.tileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileItem1.Name = "tileItem1";
             // 
             // frmHome
             // 

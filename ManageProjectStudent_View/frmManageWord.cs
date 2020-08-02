@@ -37,6 +37,9 @@ namespace ManageProjectStudent_View
         private IWord _Word = Config.Container.Resolve<IWord>();
         BindingList<WordModel> _lstWord = new BindingList<WordModel>();
 
+        private IForm _Form = Config.Container.Resolve<IForm>();
+        BindingList<FormModel> _lstForm = new BindingList<FormModel>();
+
         private StaffModel StaffModel = null;
         private IDecentralize _Decen = Config.Container.Resolve<IDecentralize>();
         private DecentralizeModel Decentralize = null;
@@ -95,7 +98,7 @@ namespace ManageProjectStudent_View
                 case 1:
                     txtID.Text = getMaxID();
                     txtName.Text = string.Empty;
-                    txtModule.Text = string.Empty;
+                   
 
                     grpInformationWord.Enabled = true;
 
@@ -114,13 +117,13 @@ namespace ManageProjectStudent_View
             {
                 txtID.Text = string.Empty;
                 txtName.Text = string.Empty;
-                txtModule.Text = string.Empty;
+            
             }
             else
             {
                 txtID.Text = _WordModelNow.StrWordId;
                 txtName.Text = _WordModelNow.StrWordName;
-                txtModule.Text = _WordModelNow.StrModule;
+              
             }
         }
         private void _getData()
@@ -131,7 +134,7 @@ namespace ManageProjectStudent_View
             }
             _WordModelNow.StrWordId = txtID.Text;
             _WordModelNow.StrWordName = txtName.Text;
-            _WordModelNow.StrModule = txtModule.Text;
+
         }
         private void _lstLoadListWord()
         {
@@ -155,6 +158,8 @@ namespace ManageProjectStudent_View
                     }
                 }
             }
+            //lookup-edit
+            
             _lstWord = _Word.loadWord();
             gcListWord.DataSource = _lstWord;
             _setStatusForm();
@@ -208,11 +213,6 @@ namespace ManageProjectStudent_View
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập Tên từ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtName.Focus();
-            }
-            else if (txtModule.Text == "")
-            {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập Module", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtModule.Focus();
             }
             else
             {

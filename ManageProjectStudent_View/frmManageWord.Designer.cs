@@ -39,7 +39,6 @@
             this.btnExitForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.grpInformationWord = new DevExpress.XtraEditors.GroupControl();
-            this.txtModule = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
@@ -52,6 +51,7 @@
             this.colWordName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colModule = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpEdit_Class = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.lkeModule = new DevExpress.XtraEditors.LookUpEdit();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationWord)).BeginInit();
@@ -59,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcListWord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvWordList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Class)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkeModule.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -221,7 +222,7 @@
             // 
             // grpInformationWord
             // 
-            this.grpInformationWord.Controls.Add(this.txtModule);
+            this.grpInformationWord.Controls.Add(this.lkeModule);
             this.grpInformationWord.Controls.Add(this.label1);
             this.grpInformationWord.Controls.Add(this.txtName);
             this.grpInformationWord.Controls.Add(this.btnSave);
@@ -233,13 +234,6 @@
             this.grpInformationWord.Size = new System.Drawing.Size(733, 178);
             this.grpInformationWord.TabIndex = 49;
             this.grpInformationWord.Text = "Thông Tin";
-            // 
-            // txtModule
-            // 
-            this.txtModule.Location = new System.Drawing.Point(293, 90);
-            this.txtModule.Name = "txtModule";
-            this.txtModule.Size = new System.Drawing.Size(209, 21);
-            this.txtModule.TabIndex = 124;
             // 
             // label1
             // 
@@ -394,6 +388,21 @@
             this.LookUpEdit_Class.Name = "LookUpEdit_Class";
             this.LookUpEdit_Class.ValueMember = "StrClassID";
             // 
+            // lkeModule
+            // 
+            this.lkeModule.Location = new System.Drawing.Point(293, 90);
+            this.lkeModule.Name = "lkeModule";
+            this.lkeModule.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkeModule.Properties.Appearance.Options.UseFont = true;
+            this.lkeModule.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkeModule.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.lkeModule.Properties.AppearanceDropDownHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkeModule.Properties.AppearanceDropDownHeader.Options.UseFont = true;
+            this.lkeModule.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkeModule.Size = new System.Drawing.Size(209, 24);
+            this.lkeModule.TabIndex = 124;
+            // 
             // frmManageWord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,6 +425,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcListWord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvWordList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Class)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkeModule.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -432,7 +442,6 @@
         private System.Windows.Forms.Button btnExitForm;
         private System.Windows.Forms.Label lblTitle;
         private DevExpress.XtraEditors.GroupControl grpInformationWord;
-        private System.Windows.Forms.TextBox txtModule;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtName;
         private DevExpress.XtraEditors.SimpleButton btnSave;
@@ -445,5 +454,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colWordName;
         private DevExpress.XtraGrid.Columns.GridColumn colModule;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit_Class;
+        private DevExpress.XtraEditors.LookUpEdit lkeModule;
     }
 }

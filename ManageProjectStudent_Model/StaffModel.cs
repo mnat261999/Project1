@@ -18,7 +18,7 @@ namespace ManageProjectStudent_Model
         private string _StrEmail;
         private string _StrAddress;
         private string _StrPhone;
-        private bool _BStatus;
+        private string _StrStatus;
         private string _StrSex;
         private string _StrStaffTypeID;
         private string _strFacultyID;
@@ -49,8 +49,9 @@ namespace ManageProjectStudent_Model
         [StringLength(30)]
         public string StrPhone { get => _StrPhone; set => _StrPhone = value; }
 
-        [Column("Status", TypeName = "bit", Order = 7)]
-        public bool BStatus { get => _BStatus; set => _BStatus = value; }
+        [Column("Status", TypeName = "nvarchar", Order = 7)]
+        [StringLength(50)]
+        public string StrStatus { get => _StrStatus; set => _StrStatus = value; }
 
         [Column("Sex", TypeName = "nvarchar", Order = 8)]
         [StringLength(10)]

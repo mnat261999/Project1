@@ -363,10 +363,10 @@
             this.radAvailable.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.radAvailable.Location = new System.Drawing.Point(0, 0);
             this.radAvailable.Name = "radAvailable";
-            this.radAvailable.Size = new System.Drawing.Size(88, 21);
+            this.radAvailable.Size = new System.Drawing.Size(89, 21);
             this.radAvailable.TabIndex = 95;
             this.radAvailable.TabStop = true;
-            this.radAvailable.Text = "Đang dạy";
+            this.radAvailable.Text = "Đang làm";
             this.radAvailable.UseVisualStyleBackColor = true;
             this.radAvailable.CheckedChanged += new System.EventHandler(this.radAvailable_CheckedChanged);
             // 
@@ -831,7 +831,7 @@
             // colStatus
             // 
             this.colStatus.Caption = "Trạng thái";
-            this.colStatus.FieldName = "BStatus";
+            this.colStatus.FieldName = "StrStatus";
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
             this.colStatus.VisibleIndex = 10;

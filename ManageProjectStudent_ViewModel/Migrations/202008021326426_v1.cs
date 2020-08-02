@@ -33,7 +33,7 @@
                         Email = c.String(maxLength: 200, unicode: false),
                         Address = c.String(maxLength: 4000),
                         Phone = c.String(maxLength: 30, unicode: false),
-                        Status = c.Boolean(nullable: false),
+                        Status = c.String(maxLength: 50),
                         Sex = c.String(maxLength: 10),
                         StaffTypeID = c.String(maxLength: 10, unicode: false),
                         FacultyID = c.String(maxLength: 10, unicode: false),
@@ -90,7 +90,7 @@
                         Email = c.String(maxLength: 200, unicode: false),
                         Address = c.String(maxLength: 4000),
                         StartYear = c.DateTime(nullable: false, storeType: "date"),
-                        Status = c.Boolean(nullable: false),
+                        Status = c.String(maxLength: 50),
                         Sex = c.String(maxLength: 10),
                         Phone = c.String(maxLength: 30, unicode: false),
                         FacultyID = c.String(maxLength: 10, unicode: false),
@@ -257,23 +257,34 @@
                     {
                         StaffTypeID = c.String(nullable: false, maxLength: 10, unicode: false),
                         StaffTypeName = c.String(maxLength: 100),
-                        DecentralizeModel_StrFrmID = c.String(maxLength: 100, unicode: false),
                     })
-                .PrimaryKey(t => t.StaffTypeID)
-                .ForeignKey("dbo.Decentralize", t => t.DecentralizeModel_StrFrmID)
-                .Index(t => t.DecentralizeModel_StrFrmID);
+                .PrimaryKey(t => t.StaffTypeID);
             
             CreateTable(
                 "dbo.Decentralize",
                 c => new
                     {
                         FormID = c.String(nullable: false, maxLength: 100, unicode: false),
-                        StaffTypeID = c.String(maxLength: 10, unicode: false),
-                        FullFunction = c.Boolean(name: "Full Function", nullable: false),
+                        StaffTypeID = c.String(nullable: false, maxLength: 10, unicode: false),
+                        FullFunction = c.Boolean(nullable: false),
                         Add = c.Boolean(nullable: false),
                         Edit = c.Boolean(nullable: false),
                         Delete = c.Boolean(nullable: false),
                         Access = c.Boolean(nullable: false),
+                        View = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.FormID, t.StaffTypeID })
+                .ForeignKey("dbo.Form", t => t.FormID, cascadeDelete: true)
+                .ForeignKey("dbo.StaffType", t => t.StaffTypeID, cascadeDelete: true)
+                .Index(t => t.FormID)
+                .Index(t => t.StaffTypeID);
+            
+            CreateTable(
+                "dbo.Form",
+                c => new
+                    {
+                        FormID = c.String(nullable: false, maxLength: 100, unicode: false),
+                        FormName = c.String(maxLength: 100),
                     })
                 .PrimaryKey(t => t.FormID);
             
@@ -283,8 +294,10 @@
                     {
                         LanguageID = c.String(nullable: false, maxLength: 10, unicode: false),
                         LanguageName = c.String(maxLength: 100),
-                        Default = c.Boolean(nullable: false),
-                        Status = c.Boolean(nullable: false),
+                        Default = c.String(maxLength: 4000),
+                        Status = c.String(maxLength: 4000),
+                        Lang_Default = c.Int(nullable: false),
+                        Odering = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.LanguageID);
             
@@ -292,12 +305,13 @@
                 "dbo.Language_Word",
                 c => new
                     {
+                        ID = c.String(nullable: false, maxLength: 10, unicode: false),
                         LanguageID = c.String(nullable: false, maxLength: 10, unicode: false),
                         WordID = c.String(nullable: false, maxLength: 10, unicode: false),
                         Mean = c.String(maxLength: 100),
                         Status = c.Boolean(nullable: false),
                     })
-                .PrimaryKey(t => new { t.LanguageID, t.WordID })
+                .PrimaryKey(t => new { t.ID, t.LanguageID, t.WordID })
                 .ForeignKey("dbo.Language", t => t.LanguageID, cascadeDelete: true)
                 .ForeignKey("dbo.Word", t => t.WordID, cascadeDelete: true)
                 .Index(t => t.LanguageID)
@@ -321,7 +335,8 @@
             DropForeignKey("dbo.Language_Word", "LanguageID", "dbo.Language");
             DropForeignKey("dbo.StudentClassGroup", "GroupID", "dbo.ClassGroupOfSubject");
             DropForeignKey("dbo.Staff", "StaffTypeID", "dbo.StaffType");
-            DropForeignKey("dbo.StaffType", "DecentralizeModel_StrFrmID", "dbo.Decentralize");
+            DropForeignKey("dbo.Decentralize", "StaffTypeID", "dbo.StaffType");
+            DropForeignKey("dbo.Decentralize", "FormID", "dbo.Form");
             DropForeignKey("dbo.Staff", "FacultyID", "dbo.Faculty");
             DropForeignKey("dbo.StudentClassGroup", "StudentID", "dbo.Student");
             DropForeignKey("dbo.Student", "FacultyID", "dbo.Faculty");
@@ -347,7 +362,8 @@
             DropForeignKey("dbo.ClassGroupOfSubject", "StaffID", "dbo.Staff");
             DropIndex("dbo.Language_Word", new[] { "WordID" });
             DropIndex("dbo.Language_Word", new[] { "LanguageID" });
-            DropIndex("dbo.StaffType", new[] { "DecentralizeModel_StrFrmID" });
+            DropIndex("dbo.Decentralize", new[] { "StaffTypeID" });
+            DropIndex("dbo.Decentralize", new[] { "FormID" });
             DropIndex("dbo.StudentClassGroup", new[] { "GroupID" });
             DropIndex("dbo.StudentClassGroup", new[] { "StudentID" });
             DropIndex("dbo.TeachAndStudy", new[] { "SubjectID" });
@@ -376,6 +392,7 @@
             DropTable("dbo.Word");
             DropTable("dbo.Language_Word");
             DropTable("dbo.Language");
+            DropTable("dbo.Form");
             DropTable("dbo.Decentralize");
             DropTable("dbo.StaffType");
             DropTable("dbo.StudentClassGroup");

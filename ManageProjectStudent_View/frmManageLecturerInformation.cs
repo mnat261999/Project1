@@ -182,7 +182,7 @@ namespace ManageProjectStudent_View
                     radNam.Checked = false;
                     radNu.Checked = true;
                 }
-                if (_LecturerModelNow.BStatus == true)
+                if (_LecturerModelNow.StrStatus == "Đang làm")
                 {
                     radAvailable.Checked = true;
                     radUnavailable.Checked = false;
@@ -222,11 +222,11 @@ namespace ManageProjectStudent_View
 
             if (radAvailable.Checked)
             {
-                _LecturerModelNow.BStatus = true;
+                _LecturerModelNow.StrStatus = radAvailable.Text;
             }
             else
             {
-                _LecturerModelNow.BStatus = false;
+                _LecturerModelNow.StrStatus = radUnavailable.Text;
             }
         }
 

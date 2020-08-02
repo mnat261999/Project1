@@ -28,7 +28,7 @@ namespace ManageProjectStudent_ViewModel
                                   StrPhone = x.StrPhone,
                                   StrSex = x.StrSex,
                                   DtBirthDay = x.DtBirthDay,
-                                  BStatus = x.BStatus,
+                                  StrStatus = x.StrStatus,
                                   StrCardID = x.StrCardID,
                                   DtStartYear = x.DtStartYear,
                                   StrFacultyID = x.StrFacultyID,
@@ -120,7 +120,7 @@ namespace ManageProjectStudent_ViewModel
                     StudentToUpdate.StrCardID = student.StrCardID;
                     StudentToUpdate.StrFacultyID = student.StrFacultyID;
                     StudentToUpdate.StrClassID = student.StrClassID;
-                    StudentToUpdate.BStatus = student.BStatus;
+                    StudentToUpdate.StrStatus = student.StrStatus;
                     StudentToUpdate.StrPhone = student.StrPhone;
                     StudentToUpdate.StrSex = student.StrSex;
 

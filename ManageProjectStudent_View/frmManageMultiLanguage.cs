@@ -121,28 +121,28 @@ namespace ManageProjectStudent_View
             }
             else
             {
-                txtID.Text = _LanguageModelNow.StrLanguageID;
-                txtName.Text = _LanguageModelNow.StrLanguageName;
-                if (_LanguageModelNow.BDefault == true)
-                {
-                    radDefault.Checked = true;
-                    radNoneDefault.Checked = false;
-                }
-                else
-                {
-                    radDefault.Checked = false;
-                    radNoneDefault.Checked = true;
-                }
-                if (_LanguageModelNow.BStatus == true)
-                {
-                    radAvailable.Checked = true;
-                    radUnavailable.Checked = false;
-                }
-                else
-                {
-                    radAvailable.Checked = false;
-                    radUnavailable.Checked = true;
-                }
+                //txtID.Text = _LanguageModelNow.StrLanguageID;
+                //txtName.Text = _LanguageModelNow.StrLanguageName;
+                //if (_LanguageModelNow.BDefault == true)
+                //{
+                //    radDefault.Checked = true;
+                //    radNoneDefault.Checked = false;
+                //}
+                //else
+                //{
+                //    radDefault.Checked = false;
+                //    radNoneDefault.Checked = true;
+                //}
+                //if (_LanguageModelNow.BStatus == true)
+                //{
+                //    radAvailable.Checked = true;
+                //    radUnavailable.Checked = false;
+                //}
+                //else
+                //{
+                //    radAvailable.Checked = false;
+                //    radUnavailable.Checked = true;
+                //}
             }
         }
 

@@ -13,7 +13,7 @@ namespace ManageProjectStudent_ViewModel.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202007160718545_v1"; }
+            get { return "202008021326426_v1"; }
         }
         
         string IMigrationMetadata.Source
