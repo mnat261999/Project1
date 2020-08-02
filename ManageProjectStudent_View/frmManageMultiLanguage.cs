@@ -149,5 +149,74 @@ namespace ManageProjectStudent_View
 
         #endregion
 
+        private void frmManageMultiLanguage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gvLanList_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReLoad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExitForm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radDefault_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radNoneDefault_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radAvailable_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radUnavailable_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gvLanList_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
+        {
+
+        }
+
+        private void gvLanList_RowCountChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

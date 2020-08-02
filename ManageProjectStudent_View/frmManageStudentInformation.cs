@@ -269,7 +269,7 @@ namespace ManageProjectStudent_View
             dteStartYear.EditValue = DateTime.Now.Date;
 
            // _lstClass = _Class.loadClass();
-            lkeClass.Properties.ValueMember = "StrClassID";
+            lkeClass.Properties.ValueMember = "StrClassID";                                           
             lkeClass.Properties.DisplayMember = "StrClassName";
             //lkeClass.Properties.DataSource = _lstClass;
             lkeClass.Properties.Columns["colClassID"].FieldName = "StrClassID";

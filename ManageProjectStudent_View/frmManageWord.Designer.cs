@@ -36,28 +36,28 @@
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.btnReLoad = new System.Windows.Forms.Button();
-            this.btnExitFormManageLecturer = new System.Windows.Forms.Button();
+            this.btnExitForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.grpInformationWord = new DevExpress.XtraEditors.GroupControl();
+            this.txtModule = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.txtIDLanguage = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.gcListStudent = new DevExpress.XtraGrid.GridControl();
-            this.gvStudentList = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcListWord = new DevExpress.XtraGrid.GridControl();
+            this.gvWordList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colWordID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colWordName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colModule = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpEdit_Class = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcListStudent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvStudentList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpInformationWord)).BeginInit();
+            this.grpInformationWord.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcListWord)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvWordList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Class)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +71,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(174, 551);
+            this.panelMenu.Size = new System.Drawing.Size(174, 539);
             this.panelMenu.TabIndex = 47;
             // 
             // btnUpdate
@@ -93,10 +93,11 @@
             this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
             this.btnUpdate.Location = new System.Drawing.Point(0, 384);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(171, 53);
+            this.btnUpdate.Size = new System.Drawing.Size(171, 41);
             this.btnUpdate.TabIndex = 15;
             this.btnUpdate.TabStop = false;
             this.btnUpdate.Text = "Sửa Từ";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -117,10 +118,11 @@
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
             this.btnDelete.Location = new System.Drawing.Point(0, 470);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(170, 53);
+            this.btnDelete.Size = new System.Drawing.Size(170, 41);
             this.btnDelete.TabIndex = 14;
             this.btnDelete.TabStop = false;
             this.btnDelete.Text = "Xóa từ";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // panelLogo
             // 
@@ -154,22 +156,23 @@
             this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
             this.btnAdd.Location = new System.Drawing.Point(0, 298);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(171, 53);
+            this.btnAdd.Size = new System.Drawing.Size(171, 41);
             this.btnAdd.TabIndex = 13;
             this.btnAdd.TabStop = false;
             this.btnAdd.Text = "Thêm Từ";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
             this.panelTitleBar.Controls.Add(this.btnReLoad);
-            this.panelTitleBar.Controls.Add(this.btnExitFormManageLecturer);
+            this.panelTitleBar.Controls.Add(this.btnExitForm);
             this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelTitleBar.Location = new System.Drawing.Point(174, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(764, 87);
+            this.panelTitleBar.Size = new System.Drawing.Size(770, 87);
             this.panelTitleBar.TabIndex = 48;
             // 
             // btnReLoad
@@ -186,21 +189,23 @@
             this.btnReLoad.Size = new System.Drawing.Size(70, 87);
             this.btnReLoad.TabIndex = 7;
             this.btnReLoad.UseVisualStyleBackColor = true;
+            this.btnReLoad.Click += new System.EventHandler(this.btnReLoad_Click);
             // 
-            // btnExitFormManageLecturer
+            // btnExitForm
             // 
-            this.btnExitFormManageLecturer.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExitFormManageLecturer.FlatAppearance.BorderSize = 0;
-            this.btnExitFormManageLecturer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExitFormManageLecturer.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExitFormManageLecturer.ForeColor = System.Drawing.Color.White;
-            this.btnExitFormManageLecturer.Image = ((System.Drawing.Image)(resources.GetObject("btnExitFormManageLecturer.Image")));
-            this.btnExitFormManageLecturer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExitFormManageLecturer.Location = new System.Drawing.Point(694, 0);
-            this.btnExitFormManageLecturer.Name = "btnExitFormManageLecturer";
-            this.btnExitFormManageLecturer.Size = new System.Drawing.Size(70, 87);
-            this.btnExitFormManageLecturer.TabIndex = 6;
-            this.btnExitFormManageLecturer.UseVisualStyleBackColor = true;
+            this.btnExitForm.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExitForm.FlatAppearance.BorderSize = 0;
+            this.btnExitForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExitForm.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExitForm.ForeColor = System.Drawing.Color.White;
+            this.btnExitForm.Image = ((System.Drawing.Image)(resources.GetObject("btnExitForm.Image")));
+            this.btnExitForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExitForm.Location = new System.Drawing.Point(700, 0);
+            this.btnExitForm.Name = "btnExitForm";
+            this.btnExitForm.Size = new System.Drawing.Size(70, 87);
+            this.btnExitForm.TabIndex = 6;
+            this.btnExitForm.UseVisualStyleBackColor = true;
+            this.btnExitForm.Click += new System.EventHandler(this.btnExitForm_Click);
             // 
             // lblTitle
             // 
@@ -208,33 +213,33 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(319, 31);
+            this.lblTitle.Location = new System.Drawing.Point(322, 31);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(106, 22);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Quản lý từ";
             // 
-            // groupControl2
+            // grpInformationWord
             // 
-            this.groupControl2.Controls.Add(this.textBox2);
-            this.groupControl2.Controls.Add(this.label1);
-            this.groupControl2.Controls.Add(this.textBox1);
-            this.groupControl2.Controls.Add(this.btnSave);
-            this.groupControl2.Controls.Add(this.txtIDLanguage);
-            this.groupControl2.Controls.Add(this.label3);
-            this.groupControl2.Controls.Add(this.label2);
-            this.groupControl2.Location = new System.Drawing.Point(193, 102);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(733, 178);
-            this.groupControl2.TabIndex = 49;
-            this.groupControl2.Text = "Thông Tin";
+            this.grpInformationWord.Controls.Add(this.txtModule);
+            this.grpInformationWord.Controls.Add(this.label1);
+            this.grpInformationWord.Controls.Add(this.txtName);
+            this.grpInformationWord.Controls.Add(this.btnSave);
+            this.grpInformationWord.Controls.Add(this.txtID);
+            this.grpInformationWord.Controls.Add(this.label3);
+            this.grpInformationWord.Controls.Add(this.label2);
+            this.grpInformationWord.Location = new System.Drawing.Point(193, 102);
+            this.grpInformationWord.Name = "grpInformationWord";
+            this.grpInformationWord.Size = new System.Drawing.Size(733, 178);
+            this.grpInformationWord.TabIndex = 49;
+            this.grpInformationWord.Text = "Thông Tin";
             // 
-            // textBox2
+            // txtModule
             // 
-            this.textBox2.Location = new System.Drawing.Point(293, 90);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(209, 21);
-            this.textBox2.TabIndex = 124;
+            this.txtModule.Location = new System.Drawing.Point(293, 90);
+            this.txtModule.Name = "txtModule";
+            this.txtModule.Size = new System.Drawing.Size(209, 21);
+            this.txtModule.TabIndex = 124;
             // 
             // label1
             // 
@@ -246,12 +251,12 @@
             this.label1.TabIndex = 123;
             this.label1.Text = "Module";
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(293, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 21);
-            this.textBox1.TabIndex = 122;
+            this.txtName.Location = new System.Drawing.Point(293, 63);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(209, 21);
+            this.txtName.TabIndex = 122;
             // 
             // btnSave
             // 
@@ -275,13 +280,14 @@
             this.btnSave.TabIndex = 121;
             this.btnSave.TabStop = false;
             this.btnSave.Text = "Lưu";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txtIDLanguage
+            // txtID
             // 
-            this.txtIDLanguage.Location = new System.Drawing.Point(293, 36);
-            this.txtIDLanguage.Name = "txtIDLanguage";
-            this.txtIDLanguage.Size = new System.Drawing.Size(209, 21);
-            this.txtIDLanguage.TabIndex = 97;
+            this.txtID.Location = new System.Drawing.Point(293, 36);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(209, 21);
+            this.txtID.TabIndex = 97;
             // 
             // label3
             // 
@@ -303,55 +309,59 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã từ";
             // 
-            // gcListStudent
+            // gcListWord
             // 
-            this.gcListStudent.Location = new System.Drawing.Point(193, 286);
-            this.gcListStudent.MainView = this.gvStudentList;
-            this.gcListStudent.Name = "gcListStudent";
-            this.gcListStudent.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gcListWord.Location = new System.Drawing.Point(193, 286);
+            this.gcListWord.MainView = this.gvWordList;
+            this.gcListWord.Name = "gcListWord";
+            this.gcListWord.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.LookUpEdit_Class});
-            this.gcListStudent.Size = new System.Drawing.Size(733, 240);
-            this.gcListStudent.TabIndex = 50;
-            this.gcListStudent.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvStudentList});
+            this.gcListWord.Size = new System.Drawing.Size(733, 240);
+            this.gcListWord.TabIndex = 50;
+            this.gcListWord.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvWordList});
             // 
-            // gvStudentList
+            // gvWordList
             // 
-            this.gvStudentList.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.gvStudentList.Appearance.EvenRow.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.gvStudentList.Appearance.EvenRow.Options.UseBackColor = true;
-            this.gvStudentList.Appearance.EvenRow.Options.UseFont = true;
-            this.gvStudentList.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.gvStudentList.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gvStudentList.Appearance.OddRow.BackColor = System.Drawing.Color.White;
-            this.gvStudentList.Appearance.OddRow.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.gvStudentList.Appearance.OddRow.Options.UseBackColor = true;
-            this.gvStudentList.Appearance.OddRow.Options.UseFont = true;
-            this.gvStudentList.Appearance.Row.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.gvStudentList.Appearance.Row.Options.UseFont = true;
-            this.gvStudentList.Appearance.ViewCaption.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.gvStudentList.Appearance.ViewCaption.Options.UseFont = true;
-            this.gvStudentList.AppearancePrint.Row.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.gvStudentList.AppearancePrint.Row.Options.UseFont = true;
-            this.gvStudentList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvWordList.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.gvWordList.Appearance.EvenRow.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.gvWordList.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gvWordList.Appearance.EvenRow.Options.UseFont = true;
+            this.gvWordList.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.gvWordList.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvWordList.Appearance.OddRow.BackColor = System.Drawing.Color.White;
+            this.gvWordList.Appearance.OddRow.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.gvWordList.Appearance.OddRow.Options.UseBackColor = true;
+            this.gvWordList.Appearance.OddRow.Options.UseFont = true;
+            this.gvWordList.Appearance.Row.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.gvWordList.Appearance.Row.Options.UseFont = true;
+            this.gvWordList.Appearance.ViewCaption.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.gvWordList.Appearance.ViewCaption.Options.UseFont = true;
+            this.gvWordList.AppearancePrint.Row.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.gvWordList.AppearancePrint.Row.Options.UseFont = true;
+            this.gvWordList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colWordID,
             this.colWordName,
             this.colModule});
-            this.gvStudentList.DetailHeight = 377;
-            this.gvStudentList.GridControl = this.gcListStudent;
-            this.gvStudentList.Name = "gvStudentList";
-            this.gvStudentList.OptionsBehavior.Editable = false;
-            this.gvStudentList.OptionsSelection.MultiSelect = true;
-            this.gvStudentList.OptionsView.EnableAppearanceEvenRow = true;
-            this.gvStudentList.OptionsView.EnableAppearanceOddRow = true;
-            this.gvStudentList.OptionsView.ShowAutoFilterRow = true;
-            this.gvStudentList.OptionsView.ShowGroupPanel = false;
-            this.gvStudentList.OptionsView.ShowViewCaption = true;
-            this.gvStudentList.ViewCaption = "Danh sách từ";
+            this.gvWordList.DetailHeight = 377;
+            this.gvWordList.GridControl = this.gcListWord;
+            this.gvWordList.Name = "gvWordList";
+            this.gvWordList.OptionsBehavior.Editable = false;
+            this.gvWordList.OptionsSelection.MultiSelect = true;
+            this.gvWordList.OptionsView.EnableAppearanceEvenRow = true;
+            this.gvWordList.OptionsView.EnableAppearanceOddRow = true;
+            this.gvWordList.OptionsView.ShowAutoFilterRow = true;
+            this.gvWordList.OptionsView.ShowGroupPanel = false;
+            this.gvWordList.OptionsView.ShowViewCaption = true;
+            this.gvWordList.ViewCaption = "Danh sách từ";
+            this.gvWordList.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gvWordList_CustomDrawRowIndicator);
+            this.gvWordList.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gvWordList_SelectionChanged);
+            this.gvWordList.RowCountChanged += new System.EventHandler(this.gvWordList_RowCountChanged);
             // 
             // colWordID
             // 
             this.colWordID.Caption = "Mã từ";
+            this.colWordID.FieldName = "StrWordId";
             this.colWordID.Name = "colWordID";
             this.colWordID.Visible = true;
             this.colWordID.VisibleIndex = 0;
@@ -359,6 +369,7 @@
             // colWordName
             // 
             this.colWordName.Caption = "Tên từ";
+            this.colWordName.FieldName = "StrWordName";
             this.colWordName.Name = "colWordName";
             this.colWordName.Visible = true;
             this.colWordName.VisibleIndex = 1;
@@ -366,6 +377,7 @@
             // colModule
             // 
             this.colModule.Caption = "Module";
+            this.colModule.FieldName = "StrModule";
             this.colModule.Name = "colModule";
             this.colModule.Visible = true;
             this.colModule.VisibleIndex = 2;
@@ -386,22 +398,23 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 551);
-            this.Controls.Add(this.gcListStudent);
-            this.Controls.Add(this.groupControl2);
+            this.ClientSize = new System.Drawing.Size(944, 539);
+            this.Controls.Add(this.gcListWord);
+            this.Controls.Add(this.grpInformationWord);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManageWord";
             this.Text = "frmManageWord";
+            this.Load += new System.EventHandler(this.frmManageWord_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcListStudent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvStudentList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpInformationWord)).EndInit();
+            this.grpInformationWord.ResumeLayout(false);
+            this.grpInformationWord.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcListWord)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvWordList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Class)).EndInit();
             this.ResumeLayout(false);
 
@@ -416,18 +429,18 @@
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Button btnReLoad;
-        private System.Windows.Forms.Button btnExitFormManageLecturer;
+        private System.Windows.Forms.Button btnExitForm;
         private System.Windows.Forms.Label lblTitle;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
-        private System.Windows.Forms.TextBox textBox2;
+        private DevExpress.XtraEditors.GroupControl grpInformationWord;
+        private System.Windows.Forms.TextBox txtModule;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtName;
         private DevExpress.XtraEditors.SimpleButton btnSave;
-        private System.Windows.Forms.TextBox txtIDLanguage;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private DevExpress.XtraGrid.GridControl gcListStudent;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvStudentList;
+        private DevExpress.XtraGrid.GridControl gcListWord;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvWordList;
         private DevExpress.XtraGrid.Columns.GridColumn colWordID;
         private DevExpress.XtraGrid.Columns.GridColumn colWordName;
         private DevExpress.XtraGrid.Columns.GridColumn colModule;

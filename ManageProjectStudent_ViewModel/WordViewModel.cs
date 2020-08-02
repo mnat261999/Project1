@@ -39,6 +39,14 @@ namespace ManageProjectStudent_ViewModel
                    (x => x.StrWordId == StrWordID);
             return Word;
         }
+        public List<string> lstWordID()
+        {
+            using (var _Context = new DBManageProjectStudentViewModel())
+            {
+                var Result = _Context.WordModels.Select(c => c.StrWordId).ToList();
+                return Result;
+            }
+        }
         public bool addNewWord(WordModel Word)
         {
             try

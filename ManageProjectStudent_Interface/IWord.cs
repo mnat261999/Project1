@@ -15,6 +15,6 @@ namespace ManageProjectStudent_Interface
         bool addNewWord(WordModel Word);
         bool updateCurrentWordf(WordModel Word);
         bool deleteCurrentWord(WordModel Word);
-
+        List<string> lstWordID();
     }
 }

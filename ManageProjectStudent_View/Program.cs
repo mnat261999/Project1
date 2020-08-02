@@ -27,6 +27,7 @@ namespace ManageProjectStudent_View
             Container.RegisterType<IStaffType, StaffTypeViewModel>();
             Container.RegisterType<IDecentralize, DecentralizeViewModel>();
             Container.RegisterType<IForm, FormViewModel>();
+            Container.RegisterType<IWord, WordViewModel>();
             // Thu
             // Thong
             Container.RegisterType<IManageClass, ManageClassViewModel>();
