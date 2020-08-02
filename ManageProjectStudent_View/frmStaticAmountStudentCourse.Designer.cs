@@ -34,15 +34,15 @@
             DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView1 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
             DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
-            this.amoutStudentofCourseTableAdapter = new ManageProjectStudent_View.DBManageProjectStudentDataSetTableAdapters.AmoutStudentofCourseTableAdapter();
-            this.amoutStudentofCourseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dBManageProjectStudentDataSet = new ManageProjectStudent_View.DBManageProjectStudentDataSet();
+            this.amoutStudentofCourseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.amoutStudentofCourseTableAdapter = new ManageProjectStudent_View.DBManageProjectStudentDataSetTableAdapters.AmoutStudentofCourseTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.amoutStudentofCourseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBManageProjectStudentDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.amoutStudentofCourseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // chartControl1
@@ -74,25 +74,27 @@
             series1.View = sideBySideBarSeriesView1;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
+            this.chartControl1.SeriesTemplate.ArgumentDataMember = "KhoaHoc";
+            this.chartControl1.SeriesTemplate.ValueDataMembersSerializable = "AmoutStudent";
             this.chartControl1.Size = new System.Drawing.Size(843, 491);
             this.chartControl1.TabIndex = 0;
             chartTitle1.Text = "";
             this.chartControl1.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle1});
             // 
-            // amoutStudentofCourseTableAdapter
+            // dBManageProjectStudentDataSet
             // 
-            this.amoutStudentofCourseTableAdapter.ClearBeforeFill = true;
+            this.dBManageProjectStudentDataSet.DataSetName = "DBManageProjectStudentDataSet";
+            this.dBManageProjectStudentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // amoutStudentofCourseBindingSource
             // 
             this.amoutStudentofCourseBindingSource.DataMember = "AmoutStudentofCourse";
             this.amoutStudentofCourseBindingSource.DataSource = this.dBManageProjectStudentDataSet;
             // 
-            // dBManageProjectStudentDataSet
+            // amoutStudentofCourseTableAdapter
             // 
-            this.dBManageProjectStudentDataSet.DataSetName = "DBManageProjectStudentDataSet";
-            this.dBManageProjectStudentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.amoutStudentofCourseTableAdapter.ClearBeforeFill = true;
             // 
             // frmStaticAmountStudentCourse
             // 
@@ -108,8 +110,8 @@
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.amoutStudentofCourseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBManageProjectStudentDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.amoutStudentofCourseBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

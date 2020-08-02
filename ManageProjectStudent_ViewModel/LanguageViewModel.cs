@@ -42,6 +42,14 @@ namespace ManageProjectStudent_ViewModel
                    (x => x.StrLanguageID == StrLanguageID);
             return Language;
         }
+        public List<string> lstLanguageID()
+        {
+            using (var _Context = new DBManageProjectStudentViewModel())
+            {
+                var Result = _Context.LanguageModels.Select(c => c.StrLanguageID).ToList();
+                return Result;
+            }
+        }
         public bool addNewLanguage(LanguageModel Language)
         {
             try

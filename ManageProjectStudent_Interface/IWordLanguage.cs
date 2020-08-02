@@ -16,8 +16,6 @@ namespace ManageProjectStudent_Interface
         bool addNewWord(LanguageWordModel WordLanguage);
         bool updateCurrentWord(LanguageWordModel WordLanguage);
         bool deleteCurrentWordLanguage(LanguageWordModel WordLanguage);
-
-
-
+        List<string> lstID();
     }
 }

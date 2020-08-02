@@ -38,6 +38,14 @@ namespace ManageProjectStudent_View
         private DecentralizeModel Decentralize = null;
         #endregion
         #region Method
+        private string getMaxID()
+        {
+            string _STR_MAX = GarenaViewModel.returnMaxCode(_Lan.lstLanguageID());
+            if (_STR_MAX == "1")
+                return "NN" + _STR_MAX;
+            return _STR_MAX;
+        }
+
         private void _setStatusForm()
         {
             //txtID.ReadOnly = true;
@@ -45,7 +53,7 @@ namespace ManageProjectStudent_View
             {
                 case 0: // View
                     grpInformationLan.Enabled = false;
-                    txtID.ReadOnly = true;
+                    //txtID.ReadOnly = true;
                     if (_LanguageModelNow != null)
                     {
                         if (Decentralize.BView == true)
@@ -121,102 +129,276 @@ namespace ManageProjectStudent_View
             }
             else
             {
-                //txtID.Text = _LanguageModelNow.StrLanguageID;
-                //txtName.Text = _LanguageModelNow.StrLanguageName;
-                //if (_LanguageModelNow.BDefault == true)
-                //{
-                //    radDefault.Checked = true;
-                //    radNoneDefault.Checked = false;
-                //}
-                //else
-                //{
-                //    radDefault.Checked = false;
-                //    radNoneDefault.Checked = true;
-                //}
-                //if (_LanguageModelNow.BStatus == true)
-                //{
-                //    radAvailable.Checked = true;
-                //    radUnavailable.Checked = false;
-                //}
-                //else
-                //{
-                //    radAvailable.Checked = false;
-                //    radUnavailable.Checked = true;
-                //}
+                txtID.Text = _LanguageModelNow.StrLanguageID;
+                txtName.Text = _LanguageModelNow.StrLanguageName;
+                if (_LanguageModelNow.StrDefault == "Có")
+                {
+                    radDefault.Checked = true;
+                    radNoneDefault.Checked = false;
+                }
+                else
+                {
+                    radDefault.Checked = false;
+                    radNoneDefault.Checked = true;
+                }
+                if (_LanguageModelNow.StrStatus == "Sử dụng")
+                {
+                    radAvailable.Checked = true;
+                    radUnavailable.Checked = false;
+                }
+                else
+                {
+                    radAvailable.Checked = false;
+                    radUnavailable.Checked = true;
+                }
             }
         }
 
+        private void _getData()
+        {
+            if (_LanguageModelNow == null)
+            {
+                _LanguageModelNow = new LanguageModel();
+            }
+            _LanguageModelNow.StrLanguageID = txtID.Text;
+            _LanguageModelNow.StrLanguageName = txtName.Text;
+            if (radDefault.Checked)
+            {
+                _LanguageModelNow.StrDefault = radDefault.Text;
+            }
+            else if (radNoneDefault.Checked)
+            {
+                _LanguageModelNow.StrDefault = radNoneDefault.Text;
+            }
 
+            if (radAvailable.Checked)
+            {
+                _LanguageModelNow.StrStatus = radAvailable.Text;
+            }
+            else
+            {
+                _LanguageModelNow.StrStatus = radUnavailable.Text;
+            }
+        }
+
+        private void _lstLoadListLanguage()
+        {
+            _lstLan = _Lan.loadLanguage();
+            gcListLan.DataSource = _lstLan;
+        }
         #endregion
 
         private void frmManageMultiLanguage_Load(object sender, EventArgs e)
         {
+            this.Visible = false;
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
+            StaffModel = frmHome.staffModel;
+            if (frmHome.lstDecent != null)
+            {
+                foreach (DecentralizeModel decen in frmHome.lstDecent)
+                {
+                    if (StaffModel.StrStaffTypeID == decen.StrStaffTypeID && this.Name == decen.StrFormID)
+                    {
+                        Decentralize = _Decen.getDecentralizeStaffIdForm(decen.StrStaffTypeID, decen.StrFormID);
+                    }
+                }
+            }
 
+            _lstLan = _Lan.loadLanguage();
+            gcListLan.DataSource = _lstLan;
+            _setStatusForm();
         }
 
         private void gvLanList_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {
+            if (gvLanList.SelectedRowsCount > 0)
+                _LanguageModelNow = (LanguageModel)gvLanList.GetRow(gvLanList.FocusedRowHandle);
+            else
+                _LanguageModelNow = null;
 
+            _loadData();
+            _IStatusForm = 0;
+            _setStatusForm();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            _LanguageModelNow = null;
+            _IStatusForm = 1;
+            _setStatusForm();
+            txtName.Focus();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            _IStatusForm = 2;
+            _setStatusForm();
+            txtName.Focus();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            if (_LanguageModelNow != null)
+            {
+                if (_Lan.deleteCurrentLanguage(_LanguageModelNow))
+                {
+                    _lstLoadListLanguage();
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Xóa Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (_lstLan.Count == 0)
+                    {
+                        _LanguageModelNow = null;
+                        _IStatusForm = 0;
+                        _setStatusForm();
+                    }
+                }
+                else
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Xóa Thất Bại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtName.Text == "")
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập tên Ngôn ngữ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtName.Focus();
+            }
+            else if (!(radDefault.Checked) && !(radNoneDefault.Checked))
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn Mạc định", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (!(radAvailable.Checked) && !(radUnavailable.Checked))
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn Trạng thái", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                _getData();
+                bool bresult = false;
+                if (_IStatusForm == 1)
+                {
+                    bresult = _Lan.addNewLanguage(_LanguageModelNow);
+                }
+                else
+                {
+                    bresult = _Lan.updateCurrentLanguagef(_LanguageModelNow);
+                }
 
+                if (!bresult)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Lưu Thất Bại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    _lstLoadListLanguage();
+                    _IStatusForm = 0;
+                    _setStatusForm();
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Lưu Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private void btnReLoad_Click(object sender, EventArgs e)
         {
-
+            _IStatusForm = 0;
+            _setStatusForm();
+            _lstLan = _Lan.loadLanguage();
+            gcListLan.DataSource = _lstLan;
         }
 
         private void btnExitForm_Click(object sender, EventArgs e)
         {
-
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 30);
+            this.Close();
         }
 
         private void radDefault_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radDefault.Checked)
+            {
+                radNoneDefault.Checked = false;
+            }
         }
 
         private void radNoneDefault_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radNoneDefault.Checked)
+            {
+                radDefault.Checked = false;
+            }
         }
 
         private void radAvailable_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radAvailable.Checked)
+            {
+                radUnavailable.Checked = false;
+            }
         }
 
         private void radUnavailable_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radUnavailable.Checked)
+            {
+                radAvailable.Checked = false;
+            }
         }
 
         private void gvLanList_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
         {
+            try
+            {
+                GridView view = (GridView)sender;
+                if (e.Info.IsRowIndicator && e.RowHandle >= 0)
+                {
+                    string sText = (e.RowHandle + 1).ToString();
+                    Graphics gr = e.Info.Graphics;
+                    gr.PageUnit = GraphicsUnit.Pixel;
+                    GridView gridView = ((GridView)sender);
+                    SizeF size = gr.MeasureString(sText, e.Info.Appearance.Font);
+                    int nNewSize = Convert.ToInt32(size.Width) + GridPainter.Indicator.ImageSize.Width + 10;
+                    if (gridView.IndicatorWidth < nNewSize)
+                    {
+                        gridView.IndicatorWidth = nNewSize;
+                    }
 
+                    e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                    e.Info.DisplayText = sText;
+                }
+                if (!indicatorIcon)
+                    e.Info.ImageIndex = -1;
+
+                if (e.RowHandle == GridControl.InvalidRowHandle)
+                {
+                    Graphics gr = e.Info.Graphics;
+                    gr.PageUnit = GraphicsUnit.Pixel;
+                    GridView gridView = ((GridView)sender);
+                    SizeF size = gr.MeasureString("STT", e.Info.Appearance.Font);
+                    int nNewSize = Convert.ToInt32(size.Width) + GridPainter.Indicator.ImageSize.Width + 10;
+                    if (gridView.IndicatorWidth < nNewSize)
+                    {
+                        gridView.IndicatorWidth = nNewSize;
+                    }
+
+                    e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                    e.Info.DisplayText = "STT";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void gvLanList_RowCountChanged(object sender, EventArgs e)
         {
-
+            GridView gridview = ((GridView)sender);
+            if (!gridview.GridControl.IsHandleCreated) return;
+            Graphics gr = Graphics.FromHwnd(gridview.GridControl.Handle);
+            SizeF size = gr.MeasureString(gridview.RowCount.ToString(), gridview.PaintAppearance.Row.GetFont());
+            gridview.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 20;
         }
     }
 }

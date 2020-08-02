@@ -16,6 +16,7 @@ namespace ManageProjectStudent_Interface
         bool addNewLanguage(LanguageModel Language);
         bool updateCurrentLanguagef(LanguageModel Language);
         bool deleteCurrentLanguage(LanguageModel Language);
+        List<string> lstLanguageID();
 
     }
 }

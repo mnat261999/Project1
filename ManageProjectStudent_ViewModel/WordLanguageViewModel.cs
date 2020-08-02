@@ -26,9 +26,11 @@ namespace ManageProjectStudent_ViewModel
                 var Result = (from x in _Context.LanguageWordModels.AsEnumerable()
                               select new LanguageWordModel
                               {
+                                  StrID = x.StrID,
                                   StrWordID = x.StrWordID,
                                   StrLanguageID = x.StrLanguageID,
                                   StrMean = x.StrMean,
+                                  StrStatus = x.StrStatus
                               }).ToList();
                 return new BindingList<LanguageWordModel>(Result);
             }
@@ -45,6 +47,14 @@ namespace ManageProjectStudent_ViewModel
             var WordLanguage = _Context.LanguageWordModels.SingleOrDefault
                    (x => x.StrLanguageID == StrLanguageID);
             return WordLanguage;
+        }
+        public List<string> lstID()
+        {
+            using (var _Context = new DBManageProjectStudentViewModel())
+            {
+                var Result = _Context.LanguageWordModels.Select(c => c.StrID).ToList();
+                return Result;
+            }
         }
         public bool addNewWord(LanguageWordModel WordLanguage)
         {
@@ -64,12 +74,13 @@ namespace ManageProjectStudent_ViewModel
             try
             {
                 var WordLanguageToUpdate = _Context.LanguageWordModels.SingleOrDefault
-                 (x => x.StrWordID == WordLanguage.StrWordID);
+                 (x => x.StrID == WordLanguage.StrID);
                 if (WordLanguageToUpdate != null)
                 {
                     WordLanguageToUpdate.StrLanguageID = WordLanguage.StrLanguageID;
+                    WordLanguageToUpdate.StrWordID = WordLanguage.StrWordID;
                     WordLanguageToUpdate.StrMean = WordLanguage.StrMean;
-
+                    WordLanguageToUpdate.StrStatus = WordLanguage.StrStatus;
                     return (_Context.SaveChanges() != 0);
                 }
                 return false;
@@ -85,7 +96,7 @@ namespace ManageProjectStudent_ViewModel
             try
             {
                 var WordLanguageToDelete = _Context.LanguageWordModels.SingleOrDefault
-                                      (x => x.StrWordID == WordLanguage.StrWordID);
+                                      (x => x.StrID == WordLanguage.StrID);
                 _Context.LanguageWordModels.Remove(WordLanguageToDelete);
                 return (_Context.SaveChanges() != 0);
             }

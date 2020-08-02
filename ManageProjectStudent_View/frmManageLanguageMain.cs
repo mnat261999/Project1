@@ -67,7 +67,7 @@ namespace ManageProjectStudent_View
                     currentButton = (Button)btnSender;
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("Arial", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    currentButton.Font = new System.Drawing.Font("Arial", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     panelTitleBar.BackColor = color;
                     panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                     ThemeColor.PrimaryColor = color;
@@ -85,7 +85,7 @@ namespace ManageProjectStudent_View
                 {
                     previousBtn.BackColor = Color.FromArgb(10, 25, 77);
                     previousBtn.ForeColor = Color.White;
-                    previousBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    previousBtn.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }
@@ -105,47 +105,40 @@ namespace ManageProjectStudent_View
             this.panelDesktopPane.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+            btnExitForm.Visible = false;
             //lblTitle.Text = childForm.Text;
         }
 
         private void Reset()
         {
             DisableButton();
-            lblTitle.Text = "Quản lý khoa";
+            lblTitle.Text = "Quản lý đa ngôn ngữ";
             panelTitleBar.BackColor = Color.FromArgb(0, 135, 137);
             panelLogo.BackColor = Color.FromArgb(24, 37, 60);
             currentButton = null;
             btnCloseChildForm.Visible = false;
+            btnExitForm.Visible = true;
         }
 
         private void btnManageLanguage_Click(object sender, EventArgs e)
         {
-            frmAddGroupForSubject frm = new frmAddGroupForSubject();
+            //this.Hide();
+            frmManageMultiLanguage frm = new frmManageMultiLanguage();
             frm.ShowDialog();
-            lblTitle.Text = "Quản lý thông tin ngôn ngữ";
         }
 
-        private void btnChangeLanguage_Click(object sender, EventArgs e)
+
+        private void btnManageWord_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ManageProjectStudent_View.frmChangeLanguage(), sender);
-            lblTitle.Text = "Thay đổi ngôn ngữ";
+            //this.Hide();
+            frmManageWord frm = new frmManageWord();
+            frm.ShowDialog();
         }
 
-        private void btnExitFormManageLanguage_Click(object sender, EventArgs e)
+        private void btnAddWord_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
-            this.Hide();
-            if(IStatus == 1)
-            {
-                //frmHome frmHome = new frmHome(1,StudentModel);
-                //frmHome.ShowDialog();
-            }
-            else if (IStatus == 2)
-            {
-                //frmHome frmHome = new frmHome(2,StaffModel);
-                //frmHome.ShowDialog();
-            }
-            this.Close();
+            frmAddWordForLanguage frm = new frmAddWordForLanguage();
+            frm.ShowDialog();
         }
 
         private void btnCloseChildForm_Click(object sender, EventArgs e)
@@ -153,6 +146,18 @@ namespace ManageProjectStudent_View
             if (activeForm != null)
                 activeForm.Close();
             Reset();
+        }
+
+        private void btnExitForm_Click(object sender, EventArgs e)
+        {
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 30);
+            this.Close();
+        }
+
+        private void frmManageLanguageMain_Load(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
         }
     }
 }

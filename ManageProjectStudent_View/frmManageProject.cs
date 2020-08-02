@@ -315,7 +315,7 @@ namespace ManageProjectStudent_View
         private void btnCloseChildForm_Click(object sender, EventArgs e)
         {
             Util.EndAnimate(this, Util.Effect.Slide, 150, 30);
-            this.Hide();
+            //this.Hide();
             frmManageProjectMain frmManageProjectMain = new frmManageProjectMain();
             frmManageProjectMain.ShowDialog();
             this.Close();

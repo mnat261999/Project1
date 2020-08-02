@@ -304,7 +304,7 @@
             // colDefault
             // 
             this.colDefault.Caption = "Mặc định";
-            this.colDefault.FieldName = "BDefault";
+            this.colDefault.FieldName = "StrDefault";
             this.colDefault.Name = "colDefault";
             this.colDefault.Visible = true;
             this.colDefault.VisibleIndex = 2;
@@ -312,7 +312,7 @@
             // colStatus
             // 
             this.colStatus.Caption = "Trạng thái";
-            this.colStatus.FieldName = "BStatus";
+            this.colStatus.FieldName = "StrStatus";
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
             this.colStatus.VisibleIndex = 3;
@@ -498,6 +498,7 @@
             this.Controls.Add(this.grpInformationLan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManageMultiLanguage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmManageMultiLanguage";
             this.Load += new System.EventHandler(this.frmManageMultiLanguage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationLan)).EndInit();

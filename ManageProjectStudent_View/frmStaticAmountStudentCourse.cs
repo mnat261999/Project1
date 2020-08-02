@@ -21,6 +21,10 @@ namespace ManageProjectStudent_View
         {
             // TODO: This line of code loads data into the 'dBManageProjectStudentDataSet.AmoutStudentofCourse' table. You can move, or remove it, as needed.
             this.amoutStudentofCourseTableAdapter.Fill(this.dBManageProjectStudentDataSet.AmoutStudentofCourse);
+            // TODO: This line of code loads data into the 'dBManageProjectStudentDataSet1.AmoutStudentofCourse' table. You can move, or remove it, as needed.
+          
+            // TODO: This line of code loads data into the 'dBManageProjectStudentDataSet.AmoutStudentofCourse' table. You can move, or remove it, as needed.
+            this.amoutStudentofCourseTableAdapter.Fill(this.dBManageProjectStudentDataSet.AmoutStudentofCourse);
 
         }
     }

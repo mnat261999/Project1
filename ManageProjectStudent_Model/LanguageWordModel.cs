@@ -15,7 +15,7 @@ namespace ManageProjectStudent_Model
         private string _StrLanguageID;
         private string _StrWordID;
         private string _StrMean;
-        private bool _BStatus;
+        private string _StrStatus;
 
         [Key]
         [Column("ID", TypeName = "varchar", Order = 0)]
@@ -37,7 +37,7 @@ namespace ManageProjectStudent_Model
         public string StrMean { get => _StrMean; set => _StrMean = value; }
 
         [Column("Status", Order = 4)]
-        public bool BStatus { get => _BStatus; set => _BStatus = value; }
+        public string StrStatus { get => _StrStatus; set => _StrStatus = value; }
 
         // Khai bao khoa ngoai.
         public virtual LanguageModel LanguageModel { get; set; }

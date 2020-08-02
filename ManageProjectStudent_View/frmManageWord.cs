@@ -98,7 +98,7 @@ namespace ManageProjectStudent_View
                 case 1:
                     txtID.Text = getMaxID();
                     txtName.Text = string.Empty;
-                   
+                    lkeModule.EditValue = null;
 
                     grpInformationWord.Enabled = true;
 
@@ -117,13 +117,13 @@ namespace ManageProjectStudent_View
             {
                 txtID.Text = string.Empty;
                 txtName.Text = string.Empty;
-            
+                lkeModule.EditValue = null;
             }
             else
             {
                 txtID.Text = _WordModelNow.StrWordId;
                 txtName.Text = _WordModelNow.StrWordName;
-              
+                lkeModule.EditValue = _WordModelNow.StrModule;
             }
         }
         private void _getData()
@@ -134,6 +134,7 @@ namespace ManageProjectStudent_View
             }
             _WordModelNow.StrWordId = txtID.Text;
             _WordModelNow.StrWordName = txtName.Text;
+            _WordModelNow.StrModule = lkeModule.GetColumnValue("StrFormName").ToString();
 
         }
         private void _lstLoadListWord()
@@ -161,6 +162,13 @@ namespace ManageProjectStudent_View
             //lookup-edit
             
             _lstWord = _Word.loadWord();
+            _lstForm = _Form.loadForm();
+            lkeModule.Properties.ValueMember = "StrFormID";
+            lkeModule.Properties.DisplayMember = "StrFormName";
+            lkeModule.Properties.DataSource = _lstForm;
+            lkeModule.Properties.Columns["colFormID"].FieldName = "StrFormID";
+            lkeModule.Properties.Columns["colFormName"].FieldName = "StrFormName";
+
             gcListWord.DataSource = _lstWord;
             _setStatusForm();
         }
@@ -251,6 +259,7 @@ namespace ManageProjectStudent_View
 
         private void btnExitForm_Click(object sender, EventArgs e)
         {
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 30);
             this.Close();
         }
 
