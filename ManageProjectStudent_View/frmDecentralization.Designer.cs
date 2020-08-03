@@ -46,7 +46,7 @@
             this.gcListFunction = new DevExpress.XtraGrid.GridControl();
             this.LookUpEdit_Subject = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.lkeStaffType = new DevExpress.XtraEditors.LookUpEdit();
-            this.grpNguoiSungDung = new DevExpress.XtraEditors.GroupControl();
+            this.grpUsing = new DevExpress.XtraEditors.GroupControl();
             this.btnExitFormManageLecturer = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
@@ -67,8 +67,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcListFunction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Subject)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkeStaffType.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grpNguoiSungDung)).BeginInit();
-            this.grpNguoiSungDung.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grpUsing)).BeginInit();
+            this.grpUsing.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkFull_Add.Properties)).BeginInit();
@@ -295,19 +295,19 @@
             this.lkeStaffType.TabIndex = 0;
             this.lkeStaffType.EditValueChanged += new System.EventHandler(this.lkeStaffType_EditValueChanged);
             // 
-            // grpNguoiSungDung
+            // grpUsing
             // 
-            this.grpNguoiSungDung.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.grpNguoiSungDung.Appearance.Options.UseFont = true;
-            this.grpNguoiSungDung.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.grpNguoiSungDung.AppearanceCaption.Options.UseFont = true;
-            this.grpNguoiSungDung.Controls.Add(this.lkeStaffType);
-            this.grpNguoiSungDung.Location = new System.Drawing.Point(196, 124);
-            this.grpNguoiSungDung.Margin = new System.Windows.Forms.Padding(4);
-            this.grpNguoiSungDung.Name = "grpNguoiSungDung";
-            this.grpNguoiSungDung.Size = new System.Drawing.Size(261, 306);
-            this.grpNguoiSungDung.TabIndex = 124;
-            this.grpNguoiSungDung.Text = "Người Sử Dụng";
+            this.grpUsing.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.grpUsing.Appearance.Options.UseFont = true;
+            this.grpUsing.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.grpUsing.AppearanceCaption.Options.UseFont = true;
+            this.grpUsing.Controls.Add(this.lkeStaffType);
+            this.grpUsing.Location = new System.Drawing.Point(196, 124);
+            this.grpUsing.Margin = new System.Windows.Forms.Padding(4);
+            this.grpUsing.Name = "grpUsing";
+            this.grpUsing.Size = new System.Drawing.Size(261, 306);
+            this.grpUsing.TabIndex = 124;
+            this.grpUsing.Text = "Người Sử Dụng";
             // 
             // btnExitFormManageLecturer
             // 
@@ -441,7 +441,7 @@
             this.Controls.Add(this.chkFull_Add);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.gcListFunction);
-            this.Controls.Add(this.grpNguoiSungDung);
+            this.Controls.Add(this.grpUsing);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -459,8 +459,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcListFunction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Subject)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkeStaffType.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grpNguoiSungDung)).EndInit();
-            this.grpNguoiSungDung.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grpUsing)).EndInit();
+            this.grpUsing.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.panelMenu.ResumeLayout(false);
@@ -491,7 +491,7 @@
         private DevExpress.XtraGrid.GridControl gcListFunction;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit_Subject;
         private DevExpress.XtraEditors.LookUpEdit lkeStaffType;
-        private DevExpress.XtraEditors.GroupControl grpNguoiSungDung;
+        private DevExpress.XtraEditors.GroupControl grpUsing;
         private System.Windows.Forms.Button btnExitFormManageLecturer;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panelTitleBar;

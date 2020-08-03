@@ -35,6 +35,12 @@ namespace ManageProjectStudent_ViewModel
                 return new BindingList<LanguageWordModel>(Result);
             }
         }
+        public BindingList<LanguageWordModel> getListLanguageWord(string LangID)
+        {
+            var result = _Context.LanguageWordModels.Where(x => x.StrLanguageID == LangID).ToList();
+            return new BindingList<LanguageWordModel>(result);
+        }
+
         public LanguageWordModel getWordLanguageSelectedByWordID(string StrWordID)
         {
             var WordLanguage = _Context.LanguageWordModels.SingleOrDefault
@@ -47,6 +53,12 @@ namespace ManageProjectStudent_ViewModel
             var WordLanguage = _Context.LanguageWordModels.SingleOrDefault
                    (x => x.StrLanguageID == StrLanguageID);
             return WordLanguage;
+        }
+        public string getMean(string WordName, string LangID)
+        {
+            var Query = _Context.WordModels.SingleOrDefault(x => x.StrWordName == WordName);
+            var Result = _Context.LanguageWordModels.Where(x => x.StrLanguageID == LangID).SingleOrDefault(x => x.StrWordID == Query.StrWordId);
+            return Result.StrMean;
         }
         public List<string> lstID()
         {

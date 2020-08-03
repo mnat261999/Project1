@@ -41,6 +41,7 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
             this.panelMenuHome = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSetLan = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnInformation = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -81,24 +82,41 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnSetLan);
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.btnInformation);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 445);
+            this.panel1.Location = new System.Drawing.Point(0, 330);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(264, 202);
+            this.panel1.Size = new System.Drawing.Size(264, 317);
             this.panel1.TabIndex = 4;
+            // 
+            // btnSetLan
+            // 
+            this.btnSetLan.FlatAppearance.BorderSize = 0;
+            this.btnSetLan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetLan.Font = new System.Drawing.Font("Times New Roman", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetLan.ForeColor = System.Drawing.Color.White;
+            this.btnSetLan.Image = ((System.Drawing.Image)(resources.GetObject("btnSetLan.Image")));
+            this.btnSetLan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSetLan.Location = new System.Drawing.Point(0, 100);
+            this.btnSetLan.Name = "btnSetLan";
+            this.btnSetLan.Size = new System.Drawing.Size(261, 50);
+            this.btnSetLan.TabIndex = 6;
+            this.btnSetLan.Text = "Cài Ngôn Ngữ";
+            this.btnSetLan.UseVisualStyleBackColor = true;
+            this.btnSetLan.Click += new System.EventHandler(this.btnSetLan_Click);
             // 
             // btnLogin
             // 
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogin.Location = new System.Drawing.Point(3, 40);
+            this.btnLogin.Location = new System.Drawing.Point(3, 152);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(261, 50);
             this.btnLogin.TabIndex = 3;
@@ -110,11 +128,11 @@
             // 
             this.btnInformation.FlatAppearance.BorderSize = 0;
             this.btnInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformation.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformation.Font = new System.Drawing.Font("Times New Roman", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInformation.ForeColor = System.Drawing.Color.White;
             this.btnInformation.Image = ((System.Drawing.Image)(resources.GetObject("btnInformation.Image")));
             this.btnInformation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformation.Location = new System.Drawing.Point(3, 96);
+            this.btnInformation.Location = new System.Drawing.Point(3, 208);
             this.btnInformation.Name = "btnInformation";
             this.btnInformation.Size = new System.Drawing.Size(261, 50);
             this.btnInformation.TabIndex = 4;
@@ -126,11 +144,11 @@
             // 
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(3, 152);
+            this.btnExit.Location = new System.Drawing.Point(0, 264);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(261, 50);
             this.btnExit.TabIndex = 5;
@@ -257,7 +275,7 @@
             tileItemElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             tileItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomCenter;
             tileItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Squeeze;
-            tileItemElement1.Text = "Phân Quyền";
+            tileItemElement1.Text = "Phân quyền";
             tileItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
             this.itemDecentralization.Elements.Add(tileItemElement1);
             this.itemDecentralization.Id = 47;
@@ -501,5 +519,6 @@
         private DevExpress.XtraEditors.TileItem itemStatic;
         private DevExpress.XtraEditors.TileGroup tileGroup1;
         private DevExpress.XtraEditors.TileItem itemMulLan;
+        private System.Windows.Forms.Button btnSetLan;
     }
 }

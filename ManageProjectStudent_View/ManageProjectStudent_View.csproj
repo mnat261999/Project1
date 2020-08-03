@@ -271,6 +271,12 @@
     <Compile Include="frmManageWord.Designer.cs">
       <DependentUpon>frmManageWord.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSettingLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettingLanguage.Designer.cs">
+      <DependentUpon>frmSettingLanguage.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStaffType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -391,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageWord.resx">
       <DependentUpon>frmManageWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettingLanguage.resx">
+      <DependentUpon>frmSettingLanguage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStaffType.resx">
       <DependentUpon>frmStaffType.cs</DependentUpon>

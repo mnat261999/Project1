@@ -134,7 +134,7 @@ namespace ManageProjectStudent_View
             }
             _WordModelNow.StrWordId = txtID.Text;
             _WordModelNow.StrWordName = txtName.Text;
-            _WordModelNow.StrModule = lkeModule.GetColumnValue("StrFormName").ToString();
+            _WordModelNow.StrModule = lkeModule.GetColumnValue("StrFormID").ToString();
 
         }
         private void _lstLoadListWord()

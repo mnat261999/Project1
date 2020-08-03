@@ -37,6 +37,10 @@ namespace ManageProjectStudent_View
         List<DecentralizeModel> _lstdecentralizeModels = new List<DecentralizeModel>();
         bool BStatusLogin = false;
         int ICheck;
+        bool BCheckLan = false;
+        public static LanguageModel languageModel = null;
+        private IWord _Word = Config.Container.Resolve<IWord>();
+        private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
         #endregion
         #region Method
         private void setStatusLogin(bool bStatus, StudentModel student, StaffModel staff)
@@ -49,11 +53,13 @@ namespace ManageProjectStudent_View
                 if (student != null)
                 {
                     ICheck = 1;
+                    btnSetLan.Visible = true;
                     lblDisplayName.Text = student.StrStudentName;
                     lblType.Text = "Sinh viên";
                 }
                 else
                 {
+                    btnSetLan.Visible = true;
                     lblDisplayName.Text = staff.StrStaffName;
                     if (lstStaffType == null)
                         lstStaffType = new BindingList<StaffTypeModel>();
@@ -71,13 +77,43 @@ namespace ManageProjectStudent_View
                     }
                     lstDecent = _Decen.getListDecentralizeStaff(staff.StrStaffTypeID);
                 }
-                btnLogin.Text = "Đăng xuất";
+                btnLogin.Text = "Đăng Xuất";
             }
             else
             {
-                btnLogin.Text = "Đăng nhập";
+                btnLogin.Text = "Đăng Nhập";
                 lblDisplayName.Text = "Họ tên";
                 lblType.Text = "Chức danh";
+                btnSetLan.Visible = false;
+            }    
+        }
+        private void setLanguage (bool bCheck, LanguageModel language)
+        {
+            BCheckLan = bCheck;
+            languageModel = language;
+            if(bCheck)
+            {
+                if(language != null)
+                {
+                    if(studentModel != null || staffModel != null)
+                    {
+                        lblType.Text = _WL.getMean(lblType.Text, language.StrLanguageID);
+                        btnSetLan.Text = _WL.getMean(btnSetLan.Text, language.StrLanguageID);
+                        btnLogin.Text = _WL.getMean(btnLogin.Text, language.StrLanguageID);
+                        btnInformation.Text = _WL.getMean(btnInformation.Text, language.StrLanguageID);
+                        btnExit.Text = _WL.getMean(btnExit.Text, language.StrLanguageID);
+                        itemDecentralization.Text = _WL.getMean(itemDecentralization.Text, language.StrLanguageID);
+                        itemStatic.Text = _WL.getMean(itemStatic.Text, language.StrLanguageID);
+                        itemMulLan.Text = _WL.getMean(itemMulLan.Text, language.StrLanguageID);
+                        itemManageProject.Text = _WL.getMean(itemManageProject.Text, language.StrLanguageID);
+                        itemManagStaffType.Text = _WL.getMean(itemManagStaffType.Text, language.StrLanguageID);
+                        itemManageLecturer.Text = _WL.getMean(itemManageLecturer.Text, language.StrLanguageID);
+                        itemManageStudent.Text = _WL.getMean(itemManageStudent.Text, language.StrLanguageID);
+                        itemManageFaculty.Text = _WL.getMean(itemManageFaculty.Text, language.StrLanguageID);
+                        itemManageClass.Text = _WL.getMean(itemManageClass.Text, language.StrLanguageID);
+                        itemManagSubject.Text = _WL.getMean(itemManagSubject.Text, language.StrLanguageID);
+                    }    
+                }    
             }    
         }
         private Color SelectThemeColor()
@@ -104,7 +140,7 @@ namespace ManageProjectStudent_View
                     currentButton = (Button)btnSender;
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("Times New Roman", 22.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    currentButton.Font = new System.Drawing.Font("Times New Roman", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }
@@ -117,7 +153,7 @@ namespace ManageProjectStudent_View
                 {
                     previousBtn.BackColor = Color.FromArgb(10, 25, 77);
                     previousBtn.ForeColor = Color.White;
-                    previousBtn.Font = new System.Drawing.Font("Times New Roman", 18.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    previousBtn.Font = new System.Drawing.Font("Times New Roman", 16.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }
@@ -126,7 +162,7 @@ namespace ManageProjectStudent_View
         private void btnLogin_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            if (!BStatusLogin)
+            if (BStatusLogin == false)
             {
                 frmLogin frm = new frmLogin();
                 frm.login = setStatusLogin;
@@ -137,18 +173,29 @@ namespace ManageProjectStudent_View
                 setStatusLogin(false, null, null);
             }
         }
-
+        private void btnSetLan_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            if(BCheckLan == false)
+            {
+                frmSettingLanguage frm = new frmSettingLanguage();
+                frm.setting = setLanguage;
+                frm.ShowDialog();
+            } 
+            else
+            {
+                setLanguage(false, null);
+            }    
+        }
         private void btnInformation_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
             Application.Exit();
         }
-
         private void btnMenu_Click(object sender, EventArgs e)
         {
             if (panelMenuHome.Size.Width == 56)
@@ -164,8 +211,6 @@ namespace ManageProjectStudent_View
                 btnMenu.Text = "";
             }
         }
-
-
         private void itemDecentralization_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
             if (ICheck == 1)
@@ -196,7 +241,6 @@ namespace ManageProjectStudent_View
                 }
             }
         }
-
         private void itemManageStudent_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
             if (ICheck == 1)
@@ -227,7 +271,6 @@ namespace ManageProjectStudent_View
                 }
             }
         }
-
         private void itemManageLecturer_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
             if (ICheck == 1)
@@ -258,7 +301,6 @@ namespace ManageProjectStudent_View
                 }
             }
         }
-
         private void itemManageFaculty_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
             if (ICheck == 1)
@@ -289,7 +331,6 @@ namespace ManageProjectStudent_View
                 }
             }
         }
-
         private void itemManageProject_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
             if (ICheck == 1)
@@ -321,7 +362,6 @@ namespace ManageProjectStudent_View
                 }
             }
         }
-
         private void itemManagSubject_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
             if (ICheck == 1)
@@ -352,12 +392,10 @@ namespace ManageProjectStudent_View
                 }
             }
         }
-
         private void frmHome_Load(object sender, EventArgs e)
         {
-            
+            btnSetLan.Visible = false;
         }
-
         private void itemManageClass_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
             if (ICheck == 1)
@@ -418,7 +456,6 @@ namespace ManageProjectStudent_View
                 }
             }
         }
-
         private void itemStatic_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
             if (ICheck == 1)

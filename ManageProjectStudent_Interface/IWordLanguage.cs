@@ -17,5 +17,7 @@ namespace ManageProjectStudent_Interface
         bool updateCurrentWord(LanguageWordModel WordLanguage);
         bool deleteCurrentWordLanguage(LanguageWordModel WordLanguage);
         List<string> lstID();
+        BindingList<LanguageWordModel> getListLanguageWord(string LangID);
+        string getMean(string WordName, string LangID);
     }
 }

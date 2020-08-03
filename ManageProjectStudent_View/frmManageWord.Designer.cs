@@ -248,8 +248,8 @@
             this.lkeModule.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lkeModule.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colFormName", "Module"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colFormID", "Mã Form", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colFormName", "Tên Module"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colFormID", "Module")});
             this.lkeModule.Properties.NullText = "Module";
             this.lkeModule.Size = new System.Drawing.Size(209, 24);
             this.lkeModule.TabIndex = 124;
