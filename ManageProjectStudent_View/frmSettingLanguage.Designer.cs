@@ -120,7 +120,7 @@
             this.btnChange.AppearanceHovered.Options.UseFont = true;
             this.btnChange.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.btnChange.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnChange.Location = new System.Drawing.Point(115, 137);
+            this.btnChange.Location = new System.Drawing.Point(120, 146);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(118, 28);
             this.btnChange.TabIndex = 96;

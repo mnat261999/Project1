@@ -36,6 +36,11 @@ namespace ManageProjectStudent_View
         private StaffModel StaffModel = null;
         private IDecentralize _Decen = Config.Container.Resolve<IDecentralize>();
         private DecentralizeModel Decentralize = null;
+
+        private LanguageModel Language = null;
+        private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
+        private BindingList<WordModel> _lstWord = null;
+        private IWord _Word = Config.Container.Resolve<IWord>();
         #endregion
         #region Method
         private string getMaxID()
@@ -187,11 +192,12 @@ namespace ManageProjectStudent_View
             gcListLan.DataSource = _lstLan;
         }
         #endregion
-
+        #region Event
         private void frmManageMultiLanguage_Load(object sender, EventArgs e)
         {
             this.Visible = false;
             Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
+            #region Decen
             StaffModel = frmHome.staffModel;
             if (frmHome.lstDecent != null)
             {
@@ -203,6 +209,71 @@ namespace ManageProjectStudent_View
                     }
                 }
             }
+            #endregion
+
+            #region Multi-Lan
+            Language = frmHome.languageModel;
+            string lan = Language.StrLanguageID;
+            _lstWord = _Word.getLstWord(this.Name);
+            if (frmHome.lstLanguageWord != null)
+            {
+                foreach (WordModel word in _lstWord)
+                {
+                    if (lblTitle.Text == word.StrWordName)
+                    {
+                        lblTitle.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                    }
+                    if (btnAdd.Text == word.StrWordName)
+                    {
+                        btnAdd.Text = _WL.getMean(btnAdd.Text, Language.StrLanguageID);
+                    }
+                    if (btnUpdate.Text == word.StrWordName)
+                    {
+                        btnUpdate.Text = _WL.getMean(btnUpdate.Text, Language.StrLanguageID);
+                    }
+                    if (btnDelete.Text == word.StrWordName)
+                    {
+                        btnDelete.Text = _WL.getMean(btnDelete.Text, Language.StrLanguageID);
+                    }
+                    if (btnSave.Text == word.StrWordName)
+                    {
+                        btnSave.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                    }
+                    if (lblID.Text == word.StrWordName)
+                    {
+                        lblID.Text = _WL.getMean(lblID.Text, Language.StrLanguageID);
+                    }
+                    if (lblName.Text == word.StrWordName)
+                    {
+                        lblName.Text = _WL.getMean(lblName.Text, Language.StrLanguageID);
+                    }
+                    if (lblDefault.Text == word.StrWordName)
+                    {
+                        lblDefault.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                    }
+                    if (radDefault.Text == word.StrWordName)
+                    {
+                        radDefault.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                    }
+                    if (radNoneDefault.Text == word.StrWordName)
+                    {
+                        radNoneDefault.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                    }
+                    if (lblStatus.Text == word.StrWordName)
+                    {
+                        lblStatus.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                    }
+                    if (radAvailable.Text == word.StrWordName)
+                    {
+                        radAvailable.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                    }
+                    if (radUnavailable.Text == word.StrWordName)
+                    {
+                        radUnavailable.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                    }
+                }    
+            }    
+            #endregion
 
             _lstLan = _Lan.loadLanguage();
             gcListLan.DataSource = _lstLan;
@@ -400,5 +471,6 @@ namespace ManageProjectStudent_View
             SizeF size = gr.MeasureString(gridview.RowCount.ToString(), gridview.PaintAppearance.Row.GetFont());
             gridview.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 20;
         }
+        #endregion
     }
 }

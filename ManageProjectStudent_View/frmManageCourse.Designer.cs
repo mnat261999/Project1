@@ -30,8 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManageCourse));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.btnExitFormManageCourse = new System.Windows.Forms.Button();
             this.btnReLoad = new System.Windows.Forms.Button();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
@@ -59,10 +63,6 @@
             this.colCourseID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colYearStart = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colYearEnd = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.btnExitFormManageCourse = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -93,6 +93,80 @@
             this.panelMenu.Size = new System.Drawing.Size(174, 506);
             this.panelMenu.TabIndex = 6;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnUpdate.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Appearance.Options.UseBackColor = true;
+            this.btnUpdate.Appearance.Options.UseFont = true;
+            this.btnUpdate.Appearance.Options.UseForeColor = true;
+            this.btnUpdate.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(71)))), ((int)(((byte)(100)))));
+            this.btnUpdate.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnUpdate.AppearanceHovered.Options.UseBackColor = true;
+            this.btnUpdate.AppearanceHovered.Options.UseFont = true;
+            this.btnUpdate.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
+            this.btnUpdate.Location = new System.Drawing.Point(6, 335);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(165, 64);
+            this.btnUpdate.TabIndex = 126;
+            this.btnUpdate.TabStop = false;
+            this.btnUpdate.Text = "Sửa Khóa Học";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDelete.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Appearance.Options.UseBackColor = true;
+            this.btnDelete.Appearance.Options.UseFont = true;
+            this.btnDelete.Appearance.Options.UseForeColor = true;
+            this.btnDelete.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(71)))), ((int)(((byte)(100)))));
+            this.btnDelete.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDelete.AppearanceHovered.Options.UseBackColor = true;
+            this.btnDelete.AppearanceHovered.Options.UseFont = true;
+            this.btnDelete.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
+            this.btnDelete.Location = new System.Drawing.Point(6, 421);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(164, 64);
+            this.btnDelete.TabIndex = 125;
+            this.btnDelete.TabStop = false;
+            this.btnDelete.Text = "Xóa Khóa Học";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdd.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnAdd.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Appearance.Options.UseBackColor = true;
+            this.btnAdd.Appearance.Options.UseFont = true;
+            this.btnAdd.Appearance.Options.UseForeColor = true;
+            this.btnAdd.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(71)))), ((int)(((byte)(100)))));
+            this.btnAdd.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnAdd.AppearanceHovered.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.AppearanceHovered.Options.UseBackColor = true;
+            this.btnAdd.AppearanceHovered.Options.UseFont = true;
+            this.btnAdd.AppearanceHovered.Options.UseForeColor = true;
+            this.btnAdd.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
+            this.btnAdd.Location = new System.Drawing.Point(6, 249);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(165, 64);
+            this.btnAdd.TabIndex = 124;
+            this.btnAdd.TabStop = false;
+            this.btnAdd.Text = "Thêm Khóa Học";
+            // 
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(37)))), ((int)(((byte)(60)))));
@@ -117,6 +191,22 @@
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(755, 87);
             this.panelTitleBar.TabIndex = 7;
+            // 
+            // btnExitFormManageCourse
+            // 
+            this.btnExitFormManageCourse.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExitFormManageCourse.FlatAppearance.BorderSize = 0;
+            this.btnExitFormManageCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExitFormManageCourse.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExitFormManageCourse.ForeColor = System.Drawing.Color.White;
+            this.btnExitFormManageCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnExitFormManageCourse.Image")));
+            this.btnExitFormManageCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExitFormManageCourse.Location = new System.Drawing.Point(685, 0);
+            this.btnExitFormManageCourse.Name = "btnExitFormManageCourse";
+            this.btnExitFormManageCourse.Size = new System.Drawing.Size(70, 87);
+            this.btnExitFormManageCourse.TabIndex = 14;
+            this.btnExitFormManageCourse.UseVisualStyleBackColor = true;
+            this.btnExitFormManageCourse.Click += new System.EventHandler(this.btnExitFormManageCourse_Click);
             // 
             // btnReLoad
             // 
@@ -396,9 +486,12 @@
             this.gvListCourse.OptionsView.ShowAutoFilterRow = true;
             this.gvListCourse.OptionsView.ShowGroupPanel = false;
             this.gvListCourse.OptionsView.ShowViewCaption = true;
+            this.gvListCourse.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colCourseID, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gvListCourse.ViewCaption = "Danh sách khóa học";
             this.gvListCourse.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gvListCourse_CustomDrawRowIndicator);
             this.gvListCourse.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gvListCourse_SelectionChanged);
+            this.gvListCourse.CustomColumnSort += new DevExpress.XtraGrid.Views.Base.CustomColumnSortEventHandler(this.gvListCourse_CustomColumnSort);
             this.gvListCourse.RowCountChanged += new System.EventHandler(this.gvListCourse_RowCountChanged);
             // 
             // colCourseID
@@ -406,6 +499,8 @@
             this.colCourseID.Caption = "Mã khóa học";
             this.colCourseID.FieldName = "StrCourseID";
             this.colCourseID.Name = "colCourseID";
+            this.colCourseID.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.colCourseID.SortMode = DevExpress.XtraGrid.ColumnSortMode.Custom;
             this.colCourseID.Visible = true;
             this.colCourseID.VisibleIndex = 0;
             // 
@@ -432,96 +527,6 @@
             this.colYearEnd.Name = "colYearEnd";
             this.colYearEnd.Visible = true;
             this.colYearEnd.VisibleIndex = 2;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnUpdate.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Appearance.Options.UseBackColor = true;
-            this.btnUpdate.Appearance.Options.UseFont = true;
-            this.btnUpdate.Appearance.Options.UseForeColor = true;
-            this.btnUpdate.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(71)))), ((int)(((byte)(100)))));
-            this.btnUpdate.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnUpdate.AppearanceHovered.Options.UseBackColor = true;
-            this.btnUpdate.AppearanceHovered.Options.UseFont = true;
-            this.btnUpdate.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
-            this.btnUpdate.Location = new System.Drawing.Point(6, 335);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(165, 64);
-            this.btnUpdate.TabIndex = 126;
-            this.btnUpdate.TabStop = false;
-            this.btnUpdate.Text = "Sửa Khóa Học";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDelete.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Appearance.Options.UseBackColor = true;
-            this.btnDelete.Appearance.Options.UseFont = true;
-            this.btnDelete.Appearance.Options.UseForeColor = true;
-            this.btnDelete.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(71)))), ((int)(((byte)(100)))));
-            this.btnDelete.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDelete.AppearanceHovered.Options.UseBackColor = true;
-            this.btnDelete.AppearanceHovered.Options.UseFont = true;
-            this.btnDelete.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(6, 421);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(164, 64);
-            this.btnDelete.TabIndex = 125;
-            this.btnDelete.TabStop = false;
-            this.btnDelete.Text = "Xóa Khóa Học";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnAdd.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Appearance.Options.UseBackColor = true;
-            this.btnAdd.Appearance.Options.UseFont = true;
-            this.btnAdd.Appearance.Options.UseForeColor = true;
-            this.btnAdd.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(71)))), ((int)(((byte)(100)))));
-            this.btnAdd.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnAdd.AppearanceHovered.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.AppearanceHovered.Options.UseBackColor = true;
-            this.btnAdd.AppearanceHovered.Options.UseFont = true;
-            this.btnAdd.AppearanceHovered.Options.UseForeColor = true;
-            this.btnAdd.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(6, 249);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(165, 64);
-            this.btnAdd.TabIndex = 124;
-            this.btnAdd.TabStop = false;
-            this.btnAdd.Text = "Thêm Khóa Học";
-            // 
-            // btnExitFormManageCourse
-            // 
-            this.btnExitFormManageCourse.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExitFormManageCourse.FlatAppearance.BorderSize = 0;
-            this.btnExitFormManageCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExitFormManageCourse.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExitFormManageCourse.ForeColor = System.Drawing.Color.White;
-            this.btnExitFormManageCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnExitFormManageCourse.Image")));
-            this.btnExitFormManageCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExitFormManageCourse.Location = new System.Drawing.Point(685, 0);
-            this.btnExitFormManageCourse.Name = "btnExitFormManageCourse";
-            this.btnExitFormManageCourse.Size = new System.Drawing.Size(70, 87);
-            this.btnExitFormManageCourse.TabIndex = 14;
-            this.btnExitFormManageCourse.UseVisualStyleBackColor = true;
-            this.btnExitFormManageCourse.Click += new System.EventHandler(this.btnExitFormManageCourse_Click);
             // 
             // frmManageCourse
             // 

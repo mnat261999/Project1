@@ -60,6 +60,11 @@ namespace ManageProjectStudent_ViewModel
             var Result = _Context.LanguageWordModels.Where(x => x.StrLanguageID == LangID).SingleOrDefault(x => x.StrWordID == Query.StrWordId);
             return Result.StrMean;
         }
+        public string getMeanByID(string WordID, string LangID)
+        {
+            var Result = _Context.LanguageWordModels.Where(x => x.StrLanguageID == LangID).SingleOrDefault(x => x.StrWordID == WordID);
+            return Result.StrMean;
+        }
         public List<string> lstID()
         {
             using (var _Context = new DBManageProjectStudentViewModel())

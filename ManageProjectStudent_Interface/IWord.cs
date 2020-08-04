@@ -16,5 +16,7 @@ namespace ManageProjectStudent_Interface
         bool updateCurrentWordf(WordModel Word);
         bool deleteCurrentWord(WordModel Word);
         List<string> lstWordID();
+        BindingList<WordModel> getLstWord(string StrModul);
+        BindingList<WordModel> getListWord(string LangID, string Module);
     }
 }

@@ -38,9 +38,17 @@ namespace ManageProjectStudent_View
         bool BStatusLogin = false;
         int ICheck;
         bool BCheckLan = false;
+
         public static LanguageModel languageModel = null;
-        private IWord _Word = Config.Container.Resolve<IWord>();
+        //private IWord _Word = Config.Container.Resolve<IWord>();
         private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
+        private BindingList<LanguageModel> _lstLanguage = null;
+        private ILanguage _Lan = Config.Container.Resolve<ILanguage>();
+        public static string DefaultLan;
+        public static BindingList<LanguageWordModel> lstLanguageWord = null;
+        private BindingList<WordModel> _lstWord = null;
+        private IWord _Word = Config.Container.Resolve<IWord>();
+        //public static string DefaultLan;
         #endregion
         #region Method
         private void setStatusLogin(bool bStatus, StudentModel student, StaffModel staff)
@@ -95,26 +103,60 @@ namespace ManageProjectStudent_View
             {
                 if(language != null)
                 {
-                    if(studentModel != null || staffModel != null)
+                    if(language.StrLanguageID == DefaultLan)
                     {
-                        lblType.Text = _WL.getMean(lblType.Text, language.StrLanguageID);
-                        btnSetLan.Text = _WL.getMean(btnSetLan.Text, language.StrLanguageID);
-                        btnLogin.Text = _WL.getMean(btnLogin.Text, language.StrLanguageID);
-                        btnInformation.Text = _WL.getMean(btnInformation.Text, language.StrLanguageID);
-                        btnExit.Text = _WL.getMean(btnExit.Text, language.StrLanguageID);
-                        itemDecentralization.Text = _WL.getMean(itemDecentralization.Text, language.StrLanguageID);
-                        itemStatic.Text = _WL.getMean(itemStatic.Text, language.StrLanguageID);
-                        itemMulLan.Text = _WL.getMean(itemMulLan.Text, language.StrLanguageID);
-                        itemManageProject.Text = _WL.getMean(itemManageProject.Text, language.StrLanguageID);
-                        itemManagStaffType.Text = _WL.getMean(itemManagStaffType.Text, language.StrLanguageID);
-                        itemManageLecturer.Text = _WL.getMean(itemManageLecturer.Text, language.StrLanguageID);
-                        itemManageStudent.Text = _WL.getMean(itemManageStudent.Text, language.StrLanguageID);
-                        itemManageFaculty.Text = _WL.getMean(itemManageFaculty.Text, language.StrLanguageID);
-                        itemManageClass.Text = _WL.getMean(itemManageClass.Text, language.StrLanguageID);
-                        itemManagSubject.Text = _WL.getMean(itemManagSubject.Text, language.StrLanguageID);
-                    }    
+                        DevExpress.XtraEditors.XtraMessageBox.Show("Đây là ngôn ngữ mặc định bạn phải chọn ngôn ngữ khác để thay đổi", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }  
+                    else
+                    {
+                        DefaultLan = language.StrLanguageID;
+                        _lstWord = _Word.getLstWord(this.Name);
+                        if (studentModel != null || staffModel != null)
+                        {
+                            foreach (WordModel word in _lstWord)
+                            {
+                                if(itemStatic.Text == word.StrWordName)
+                                {
+                                    itemStatic.Text = _WL.getMeanByID(word.StrWordId, languageModel.StrLanguageID);
+                                }
+                                if (itemMulLan.Text == word.StrWordName)
+                                {
+                                    itemMulLan.Text = _WL.getMeanByID(word.StrWordId, languageModel.StrLanguageID);
+                                }
+                            }    
+                            lblType.Text = _WL.getMean(lblType.Text, language.StrLanguageID);
+                            btnSetLan.Text = _WL.getMean(btnSetLan.Text, language.StrLanguageID);
+                            btnLogin.Text = _WL.getMean(btnLogin.Text, language.StrLanguageID);
+                            btnInformation.Text = _WL.getMean(btnInformation.Text, language.StrLanguageID);
+                            btnExit.Text = _WL.getMean(btnExit.Text, language.StrLanguageID);
+                            itemDecentralization.Text = _WL.getMean(itemDecentralization.Text, language.StrLanguageID);
+                            //itemStatic.Text= _WL.getMean(itemStatic.Text, language.StrLanguageID);
+                            //itemMulLan.Text = _WL.getMean(itemMulLan.Text, language.StrLanguageID);
+                            itemManageProject.Text = _WL.getMean(itemManageProject.Text, language.StrLanguageID);
+                            itemManagStaffType.Text = _WL.getMean(itemManagStaffType.Text, language.StrLanguageID);
+                            itemManageLecturer.Text = _WL.getMean(itemManageLecturer.Text, language.StrLanguageID);
+                            itemManageStudent.Text = _WL.getMean(itemManageStudent.Text, language.StrLanguageID);
+                            itemManageFaculty.Text = _WL.getMean(itemManageFaculty.Text, language.StrLanguageID);
+                            itemManageClass.Text = _WL.getMean(itemManageClass.Text, language.StrLanguageID);
+                            itemManagSubject.Text = _WL.getMean(itemManagSubject.Text, language.StrLanguageID);
+                        }
+                        lstLanguageWord = _WL.getListLanguageWord(language.StrLanguageID);
+                    }
                 }    
             }    
+        }
+        private void SettingDefaultLan()
+        {
+            _lstLanguage = new BindingList<LanguageModel>();
+            _lstLanguage = _Lan.loadLanguage();
+            foreach (LanguageModel language in _lstLanguage)
+            {
+                if (language.StrDefault == "Có")
+                {
+                    DefaultLan = language.StrLanguageID;
+                    break;
+                }
+            }
         }
         private Color SelectThemeColor()
         {
@@ -395,6 +437,7 @@ namespace ManageProjectStudent_View
         private void frmHome_Load(object sender, EventArgs e)
         {
             btnSetLan.Visible = false;
+            SettingDefaultLan();
         }
         private void itemManageClass_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {

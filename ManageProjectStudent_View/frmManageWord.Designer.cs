@@ -366,9 +366,12 @@
             this.gvWordList.OptionsView.ShowAutoFilterRow = true;
             this.gvWordList.OptionsView.ShowGroupPanel = false;
             this.gvWordList.OptionsView.ShowViewCaption = true;
+            this.gvWordList.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colWordID, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gvWordList.ViewCaption = "Danh sách từ";
             this.gvWordList.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gvWordList_CustomDrawRowIndicator);
             this.gvWordList.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gvWordList_SelectionChanged);
+            this.gvWordList.CustomColumnSort += new DevExpress.XtraGrid.Views.Base.CustomColumnSortEventHandler(this.gvWordList_CustomColumnSort);
             this.gvWordList.RowCountChanged += new System.EventHandler(this.gvWordList_RowCountChanged);
             // 
             // colWordID
@@ -376,6 +379,8 @@
             this.colWordID.Caption = "Mã từ";
             this.colWordID.FieldName = "StrWordId";
             this.colWordID.Name = "colWordID";
+            this.colWordID.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.colWordID.SortMode = DevExpress.XtraGrid.ColumnSortMode.Custom;
             this.colWordID.Visible = true;
             this.colWordID.VisibleIndex = 0;
             // 

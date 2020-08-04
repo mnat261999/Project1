@@ -49,7 +49,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(174, 578);
+            this.panelMenu.Size = new System.Drawing.Size(188, 578);
             this.panelMenu.TabIndex = 46;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
@@ -63,7 +63,7 @@
             this.btnAmountStudentCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAmountStudentCourse.Location = new System.Drawing.Point(0, 87);
             this.btnAmountStudentCourse.Name = "btnAmountStudentCourse";
-            this.btnAmountStudentCourse.Size = new System.Drawing.Size(174, 50);
+            this.btnAmountStudentCourse.Size = new System.Drawing.Size(188, 50);
             this.btnAmountStudentCourse.TabIndex = 9;
             this.btnAmountStudentCourse.Text = "Số lượng sinh viên theo khóa";
             this.btnAmountStudentCourse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -79,7 +79,7 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(174, 87);
+            this.panelLogo.Size = new System.Drawing.Size(188, 87);
             this.panelLogo.TabIndex = 7;
             this.panelLogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLogo_Paint);
             // 
@@ -91,9 +91,9 @@
             this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelTitleBar.Location = new System.Drawing.Point(174, 0);
+            this.panelTitleBar.Location = new System.Drawing.Point(188, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(843, 87);
+            this.panelTitleBar.Size = new System.Drawing.Size(829, 87);
             this.panelTitleBar.TabIndex = 47;
             this.panelTitleBar.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitleBar_Paint);
             // 
@@ -118,7 +118,7 @@
             this.btnExitForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExitForm.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExitForm.Image = ((System.Drawing.Image)(resources.GetObject("btnExitForm.Image")));
-            this.btnExitForm.Location = new System.Drawing.Point(768, 0);
+            this.btnExitForm.Location = new System.Drawing.Point(754, 0);
             this.btnExitForm.Name = "btnExitForm";
             this.btnExitForm.Size = new System.Drawing.Size(75, 87);
             this.btnExitForm.TabIndex = 1;
@@ -141,9 +141,9 @@
             // panelDesktopPane
             // 
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktopPane.Location = new System.Drawing.Point(174, 87);
+            this.panelDesktopPane.Location = new System.Drawing.Point(188, 87);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(843, 491);
+            this.panelDesktopPane.Size = new System.Drawing.Size(829, 491);
             this.panelDesktopPane.TabIndex = 48;
             this.panelDesktopPane.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktopPane_Paint);
             // 

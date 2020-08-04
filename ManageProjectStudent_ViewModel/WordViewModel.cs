@@ -39,6 +39,23 @@ namespace ManageProjectStudent_ViewModel
                    (x => x.StrWordId == StrWordID);
             return Word;
         }
+        public BindingList<WordModel> getLstWord(string StrModul)
+        {
+            var Word = _Context.WordModels.Where
+                   (x => x.StrModule == StrModul).ToList();
+            return new BindingList<WordModel>(Word);
+        }
+        public BindingList<WordModel> getListWord(string LangID, string Module)
+        {
+            var query = _Context.LanguageWordModels.Where(x => x.StrLanguageID == LangID).Select(x => x.StrWordID).ToList();
+            BindingList<WordModel> Words = new BindingList<WordModel>();
+            foreach (string c in query)
+            {
+                var result = _Context.WordModels.Where(x => x.StrWordId == c).SingleOrDefault(x => x.StrModule == Module);
+                Words.Add(result);
+            }
+            return Words;
+        }
         public List<string> lstWordID()
         {
             using (var _Context = new DBManageProjectStudentViewModel())

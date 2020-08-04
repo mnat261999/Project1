@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ManageProjectStudent_Interface;
+using Unity;
+using ManageProjectStudent_Model;
+using ManageProjectStudent_ViewModel;
 
 namespace ManageProjectStudent_View
 {
@@ -16,6 +20,11 @@ namespace ManageProjectStudent_View
         private Random random;
         private int tempIndex;
         private Form activeForm;
+
+        private LanguageModel Language = null;
+        private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
+        private BindingList<WordModel> _lstWord = null;
+        private IWord _Word = Config.Container.Resolve<IWord>();
         public frmStatic()
         {
             InitializeComponent();
@@ -147,6 +156,24 @@ namespace ManageProjectStudent_View
         {
             this.Visible = false;
             Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
+            Language = frmHome.languageModel;
+            _lstWord = _Word.getLstWord(this.Name);
+
+            if (frmHome.lstLanguageWord != null)
+            {
+                foreach (WordModel word in _lstWord)
+                {
+                    if (lblTitle.Text == word.StrWordName)
+                    {
+                        lblTitle.Text = _WL.getMeanByID(word.StrWordId,Language.StrLanguageID);
+                    }
+                    if (btnAmountStudentCourse.Text == word.StrWordName)
+                    {
+                        btnAmountStudentCourse.Text = _WL.getMean(btnAmountStudentCourse.Text, Language.StrLanguageID);
+                    }
+                }    
+            }    
+
         }
     }
 }

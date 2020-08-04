@@ -35,14 +35,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.radUnavailable = new System.Windows.Forms.RadioButton();
             this.radAvailable = new System.Windows.Forms.RadioButton();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.radNoneDefault = new System.Windows.Forms.RadioButton();
             this.radDefault = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblDefault = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             this.gcListLan = new DevExpress.XtraGrid.GridControl();
             this.gvLanList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colLanguageID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -75,12 +75,12 @@
             this.grpInformationLan.Controls.Add(this.btnSave);
             this.grpInformationLan.Controls.Add(this.txtName);
             this.grpInformationLan.Controls.Add(this.panel2);
-            this.grpInformationLan.Controls.Add(this.label4);
+            this.grpInformationLan.Controls.Add(this.lblStatus);
             this.grpInformationLan.Controls.Add(this.panel1);
-            this.grpInformationLan.Controls.Add(this.label1);
+            this.grpInformationLan.Controls.Add(this.lblDefault);
             this.grpInformationLan.Controls.Add(this.txtID);
-            this.grpInformationLan.Controls.Add(this.label3);
-            this.grpInformationLan.Controls.Add(this.label2);
+            this.grpInformationLan.Controls.Add(this.lblName);
+            this.grpInformationLan.Controls.Add(this.lblID);
             this.grpInformationLan.Location = new System.Drawing.Point(196, 93);
             this.grpInformationLan.Name = "grpInformationLan";
             this.grpInformationLan.Size = new System.Drawing.Size(721, 178);
@@ -153,15 +153,15 @@
             this.radAvailable.UseVisualStyleBackColor = true;
             this.radAvailable.CheckedChanged += new System.EventHandler(this.radAvailable_CheckedChanged);
             // 
-            // label4
+            // lblStatus
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(396, 74);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 17);
-            this.label4.TabIndex = 103;
-            this.label4.Text = "Trạng thái";
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(396, 74);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(72, 17);
+            this.lblStatus.TabIndex = 103;
+            this.lblStatus.Text = "Trạng thái";
             // 
             // panel1
             // 
@@ -198,15 +198,15 @@
             this.radDefault.UseVisualStyleBackColor = true;
             this.radDefault.CheckedChanged += new System.EventHandler(this.radDefault_CheckedChanged);
             // 
-            // label1
+            // lblDefault
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(402, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 17);
-            this.label1.TabIndex = 101;
-            this.label1.Text = "Mặc định";
+            this.lblDefault.AutoSize = true;
+            this.lblDefault.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDefault.Location = new System.Drawing.Point(396, 39);
+            this.lblDefault.Name = "lblDefault";
+            this.lblDefault.Size = new System.Drawing.Size(66, 17);
+            this.lblDefault.TabIndex = 101;
+            this.lblDefault.Text = "Mặc định";
             // 
             // txtID
             // 
@@ -215,25 +215,25 @@
             this.txtID.Size = new System.Drawing.Size(174, 21);
             this.txtID.TabIndex = 97;
             // 
-            // label3
+            // lblName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(56, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Tên Ngôn Ngữ";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(56, 75);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(99, 17);
+            this.lblName.TabIndex = 2;
+            this.lblName.Text = "Tên ngôn ngữ";
             // 
-            // label2
+            // lblID
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(62, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mã Ngôn Ngữ";
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(56, 39);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(93, 17);
+            this.lblID.TabIndex = 0;
+            this.lblID.Text = "Mã ngôn ngữ";
             // 
             // gcListLan
             // 
@@ -478,14 +478,14 @@
             // lblTitle
             // 
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(290, 31);
+            this.lblTitle.Location = new System.Drawing.Point(81, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(177, 22);
+            this.lblTitle.Size = new System.Drawing.Size(607, 87);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Quản lý ngôn ngữ";
+            this.lblTitle.Text = "Quản Lý Ngôn Ngữ";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmManageMultiLanguage
             // 
@@ -513,19 +513,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Class)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
-            this.panelTitleBar.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private DevExpress.XtraEditors.GroupControl grpInformationLan;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton radDefault;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDefault;
         private DevExpress.XtraGrid.GridControl gcListLan;
         private DevExpress.XtraGrid.Views.Grid.GridView gvLanList;
         private DevExpress.XtraGrid.Columns.GridColumn colLanguageID;
@@ -536,7 +535,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton radUnavailable;
         private System.Windows.Forms.RadioButton radAvailable;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.RadioButton radNoneDefault;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelLogo;

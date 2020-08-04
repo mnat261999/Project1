@@ -19,5 +19,6 @@ namespace ManageProjectStudent_Interface
         List<string> lstID();
         BindingList<LanguageWordModel> getListLanguageWord(string LangID);
         string getMean(string WordName, string LangID);
+        string getMeanByID(string WordID, string LangID);
     }
 }

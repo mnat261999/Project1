@@ -403,6 +403,17 @@ namespace ManageProjectStudent_View
             SizeF size = gr.MeasureString(gridview.RowCount.ToString(), gridview.PaintAppearance.Row.GetFont());
             gridview.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 20;
         }
+
+        private void gvWordLanList_CustomColumnSort(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnSortEventArgs e)
+        {
+            if (e.Column.FieldName == "StrID")
+            {
+                e.Handled = true;
+                int num1 = GarenaViewModel._seperateNumber((string)e.Value1);
+                int num2 = GarenaViewModel._seperateNumber((string)e.Value2);
+                e.Result = num1.CompareTo(num2);
+            }
+        }
         #endregion
     }
 }

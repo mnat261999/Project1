@@ -39,13 +39,13 @@
             this.btnExitForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.grpInformationWordLan = new DevExpress.XtraEditors.GroupControl();
+            this.txtMean = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.radUnavailable = new System.Windows.Forms.RadioButton();
             this.radAvailable = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtMean = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lkeWord = new DevExpress.XtraEditors.LookUpEdit();
             this.lkeLanguage = new DevExpress.XtraEditors.LookUpEdit();
@@ -54,6 +54,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.gcListWordLan = new DevExpress.XtraGrid.GridControl();
             this.gvWordLanList = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLanguage = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpEdit_Language = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colWord = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,7 +62,7 @@
             this.colMean = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpEdit_Class = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LookUpEdit_Mean = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationWordLan)).BeginInit();
@@ -74,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Language)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Word)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Class)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Mean)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -236,11 +238,11 @@
             // 
             // grpInformationWordLan
             // 
+            this.grpInformationWordLan.Controls.Add(this.txtMean);
             this.grpInformationWordLan.Controls.Add(this.panel2);
             this.grpInformationWordLan.Controls.Add(this.label4);
             this.grpInformationWordLan.Controls.Add(this.txtID);
             this.grpInformationWordLan.Controls.Add(this.label5);
-            this.grpInformationWordLan.Controls.Add(this.txtMean);
             this.grpInformationWordLan.Controls.Add(this.label1);
             this.grpInformationWordLan.Controls.Add(this.lkeWord);
             this.grpInformationWordLan.Controls.Add(this.lkeLanguage);
@@ -252,6 +254,13 @@
             this.grpInformationWordLan.Size = new System.Drawing.Size(732, 178);
             this.grpInformationWordLan.TabIndex = 50;
             this.grpInformationWordLan.Text = "Thông Tin";
+            // 
+            // txtMean
+            // 
+            this.txtMean.Location = new System.Drawing.Point(477, 36);
+            this.txtMean.Name = "txtMean";
+            this.txtMean.Size = new System.Drawing.Size(169, 21);
+            this.txtMean.TabIndex = 127;
             // 
             // panel2
             // 
@@ -315,13 +324,6 @@
             this.label5.TabIndex = 127;
             this.label5.Text = "ID";
             // 
-            // txtMean
-            // 
-            this.txtMean.Location = new System.Drawing.Point(477, 38);
-            this.txtMean.Name = "txtMean";
-            this.txtMean.Size = new System.Drawing.Size(169, 21);
-            this.txtMean.TabIndex = 126;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -342,12 +344,15 @@
             this.lkeWord.Properties.AppearanceDropDown.Options.UseFont = true;
             this.lkeWord.Properties.AppearanceDropDownHeader.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lkeWord.Properties.AppearanceDropDownHeader.Options.UseFont = true;
+            this.lkeWord.Properties.AutoSearchColumnIndex = 1;
             this.lkeWord.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkeWord.Properties.CaseSensitiveSearch = true;
             this.lkeWord.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colWordName", "Từ"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colWordID", "Mã từ", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colWordID", "Mã từ")});
             this.lkeWord.Properties.NullText = "Từ";
+            this.lkeWord.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSearch;
             this.lkeWord.Size = new System.Drawing.Size(169, 24);
             this.lkeWord.TabIndex = 124;
             // 
@@ -422,7 +427,8 @@
             this.gcListWordLan.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.LookUpEdit_Class,
             this.LookUpEdit_Language,
-            this.LookUpEdit_Word});
+            this.LookUpEdit_Word,
+            this.LookUpEdit_Mean});
             this.gcListWordLan.Size = new System.Drawing.Size(732, 240);
             this.gcListWordLan.TabIndex = 51;
             this.gcListWordLan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -462,10 +468,23 @@
             this.gvWordLanList.OptionsView.ShowAutoFilterRow = true;
             this.gvWordLanList.OptionsView.ShowGroupPanel = false;
             this.gvWordLanList.OptionsView.ShowViewCaption = true;
+            this.gvWordLanList.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colID, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gvWordLanList.ViewCaption = "Danh sách ngôn ngữ";
             this.gvWordLanList.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gvWordLanList_CustomDrawRowIndicator);
             this.gvWordLanList.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gvWordLanList_SelectionChanged);
+            this.gvWordLanList.CustomColumnSort += new DevExpress.XtraGrid.Views.Base.CustomColumnSortEventHandler(this.gvWordLanList_CustomColumnSort);
             this.gvWordLanList.RowCountChanged += new System.EventHandler(this.gvWordLanList_RowCountChanged);
+            // 
+            // colID
+            // 
+            this.colID.Caption = "ID";
+            this.colID.FieldName = "StrID";
+            this.colID.Name = "colID";
+            this.colID.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.colID.SortMode = DevExpress.XtraGrid.ColumnSortMode.Custom;
+            this.colID.Visible = true;
+            this.colID.VisibleIndex = 0;
             // 
             // colLanguage
             // 
@@ -537,13 +556,16 @@
             this.LookUpEdit_Class.Name = "LookUpEdit_Class";
             this.LookUpEdit_Class.ValueMember = "StrClassID";
             // 
-            // colID
+            // LookUpEdit_Mean
             // 
-            this.colID.Caption = "ID";
-            this.colID.FieldName = "StrID";
-            this.colID.Name = "colID";
-            this.colID.Visible = true;
-            this.colID.VisibleIndex = 0;
+            this.LookUpEdit_Mean.AutoHeight = false;
+            this.LookUpEdit_Mean.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.LookUpEdit_Mean.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colWordName", "Nghĩa")});
+            this.LookUpEdit_Mean.DisplayMember = "StrWordName";
+            this.LookUpEdit_Mean.Name = "LookUpEdit_Mean";
+            this.LookUpEdit_Mean.ValueMember = "StrWordName";
             // 
             // frmAddWordForLanguage
             // 
@@ -574,6 +596,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Language)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Word)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Class)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Mean)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -590,7 +613,6 @@
         private System.Windows.Forms.Button btnExitForm;
         private System.Windows.Forms.Label lblTitle;
         private DevExpress.XtraEditors.GroupControl grpInformationWordLan;
-        private System.Windows.Forms.TextBox txtMean;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.LookUpEdit lkeWord;
         private DevExpress.XtraEditors.LookUpEdit lkeLanguage;
@@ -613,5 +635,7 @@
         private System.Windows.Forms.Label label4;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit_Mean;
+        private System.Windows.Forms.TextBox txtMean;
     }
 }

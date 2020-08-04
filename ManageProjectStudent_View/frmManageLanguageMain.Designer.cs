@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManageLanguageMain));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnAddWord = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btnManageWord = new System.Windows.Forms.Button();
             this.btnManageLanguage = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
-            this.btnAddWord = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +55,23 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(174, 460);
             this.panelMenu.TabIndex = 3;
+            // 
+            // btnAddWord
+            // 
+            this.btnAddWord.FlatAppearance.BorderSize = 0;
+            this.btnAddWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddWord.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddWord.ForeColor = System.Drawing.Color.White;
+            this.btnAddWord.Image = ((System.Drawing.Image)(resources.GetObject("btnAddWord.Image")));
+            this.btnAddWord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddWord.Location = new System.Drawing.Point(0, 205);
+            this.btnAddWord.Name = "btnAddWord";
+            this.btnAddWord.Size = new System.Drawing.Size(174, 50);
+            this.btnAddWord.TabIndex = 6;
+            this.btnAddWord.Text = "Thêm từ cho ngôn ngữ";
+            this.btnAddWord.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddWord.UseVisualStyleBackColor = true;
+            this.btnAddWord.Click += new System.EventHandler(this.btnAddWord_Click);
             // 
             // panelLogo
             // 
@@ -146,14 +163,14 @@
             // lblTitle
             // 
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(250, 31);
+            this.lblTitle.Location = new System.Drawing.Point(81, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(216, 22);
+            this.lblTitle.Size = new System.Drawing.Size(603, 84);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Quản Lý Đa Ngôn Ngữ";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelDesktopPane
             // 
@@ -162,23 +179,6 @@
             this.panelDesktopPane.Name = "panelDesktopPane";
             this.panelDesktopPane.Size = new System.Drawing.Size(756, 373);
             this.panelDesktopPane.TabIndex = 5;
-            // 
-            // btnAddWord
-            // 
-            this.btnAddWord.FlatAppearance.BorderSize = 0;
-            this.btnAddWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddWord.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddWord.ForeColor = System.Drawing.Color.White;
-            this.btnAddWord.Image = ((System.Drawing.Image)(resources.GetObject("btnAddWord.Image")));
-            this.btnAddWord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddWord.Location = new System.Drawing.Point(0, 205);
-            this.btnAddWord.Name = "btnAddWord";
-            this.btnAddWord.Size = new System.Drawing.Size(174, 50);
-            this.btnAddWord.TabIndex = 6;
-            this.btnAddWord.Text = "Thêm từ cho ngôn ngữ";
-            this.btnAddWord.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddWord.UseVisualStyleBackColor = true;
-            this.btnAddWord.Click += new System.EventHandler(this.btnAddWord_Click);
             // 
             // frmManageLanguageMain
             // 
@@ -195,7 +195,6 @@
             this.Load += new System.EventHandler(this.frmManageLanguageMain_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
-            this.panelTitleBar.PerformLayout();
             this.ResumeLayout(false);
 
         }

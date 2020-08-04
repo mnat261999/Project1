@@ -6,13 +6,15 @@ using System.Windows.Forms;
 using Unity;
 using ManageProjectStudent_Interface;
 using ManageProjectStudent_ViewModel;
+using ManageProjectStudent_Model;
+using System.ComponentModel;
 
 namespace ManageProjectStudent_View
 {
     static class Config
     {
         public static UnityContainer Container { get; private set; } = new UnityContainer();
-
+ 
         public static void Register()
         {
             // Thu
@@ -55,7 +57,6 @@ namespace ManageProjectStudent_View
         static void Main()
         {
             Config.Register();
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmHome());

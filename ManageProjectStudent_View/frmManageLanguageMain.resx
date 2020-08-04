@@ -120,16 +120,16 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnAddWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAHgSURBVEhL7ZY7ThxBFEVHEGDYA0Iyv5AAFkDgHRhLfFMyEidsgK+9CBuQHTkAREZAjADBFiz5
-        w08IESBIKJ9b75U8MDMtqpkEaY50VK1br+oxQ3f1VFqEENrwPS7gSkk/Yq9v+TxY8AObwS2O+LbFUDgQ
-        lzSPDd+6GApHrT4y6nE2rN2zLcKeR8VQ2GpcCta2GhdD4atvPIs6wWY9KkbNMFG6cTZqZj0jr6Mx9Xq5
-        zOAW/sQrHzdxGtu8tBYmSzWmthcP46rG7ONbX/IYJrIbU9eHl3GFcY7fUDfXd7zAhOpqX5eEWY2paceT
-        WB3CA37CThzGdz524WfUvDjCx187QW7jKSuNLHmsvOY55lp/VGLcY4Mgt/GOlYZTfONxo8b6Js5iGsK2
-        xwZBbuO/Vhq+oL5W3WDyBoXGlGl+HcVv38IgyG18b6VhEavX1kPzy3YZ7nwLg6DsJ/6KQ7jr6hkWGlOm
-        +TUUv3wLgyC3ce7/WI+a2PLYIBi0PHLs41OuscPrq+/qxbgJcF2v8apFkQmP/0OYft42aiwmvVbPcaqr
-        fo71a1U3k8b0HCcOsPb4VIhjOIfzDfzg5arvx6cnl06seifXH+zxpS+HzZ57Vnf7kubBpunttI36ZEJj
-        nbdTpfIP32x6CFxwWk0AAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAeBJREFUSEvt
+        ljtOHEEURUcQYNgDQjK/kAAWQOAdGEt8UzISJ2yAr70IG5AdOQBERkCMAMEWLPnDTwgRIEgon1vvlTww
+        My2qmQRpjnRUrVuv6jFDd/VUWoQQ2vA9LuBKST9ir2/5PFjwA5vBLY74tsVQOBCXNI8N37oYCketPjLq
+        cTas3bMtwp5HxVDYalwK1rYaF0Phq288izrBZj0qRs0wUbpxNmpmPSOvozH1ernM4Bb+xCsfN3Ea27y0
+        FiZLNaa2Fw/jqsbs41tf8hgmshtT14eXcYVxjt9QN9d3vMCE6mpfl4RZjalpx5NYHcIDfsJOHMZ3Pnbh
+        Z9S8OMLHXztBbuMpK40seay85jnmWn9UYtxjgyC38Y6VhlN843GjxvomzmIawrbHBkFu479WGr6gvlbd
+        YPIGhcaUaX4dxW/fwiDIbXxvpWERq9fWQ/PLdhnufAuDoOwn/opDuOvqGRYaU6b5NRS/fAuDILdx7v9Y
+        j5rY8tggGLQ8cuzjU66xw+ur7+rFuAlwXa/xqkWRCY//Q5h+3jZqLCa9Vs9xqqt+jvVrVTeTxvQcJw6w
+        9vhUiGM4h/MN/ODlqu/HpyeXTqx6J9cf7PGlL4fNnntWd/uS5sGm6e20jfpkQmOdt1Ol8g/fbHoIXHBa
+        TQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="panelLogo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
