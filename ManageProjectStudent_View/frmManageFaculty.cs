@@ -42,6 +42,10 @@ namespace ManageProjectStudent_View
         private StaffModel StaffModel = null;
         private IDecentralize _Decen = Config.Container.Resolve<IDecentralize>();
         private DecentralizeModel Decentralize = null;
+        private LanguageModel Language = null;
+        private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
+        private BindingList<WordModel> _lstWord = null;
+        private IWord _Word = Config.Container.Resolve<IWord>();
         #endregion
         #region Method
         private void _setStatusForm()
@@ -159,6 +163,71 @@ namespace ManageProjectStudent_View
             _lstFaculty = _Faculty.loadFaculty();
             gcListFaculty.DataSource = _lstFaculty;
             _setStatusForm();
+
+            #region Multi-Language
+            Language = frmHome.languageModel;
+            string lan = Language.StrLanguageID;
+            _lstWord = _Word.getLstWord(this.Name);
+            if (frmHome.lstLanguageWord != null)
+            {
+                foreach (WordModel word in _lstWord)
+                {
+                    if (lblTitle.Text == word.StrWordName)
+                    {
+                        lblTitle.Text = _WL.getMean(lblTitle.Text, Language.StrLanguageID);
+                    }
+                    if (btnAdd.Text == word.StrWordName)
+                    {
+                        btnAdd.Text = _WL.getMean(btnAdd.Text, Language.StrLanguageID);
+                    }
+                    if (btnUpdate.Text == word.StrWordName)
+                    {
+                        btnUpdate.Text = _WL.getMean(btnUpdate.Text, Language.StrLanguageID);
+                    }
+                    if (btnDelete.Text == word.StrWordName)
+                    {
+                        btnDelete.Text = _WL.getMean(btnDelete.Text, Language.StrLanguageID);
+                    }
+                    if (btnSave.Text == word.StrWordName)
+                    {
+                        btnSave.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                    }
+                    if (lblFacultyID.Text == word.StrWordName)
+                    {
+                        lblFacultyID.Text = _WL.getMean(lblFacultyID.Text, Language.StrLanguageID);
+                    }
+                    if (lblFacultyName.Text == word.StrWordName)
+                    {
+                        lblFacultyName.Text = _WL.getMean(lblFacultyName.Text, Language.StrLanguageID);
+                    }
+                    if (lblStartDay.Text == word.StrWordName)
+                    {
+                        lblStartDay.Text = _WL.getMean(lblStartDay.Text, Language.StrLanguageID);
+                    }
+                    if (grpInformationFaculty.Text == word.StrWordName)
+                    {
+                        grpInformationFaculty.Text = _WL.getMean(grpInformationFaculty.Text, Language.StrLanguageID);
+                    }
+                    if (gcListFaculty.Text == word.StrWordName)
+                    {
+                        gcListFaculty.Text = _WL.getMean(gcListFaculty.Text, Language.StrLanguageID);
+                    }
+                    if (colFacultyID.Caption == word.StrWordName)
+                    {
+                        colFacultyID.Caption = _WL.getMean(colFacultyID.Caption, Language.StrLanguageID);
+                    }
+                    if (colFacultyName.Caption == word.StrWordName)
+                    {
+                        colFacultyName.Caption = _WL.getMean(colFacultyName.Caption, Language.StrLanguageID);
+                    }
+                    if (colStartDay.Caption == word.StrWordName)
+                    {
+                        colStartDay.Caption = _WL.getMean(colStartDay.Caption, Language.StrLanguageID);
+                    }
+
+                }
+            }
+                    #endregion
         }
 
         //selection changed

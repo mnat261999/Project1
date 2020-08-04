@@ -40,9 +40,9 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.grpInformationStaffType = new DevExpress.XtraEditors.GroupControl();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblStaffName = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblStaffTypeID = new System.Windows.Forms.Label();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.gcListStaffType = new DevExpress.XtraGrid.GridControl();
             this.gvStaffTypeList = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -52,7 +52,6 @@
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationStaffType)).BeginInit();
-            this.grpInformationStaffType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcListStaffType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvStaffTypeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Class)).BeginInit();
@@ -219,9 +218,9 @@
             // grpInformationStaffType
             // 
             this.grpInformationStaffType.Controls.Add(this.txtName);
-            this.grpInformationStaffType.Controls.Add(this.label2);
+            this.grpInformationStaffType.Controls.Add(this.lblStaffName);
             this.grpInformationStaffType.Controls.Add(this.txtID);
-            this.grpInformationStaffType.Controls.Add(this.label1);
+            this.grpInformationStaffType.Controls.Add(this.lblStaffTypeID);
             this.grpInformationStaffType.Controls.Add(this.btnSave);
             this.grpInformationStaffType.Location = new System.Drawing.Point(194, 100);
             this.grpInformationStaffType.Name = "grpInformationStaffType";
@@ -236,15 +235,15 @@
             this.txtName.Size = new System.Drawing.Size(169, 21);
             this.txtName.TabIndex = 128;
             // 
-            // label2
+            // lblStaffName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(379, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 17);
-            this.label2.TabIndex = 127;
-            this.label2.Text = "Tên loại nhân viên";
+            this.lblStaffName.AutoSize = true;
+            this.lblStaffName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaffName.Location = new System.Drawing.Point(379, 53);
+            this.lblStaffName.Name = "lblStaffName";
+            this.lblStaffName.Size = new System.Drawing.Size(125, 17);
+            this.lblStaffName.TabIndex = 127;
+            this.lblStaffName.Text = "Tên loại nhân viên";
             // 
             // txtID
             // 
@@ -253,15 +252,15 @@
             this.txtID.Size = new System.Drawing.Size(169, 21);
             this.txtID.TabIndex = 126;
             // 
-            // label1
+            // lblStaffTypeID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(63, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 17);
-            this.label1.TabIndex = 125;
-            this.label1.Text = "Mã loại nhân viên";
+            this.lblStaffTypeID.AutoSize = true;
+            this.lblStaffTypeID.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaffTypeID.Location = new System.Drawing.Point(63, 53);
+            this.lblStaffTypeID.Name = "lblStaffTypeID";
+            this.lblStaffTypeID.Size = new System.Drawing.Size(119, 17);
+            this.lblStaffTypeID.TabIndex = 125;
+            this.lblStaffTypeID.Text = "Mã loại nhân viên";
             // 
             // btnSave
             // 
@@ -381,8 +380,6 @@
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationStaffType)).EndInit();
-            this.grpInformationStaffType.ResumeLayout(false);
-            this.grpInformationStaffType.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcListStaffType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvStaffTypeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Class)).EndInit();
@@ -403,9 +400,9 @@
         private System.Windows.Forms.Label lblTitle;
         private DevExpress.XtraEditors.GroupControl grpInformationStaffType;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblStaffName;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblStaffTypeID;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraGrid.GridControl gcListStaffType;
         private DevExpress.XtraGrid.Views.Grid.GridView gvStaffTypeList;

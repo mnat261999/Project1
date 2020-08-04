@@ -42,6 +42,10 @@ namespace ManageProjectStudent_View
         private StaffModel StaffModel = null;
         private IDecentralize _Decen = Config.Container.Resolve<IDecentralize>();
         private DecentralizeModel Decentralize = null;
+        private LanguageModel Language = null;
+        private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
+        private BindingList<WordModel> _lstWord = null;
+        private IWord _Word = Config.Container.Resolve<IWord>();
         #endregion
         #region Method
         private bool CheckBirthday()
@@ -323,6 +327,150 @@ namespace ManageProjectStudent_View
             }
             gcListLecturer.DataSource = _lstLecturer;
             _setStatusForm();
+            #region Multi-Language
+            Language = frmHome.languageModel;
+            string lan = Language.StrLanguageID;
+            _lstWord = _Word.getLstWord(this.Name);
+
+            if (frmHome.lstLanguageWord != null)
+            {
+                foreach (WordModel word in _lstWord)
+                {
+                    if (lblTitle.Text == word.StrWordName)
+                    {
+                        lblTitle.Text = _WL.getMean(lblTitle.Text, Language.StrLanguageID);
+                    }
+                    if (btnAdd.Text == word.StrWordName)
+                    {
+                        btnAdd.Text = _WL.getMean(btnAdd.Text, Language.StrLanguageID);
+                    }
+                    if (btnUpdate.Text == word.StrWordName)
+                    {
+                        btnUpdate.Text = _WL.getMean(btnUpdate.Text, Language.StrLanguageID);
+                    }
+                    if (btnDelete.Text == word.StrWordName)
+                    {
+                        btnDelete.Text = _WL.getMean(btnDelete.Text, Language.StrLanguageID);
+                    }
+                    if (btnSave.Text == word.StrWordName)
+                    {
+                        btnSave.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                    }
+                    if (lblStaffID.Text == word.StrWordName)
+                    {
+                        lblStaffID.Text = _WL.getMean(lblStaffID.Text, Language.StrLanguageID);
+                    }
+                    if (lblName.Text == word.StrWordName)
+                    {
+                        lblName.Text = _WL.getMean(lblName.Text, Language.StrLanguageID);
+                    }
+                    if (lblBirthday.Text == word.StrWordName)
+                    {
+                        lblBirthday.Text = _WL.getMean(lblBirthday.Text, Language.StrLanguageID);
+                    }
+                    if (lblPhoneNumber.Text == word.StrWordName)
+                    {
+                        lblPhoneNumber.Text = _WL.getMean(lblPhoneNumber.Text, Language.StrLanguageID);
+                    }
+                    if (lblEmail.Text == word.StrWordName)
+                    {
+                        lblEmail.Text = _WL.getMean(lblEmail.Text, Language.StrLanguageID);
+                    }
+                    if (lblCardID.Text == word.StrWordName)
+                    {
+                        lblCardID.Text = _WL.getMean(lblCardID.Text, Language.StrLanguageID);
+                    }
+                    if (lblAddress.Text == word.StrWordName)
+                    {
+                        lblAddress.Text = _WL.getMean(lblAddress.Text, Language.StrLanguageID);
+                    }
+                    if (lblStaffType.Text == word.StrWordName)
+                    {
+                        lblStaffType.Text = _WL.getMean(lblStaffType.Text, Language.StrLanguageID);
+                    }
+                    if (radNam.Text == word.StrWordName)
+                    {
+                        radNam.Text = _WL.getMean(radNam.Text, Language.StrLanguageID);
+                    }
+                    if (radNu.Text == word.StrWordName)
+                    {
+                        radNu.Text = _WL.getMean(radNu.Text, Language.StrLanguageID);
+                    }
+                    if (lblStatus.Text == word.StrWordName)
+                    {
+                        lblStatus.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                    }
+                    if (radAvailable.Text == word.StrWordName)
+                    {
+                        radAvailable.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                    }
+                    if (radUnavailable.Text == word.StrWordName)
+                    {
+                        radUnavailable.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                    }
+                    if (lblFaculty.Text == word.StrWordName)
+                    {
+                        lblFaculty.Text = _WL.getMean(lblFaculty.Text, Language.StrLanguageID);
+                    }
+                    if (lkeFaculty.Properties.NullText == word.StrWordName)
+                    {
+                        lkeFaculty.Properties.NullText = _WL.getMean(lkeFaculty.Properties.NullText, Language.StrLanguageID);
+                    }
+                    if (gcListLecturer.Text == word.StrWordName)
+                    {
+                        gcListLecturer.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                    }
+                    if (colLecturerID.Caption == word.StrWordName)
+                    {
+                        colLecturerID.Caption = _WL.getMean(colLecturerID.Caption, Language.StrLanguageID);
+                    }
+                    if (colFullName.Caption == word.StrWordName)
+                    {
+                        colFullName.Caption = _WL.getMean(colFullName.Caption, Language.StrLanguageID);
+                    }
+                    if (colBirthday.Caption == word.StrWordName)
+                    {
+                        colBirthday.Caption = _WL.getMean(colBirthday.Caption, Language.StrLanguageID);
+                    }
+                    if (ColSex.Caption == word.StrWordName)
+                    {
+                        ColSex.Caption = _WL.getMean(ColSex.Caption, Language.StrLanguageID);
+                    }
+                    if (colPhoneNumber.Caption == word.StrWordName)
+                    {
+                        colPhoneNumber.Caption = _WL.getMean(colPhoneNumber.Caption, Language.StrLanguageID);
+                    }
+                    if (colEmail.Caption == word.StrWordName)
+                    {
+                        colEmail.Caption = _WL.getMean(colEmail.Caption, Language.StrLanguageID);
+                    }
+                    if (colIDCard.Caption == word.StrWordName)
+                    {
+                        colIDCard.Caption = _WL.getMean(colIDCard.Caption, Language.StrLanguageID);
+                    }
+                    if (colAddress.Caption == word.StrWordName)
+                    {
+                        colAddress.Caption = _WL.getMean(colAddress.Caption, Language.StrLanguageID);
+                    }
+                    if (colStatus.Caption == word.StrWordName)
+                    {
+                        colStatus.Caption = _WL.getMean(colStatus.Caption, Language.StrLanguageID);
+                    }
+                    if (colFaculty.Caption == word.StrWordName)
+                    {
+                        colFaculty.Caption = _WL.getMean(colFaculty.Caption, Language.StrLanguageID);
+                    }
+                    if (colStaffType.Caption == word.StrWordName)
+                    {
+                        colStaffType.Caption = _WL.getMean(colStaffType.Caption, Language.StrLanguageID);
+                    }
+                    if (grpInformationLecturer.Text == word.StrWordName)
+                    {
+                        grpInformationLecturer.Text = _WL.getMean(grpInformationLecturer.Text, Language.StrLanguageID);
+                    }
+                }
+            }
+                    #endregion
         }
 
         //selection changed
@@ -649,6 +797,8 @@ namespace ManageProjectStudent_View
                 radAvailable.Checked = false;
             }
         }
+
+     
         #endregion
         //Thu
 
