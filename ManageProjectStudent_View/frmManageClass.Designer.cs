@@ -54,13 +54,13 @@
             this.grpInformationClass = new DevExpress.XtraEditors.GroupControl();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.lkeCourse = new DevExpress.XtraEditors.LookUpEdit();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblCourse = new System.Windows.Forms.Label();
             this.lkeFaculty = new DevExpress.XtraEditors.LookUpEdit();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblFaculty = new System.Windows.Forms.Label();
             this.txtClassName = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblClassName = new System.Windows.Forms.Label();
             this.txtClassID = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblClassID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gcListClass = new DevExpress.XtraGrid.GridControl();
             this.gvClassList = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -73,12 +73,10 @@
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationClass)).BeginInit();
-            this.grpInformationClass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkeCourse.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkeFaculty.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcListClass)).BeginInit();
@@ -377,13 +375,13 @@
             // 
             this.grpInformationClass.Controls.Add(this.btnSave);
             this.grpInformationClass.Controls.Add(this.lkeCourse);
-            this.grpInformationClass.Controls.Add(this.label9);
+            this.grpInformationClass.Controls.Add(this.lblCourse);
             this.grpInformationClass.Controls.Add(this.lkeFaculty);
-            this.grpInformationClass.Controls.Add(this.label8);
+            this.grpInformationClass.Controls.Add(this.lblFaculty);
             this.grpInformationClass.Controls.Add(this.txtClassName);
-            this.grpInformationClass.Controls.Add(this.label7);
+            this.grpInformationClass.Controls.Add(this.lblClassName);
             this.grpInformationClass.Controls.Add(this.txtClassID);
-            this.grpInformationClass.Controls.Add(this.label6);
+            this.grpInformationClass.Controls.Add(this.lblClassID);
             this.grpInformationClass.Controls.Add(this.label1);
             this.grpInformationClass.Location = new System.Drawing.Point(191, 93);
             this.grpInformationClass.Name = "grpInformationClass";
@@ -420,6 +418,9 @@
             // 
             this.lkeCourse.Location = new System.Drawing.Point(562, 63);
             this.lkeCourse.Name = "lkeCourse";
+            // 
+            // 
+            // 
             this.lkeCourse.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lkeCourse.Properties.Appearance.Options.UseFont = true;
             this.lkeCourse.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -430,20 +431,23 @@
             this.lkeCourse.Size = new System.Drawing.Size(190, 24);
             this.lkeCourse.TabIndex = 8;
             // 
-            // label9
+            // lblCourse
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(498, 66);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 17);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Khóa";
+            this.lblCourse.AutoSize = true;
+            this.lblCourse.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCourse.Location = new System.Drawing.Point(498, 66);
+            this.lblCourse.Name = "lblCourse";
+            this.lblCourse.Size = new System.Drawing.Size(42, 17);
+            this.lblCourse.TabIndex = 7;
+            this.lblCourse.Text = "Khóa";
             // 
             // lkeFaculty
             // 
             this.lkeFaculty.Location = new System.Drawing.Point(562, 33);
             this.lkeFaculty.Name = "lkeFaculty";
+            // 
+            // 
+            // 
             this.lkeFaculty.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lkeFaculty.Properties.Appearance.Options.UseFont = true;
             this.lkeFaculty.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -455,15 +459,15 @@
             this.lkeFaculty.Size = new System.Drawing.Size(190, 24);
             this.lkeFaculty.TabIndex = 6;
             // 
-            // label8
+            // lblFaculty
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(498, 38);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 17);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Khoa";
+            this.lblFaculty.AutoSize = true;
+            this.lblFaculty.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFaculty.Location = new System.Drawing.Point(498, 38);
+            this.lblFaculty.Name = "lblFaculty";
+            this.lblFaculty.Size = new System.Drawing.Size(42, 17);
+            this.lblFaculty.TabIndex = 5;
+            this.lblFaculty.Text = "Khoa";
             // 
             // txtClassName
             // 
@@ -473,15 +477,15 @@
             this.txtClassName.Size = new System.Drawing.Size(190, 25);
             this.txtClassName.TabIndex = 4;
             // 
-            // label7
+            // lblClassName
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(88, 66);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 17);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Tên lớp ";
+            this.lblClassName.AutoSize = true;
+            this.lblClassName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClassName.Location = new System.Drawing.Point(88, 66);
+            this.lblClassName.Name = "lblClassName";
+            this.lblClassName.Size = new System.Drawing.Size(62, 17);
+            this.lblClassName.TabIndex = 3;
+            this.lblClassName.Text = "Tên lớp ";
             // 
             // txtClassID
             // 
@@ -491,15 +495,15 @@
             this.txtClassID.Size = new System.Drawing.Size(190, 25);
             this.txtClassID.TabIndex = 2;
             // 
-            // label6
+            // lblClassID
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(94, 33);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 17);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Mã lớp ";
+            this.lblClassID.AutoSize = true;
+            this.lblClassID.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClassID.Location = new System.Drawing.Point(94, 33);
+            this.lblClassID.Name = "lblClassID";
+            this.lblClassID.Size = new System.Drawing.Size(56, 17);
+            this.lblClassID.TabIndex = 1;
+            this.lblClassID.Text = "Mã lớp ";
             // 
             // label1
             // 
@@ -627,14 +631,10 @@
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationClass)).EndInit();
-            this.grpInformationClass.ResumeLayout(false);
-            this.grpInformationClass.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkeCourse.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkeFaculty.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcListClass)).EndInit();
@@ -667,13 +667,13 @@
         private System.Windows.Forms.Label lblTitle;
         private DevExpress.XtraEditors.GroupControl grpInformationClass;
         private DevExpress.XtraEditors.LookUpEdit lkeCourse;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblCourse;
         private DevExpress.XtraEditors.LookUpEdit lkeFaculty;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblFaculty;
         private System.Windows.Forms.TextBox txtClassName;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblClassName;
         private System.Windows.Forms.TextBox txtClassID;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblClassID;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.GridControl gcListClass;
         private DevExpress.XtraGrid.Views.Grid.GridView gvClassList;

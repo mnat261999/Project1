@@ -117,6 +117,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(174, 21);
             this.txtName.TabIndex = 122;
+            this.txtName.Tag = "2";
             // 
             // panel2
             // 
@@ -214,6 +215,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(174, 21);
             this.txtID.TabIndex = 97;
+            this.txtID.Tag = "1";
             // 
             // lblName
             // 

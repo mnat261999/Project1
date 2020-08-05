@@ -218,6 +218,7 @@ namespace ManageProjectStudent_View
             //_lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
             if (frmHome.lstLanguageWord != null)
             {
+                _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
                 foreach (LanguageWordModel lnword in _lstLanWord)
                 {
                     _wordModel = _Word.getWordSelected(lnword.StrWordID);

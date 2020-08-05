@@ -235,6 +235,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(209, 21);
             this.txtName.TabIndex = 122;
+            this.txtName.Tag = "2";
             // 
             // btnSave
             // 
@@ -257,6 +258,7 @@
             this.btnSave.Size = new System.Drawing.Size(156, 36);
             this.btnSave.TabIndex = 121;
             this.btnSave.TabStop = false;
+            this.btnSave.Tag = "3";
             this.btnSave.Text = "Lưu";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -266,6 +268,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(209, 21);
             this.txtID.TabIndex = 97;
+            this.txtID.Tag = "1";
             // 
             // lblName
             // 

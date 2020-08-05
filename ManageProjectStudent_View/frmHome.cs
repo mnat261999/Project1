@@ -491,7 +491,7 @@ namespace ManageProjectStudent_View
             {
                 if (lstDecent != null)
                 {
-                    frmManageSubjectMain frm = new frmManageSubjectMain();
+                    frmManageSubject frm = new frmManageSubject();
                     foreach (DecentralizeModel decentralize in lstDecent)
                     {
                         if (staffModel.StrStaffTypeID == decentralize.StrStaffTypeID && frm.Name == decentralize.StrFormID)

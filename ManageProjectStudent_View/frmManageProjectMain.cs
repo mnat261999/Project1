@@ -145,7 +145,7 @@ namespace ManageProjectStudent_View
 
         private void btnManageTask_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             frmManageProjectTask frm = new frmManageProjectTask();
             frm.ShowDialog();
             
@@ -153,7 +153,7 @@ namespace ManageProjectStudent_View
 
         private void btnManageProjectLecturer_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             frmManageProject frm = new frmManageProject();
             frm.ShowDialog();
         }

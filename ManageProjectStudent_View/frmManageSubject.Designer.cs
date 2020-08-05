@@ -38,24 +38,23 @@
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.btnReLoad = new System.Windows.Forms.Button();
             this.btnExitFormManageStudent = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.grpInformationSubject = new DevExpress.XtraEditors.GroupControl();
             this.lkeFaculty = new DevExpress.XtraEditors.LookUpEdit();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblFacuty = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.dteEndTime = new DevExpress.XtraEditors.DateEdit();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblEndDay = new System.Windows.Forms.Label();
             this.dteStartTime = new DevExpress.XtraEditors.DateEdit();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblStartDay = new System.Windows.Forms.Label();
+            this.lblSubjectName = new System.Windows.Forms.Label();
+            this.lblSubjectID = new System.Windows.Forms.Label();
             this.gcListSubject = new DevExpress.XtraGrid.GridControl();
             this.gvListSubject = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSubjectID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -65,6 +64,7 @@
             this.colStartTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEndTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpEdit_Class = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationSubject)).BeginInit();
@@ -262,7 +262,7 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
-            this.panelTitleBar.Controls.Add(this.btnCloseChildForm);
+            this.panelTitleBar.Controls.Add(this.btnExit);
             this.panelTitleBar.Controls.Add(this.btnReLoad);
             this.panelTitleBar.Controls.Add(this.btnExitFormManageStudent);
             this.panelTitleBar.Controls.Add(this.lblTitle);
@@ -272,20 +272,6 @@
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(948, 87);
             this.panelTitleBar.TabIndex = 48;
-            // 
-            // btnCloseChildForm
-            // 
-            this.btnCloseChildForm.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
-            this.btnCloseChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseChildForm.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCloseChildForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseChildForm.Image")));
-            this.btnCloseChildForm.Location = new System.Drawing.Point(873, 0);
-            this.btnCloseChildForm.Name = "btnCloseChildForm";
-            this.btnCloseChildForm.Size = new System.Drawing.Size(75, 87);
-            this.btnCloseChildForm.TabIndex = 9;
-            this.btnCloseChildForm.UseVisualStyleBackColor = true;
-            this.btnCloseChildForm.Click += new System.EventHandler(this.btnCloseChildForm_Click);
             // 
             // btnReLoad
             // 
@@ -330,18 +316,18 @@
             // grpInformationSubject
             // 
             this.grpInformationSubject.Controls.Add(this.lkeFaculty);
-            this.grpInformationSubject.Controls.Add(this.label12);
+            this.grpInformationSubject.Controls.Add(this.lblFacuty);
             this.grpInformationSubject.Controls.Add(this.txtName);
             this.grpInformationSubject.Controls.Add(this.txtID);
             this.grpInformationSubject.Controls.Add(this.dteEndTime);
-            this.grpInformationSubject.Controls.Add(this.label3);
+            this.grpInformationSubject.Controls.Add(this.lblEndDay);
             this.grpInformationSubject.Controls.Add(this.dteStartTime);
             this.grpInformationSubject.Controls.Add(this.btnSave);
             this.grpInformationSubject.Controls.Add(this.textEdit5);
             this.grpInformationSubject.Controls.Add(this.label6);
-            this.grpInformationSubject.Controls.Add(this.label5);
-            this.grpInformationSubject.Controls.Add(this.label2);
-            this.grpInformationSubject.Controls.Add(this.label1);
+            this.grpInformationSubject.Controls.Add(this.lblStartDay);
+            this.grpInformationSubject.Controls.Add(this.lblSubjectName);
+            this.grpInformationSubject.Controls.Add(this.lblSubjectID);
             this.grpInformationSubject.Location = new System.Drawing.Point(199, 102);
             this.grpInformationSubject.Name = "grpInformationSubject";
             this.grpInformationSubject.Size = new System.Drawing.Size(911, 221);
@@ -363,16 +349,16 @@
             this.lkeFaculty.Size = new System.Drawing.Size(187, 24);
             this.lkeFaculty.TabIndex = 127;
             // 
-            // label12
+            // lblFacuty
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label12.Location = new System.Drawing.Point(135, 131);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(42, 17);
-            this.label12.TabIndex = 126;
-            this.label12.Text = "Khoa";
+            this.lblFacuty.AutoSize = true;
+            this.lblFacuty.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblFacuty.Location = new System.Drawing.Point(135, 131);
+            this.lblFacuty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFacuty.Name = "lblFacuty";
+            this.lblFacuty.Size = new System.Drawing.Size(42, 17);
+            this.lblFacuty.TabIndex = 126;
+            this.lblFacuty.Text = "Khoa";
             // 
             // txtName
             // 
@@ -391,7 +377,7 @@
             // 
             // dteEndTime
             // 
-            this.dteEndTime.EditValue = null;
+            this.dteEndTime.EditValue = new System.DateTime(2020, 8, 5, 0, 0, 0, 0);
             this.dteEndTime.Location = new System.Drawing.Point(672, 90);
             this.dteEndTime.Name = "dteEndTime";
             this.dteEndTime.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -401,19 +387,19 @@
             this.dteEndTime.Size = new System.Drawing.Size(182, 20);
             this.dteEndTime.TabIndex = 46;
             // 
-            // label3
+            // lblEndDay
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(518, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 17);
-            this.label3.TabIndex = 45;
-            this.label3.Text = "Thời Gian Kết Thúc";
+            this.lblEndDay.AutoSize = true;
+            this.lblEndDay.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEndDay.Location = new System.Drawing.Point(518, 87);
+            this.lblEndDay.Name = "lblEndDay";
+            this.lblEndDay.Size = new System.Drawing.Size(135, 17);
+            this.lblEndDay.TabIndex = 45;
+            this.lblEndDay.Text = "Thời Gian Kết Thúc";
             // 
             // dteStartTime
             // 
-            this.dteStartTime.EditValue = null;
+            this.dteStartTime.EditValue = new System.DateTime(2020, 8, 5, 0, 0, 0, 0);
             this.dteStartTime.Location = new System.Drawing.Point(672, 47);
             this.dteStartTime.Name = "dteStartTime";
             this.dteStartTime.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -463,35 +449,35 @@
             this.label6.TabIndex = 25;
             this.label6.Text = "Place";
             // 
-            // label5
+            // lblStartDay
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(524, 47);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 17);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Thời Gian Bắt Đầu";
+            this.lblStartDay.AutoSize = true;
+            this.lblStartDay.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStartDay.Location = new System.Drawing.Point(524, 47);
+            this.lblStartDay.Name = "lblStartDay";
+            this.lblStartDay.Size = new System.Drawing.Size(129, 17);
+            this.lblStartDay.TabIndex = 23;
+            this.lblStartDay.Text = "Thời Gian Bắt Đầu";
             // 
-            // label2
+            // lblSubjectName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(83, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 17);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Tên Môn Học";
+            this.lblSubjectName.AutoSize = true;
+            this.lblSubjectName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubjectName.Location = new System.Drawing.Point(83, 89);
+            this.lblSubjectName.Name = "lblSubjectName";
+            this.lblSubjectName.Size = new System.Drawing.Size(94, 17);
+            this.lblSubjectName.TabIndex = 17;
+            this.lblSubjectName.Text = "Tên Môn Học";
             // 
-            // label1
+            // lblSubjectID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(94, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 17);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "ID Môn Học";
+            this.lblSubjectID.AutoSize = true;
+            this.lblSubjectID.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubjectID.Location = new System.Drawing.Point(94, 47);
+            this.lblSubjectID.Name = "lblSubjectID";
+            this.lblSubjectID.Size = new System.Drawing.Size(83, 17);
+            this.lblSubjectID.TabIndex = 15;
+            this.lblSubjectID.Text = "ID Môn Học";
             // 
             // gcListSubject
             // 
@@ -610,6 +596,20 @@
             this.LookUpEdit_Class.Name = "LookUpEdit_Class";
             this.LookUpEdit_Class.ValueMember = "StrClassID";
             // 
+            // btnExit
+            // 
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(873, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 87);
+            this.btnExit.TabIndex = 9;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmManageSubject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -662,15 +662,14 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtID;
         private DevExpress.XtraEditors.DateEdit dteEndTime;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblEndDay;
         private DevExpress.XtraEditors.DateEdit dteStartTime;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.TextEdit textEdit5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnCloseChildForm;
+        private System.Windows.Forms.Label lblStartDay;
+        private System.Windows.Forms.Label lblSubjectName;
+        private System.Windows.Forms.Label lblSubjectID;
         private DevExpress.XtraGrid.GridControl gcListSubject;
         private DevExpress.XtraGrid.Views.Grid.GridView gvListSubject;
         private DevExpress.XtraGrid.Columns.GridColumn colSubjectID;
@@ -679,8 +678,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colEndTime;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit_Class;
         private DevExpress.XtraEditors.LookUpEdit lkeFaculty;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblFacuty;
         private DevExpress.XtraGrid.Columns.GridColumn colFaculty;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit_Faculty;
+        private System.Windows.Forms.Button btnExit;
     }
 }

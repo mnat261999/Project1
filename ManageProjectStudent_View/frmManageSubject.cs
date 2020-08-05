@@ -37,6 +37,13 @@ namespace ManageProjectStudent_View
         private StaffModel StaffModel = null;
         private IDecentralize _Decen = Config.Container.Resolve<IDecentralize>();
         private DecentralizeModel Decentralize = null;
+
+        private LanguageModel Language = null;
+        private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
+        private BindingList<WordModel> _lstWord = null;
+        private IWord _Word = Config.Container.Resolve<IWord>();
+        private BindingList<LanguageWordModel> _lstLanWord = null;
+        private WordModel _wordModel = null;
         #endregion
         #region Method
         private void _setStatusForm()
@@ -156,7 +163,93 @@ namespace ManageProjectStudent_View
                     }
                 }
             }
+            #region Multi-Language
+            //string lan = Language.StrLanguageID;
+            // _lstWord = _Word.getLstWord(this.Name);
+            Language = frmHome.languageModel;
+            //_lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+            if (frmHome.lstLanguageWord != null)
+            {
+                _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+                foreach (LanguageWordModel lnword in _lstLanWord)
+                {
+                    _wordModel = _Word.getWordSelected(lnword.StrWordID);
+                    if (lblTitle.Text == _wordModel.StrWordName)
+                    {
+                        lblTitle.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnAdd.Text == _wordModel.StrWordName)
+                    {
+                        btnAdd.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnUpdate.Text == _wordModel.StrWordName)
+                    {
+                        btnUpdate.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnDelete.Text == _wordModel.StrWordName)
+                    {
+                        btnDelete.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnSave.Text == _wordModel.StrWordName)
+                    {
+                        btnSave.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblSubjectID.Text == _wordModel.StrWordName)
+                    {
+                        lblSubjectID.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblSubjectName.Text == _wordModel.StrWordName)
+                    {
+                        lblSubjectName.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblFacuty.Text == _wordModel.StrWordName)
+                    {
+                        lblFacuty.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblStartDay.Text == _wordModel.StrWordName)
+                    {
+                        lblStartDay.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblEndDay.Text == _wordModel.StrWordName)
+                    {
+                        lblEndDay.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lkeFaculty.Text == _wordModel.StrWordName)
+                    {
+                        lkeFaculty.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colSubjectID.Caption == _wordModel.StrWordName)
+                    {
+                        colSubjectID.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colSubjectName.Caption == _wordModel.StrWordName)
+                    {
+                        colSubjectName.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colFaculty.Caption == _wordModel.StrWordName)
+                    {
+                        colFaculty.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colEndTime.Caption == _wordModel.StrWordName)
+                    {
+                        colEndTime.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colStartTime.Caption == _wordModel.StrWordName)
+                    {
+                        colStartTime.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (gcListSubject.Text == _wordModel.StrWordName)
+                    {
+                        gcListSubject.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (grpInformationSubject.Text == _wordModel.StrWordName)
+                    {
+                        grpInformationSubject.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
 
+                }
+            }
+            #endregion
             dteStartTime.EditValue = DateTime.Now.Date;
             dteEndTime.EditValue = DateTime.Now.Date;
 
@@ -280,13 +373,7 @@ namespace ManageProjectStudent_View
             gcListSubject.DataSource = _lstSubject;
         }
 
-        private void btnCloseChildForm_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmManageSubjectMain frmManageSubjectMain = new frmManageSubjectMain();
-            frmManageSubjectMain.ShowDialog();
-            this.Close();
-        }
+       
 
         private void txtName_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -353,6 +440,16 @@ namespace ManageProjectStudent_View
             SizeF size = gr.MeasureString(gridview.RowCount.ToString(), gridview.PaintAppearance.Row.GetFont());
             gridview.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 20;
         }
+
         #endregion
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 30);
+            //this.Hide();
+            //frmHome frmHome = new frmHome();
+            //frmHome.ShowDialog();
+            this.Close();
+        }
     }
 }

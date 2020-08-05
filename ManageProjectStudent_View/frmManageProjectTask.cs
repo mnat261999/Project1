@@ -176,9 +176,10 @@ namespace ManageProjectStudent_View
             }
             #region Multi-Lan
             Language = frmHome.languageModel;
-            _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+            //_lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
             if (frmHome.lstLanguageWord != null)
             {
+                _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
                 foreach (LanguageWordModel lnword in _lstLanWord)
                 {
                     _wordModel = _Word.getWordSelected(lnword.StrWordID);
@@ -397,9 +398,11 @@ namespace ManageProjectStudent_View
 
         private void btnCloseChildForm_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmManageProjectStudentMain frm = new frmManageProjectStudentMain();
-            frm.ShowDialog();
+            //this.Hide();
+            //frmManageProjectMain frm = new frmManageProjectMain();
+            //frm.ShowDialog();
+            this.Visible = false;
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
             this.Close();
         }
 

@@ -53,7 +53,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(168, 639);
+            this.panelMenu.Size = new System.Drawing.Size(168, 461);
             this.panelMenu.TabIndex = 1;
             // 
             // panelLogo
@@ -121,7 +121,7 @@
             this.panelTitleBar.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelTitleBar.Location = new System.Drawing.Point(168, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1005, 87);
+            this.panelTitleBar.Size = new System.Drawing.Size(731, 87);
             this.panelTitleBar.TabIndex = 2;
             // 
             // btnExitForm
@@ -131,7 +131,7 @@
             this.btnExitForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExitForm.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExitForm.Image = ((System.Drawing.Image)(resources.GetObject("btnExitForm.Image")));
-            this.btnExitForm.Location = new System.Drawing.Point(930, 0);
+            this.btnExitForm.Location = new System.Drawing.Point(656, 0);
             this.btnExitForm.Name = "btnExitForm";
             this.btnExitForm.Size = new System.Drawing.Size(75, 87);
             this.btnExitForm.TabIndex = 2;
@@ -157,7 +157,7 @@
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(81, 0);
+            this.lblTitle.Location = new System.Drawing.Point(-56, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(843, 87);
             this.lblTitle.TabIndex = 0;
@@ -169,14 +169,14 @@
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPane.Location = new System.Drawing.Point(168, 87);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(1005, 552);
+            this.panelDesktopPane.Size = new System.Drawing.Size(731, 374);
             this.panelDesktopPane.TabIndex = 3;
             // 
             // frmManageProjectMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1173, 639);
+            this.ClientSize = new System.Drawing.Size(899, 461);
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);

@@ -309,9 +309,10 @@ namespace ManageProjectStudent_View
             }
             #region Multi-Language
             Language = frmHome.languageModel;
-            _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+            //_lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
             if (frmHome.lstLanguageWord != null)
             {
+                _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
                 foreach (LanguageWordModel lnword in _lstLanWord)
                 {
                     _wordModel = _Word.getWordSelected(lnword.StrWordID);
@@ -406,6 +407,50 @@ namespace ManageProjectStudent_View
                     if (lkeStaffType.Properties.NullText == _wordModel.StrWordName)
                     {
                         lkeStaffType.Properties.NullText = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colLecturerID.Caption == _wordModel.StrWordName)
+                    {
+                        colLecturerID.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colFullName.Caption == _wordModel.StrWordName)
+                    {
+                        colFullName.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colBirthday.Caption == _wordModel.StrWordName)
+                    {
+                        colBirthday.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (ColSex.Caption == _wordModel.StrWordName)
+                    {
+                        ColSex.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colPhoneNumber.Caption == _wordModel.StrWordName)
+                    {
+                        colPhoneNumber.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colEmail.Caption == _wordModel.StrWordName)
+                    {
+                        colEmail.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colIDCard.Caption == _wordModel.StrWordName)
+                    {
+                        colIDCard.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colAddress.Caption == _wordModel.StrWordName)
+                    {
+                        colAddress.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colStatus.Caption == _wordModel.StrWordName)
+                    {
+                        colStatus.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colFaculty.Caption == _wordModel.StrWordName)
+                    {
+                        colFaculty.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colStaffType.Caption == _wordModel.StrWordName)
+                    {
+                        colStaffType.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
                 }
             }

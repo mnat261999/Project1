@@ -115,7 +115,8 @@ namespace ManageProjectStudent_View
                     txtID.Text = getMaxID();
                     lkeLanguage.EditValue = null;
                     lkeWord.EditValue = null;
-                    txtMean.Text = string.Empty;
+                    lkeMean.EditValue = null;
+                    //txtMean.Text = string.Empty;
                     lkeModule.EditValue = null;
                     radAvailable.Checked = false;
                     radUnavailable.Checked = false;
@@ -138,7 +139,7 @@ namespace ManageProjectStudent_View
                 txtID.Text = string.Empty;
                 lkeLanguage.EditValue = null;
                 lkeWord.EditValue = null;
-                txtMean.Text = string.Empty;
+                lkeMean.EditValue = null;
                 lkeModule.EditValue = null;
                 radAvailable.Checked = false;
                 radUnavailable.Checked = false;
@@ -148,7 +149,7 @@ namespace ManageProjectStudent_View
                 txtID.Text = _LanguageWordModelNow.StrID;
                 lkeLanguage.EditValue = _LanguageWordModelNow.StrLanguageID;
                 lkeWord.EditValue = _LanguageWordModelNow.StrWordID;
-                txtMean.Text = _LanguageWordModelNow.StrMean;
+                lkeMean.EditValue = _LanguageWordModelNow.StrMean;
                 lkeModule.EditValue = _LanguageWordModelNow.StrModule;
                 if (_LanguageWordModelNow.StrStatus == "Sử dụng")
                 {
@@ -173,7 +174,7 @@ namespace ManageProjectStudent_View
             _LanguageWordModelNow.StrID = txtID.Text;
             _LanguageWordModelNow.StrLanguageID = lkeLanguage.GetColumnValue("StrLanguageID").ToString();
             _LanguageWordModelNow.StrWordID = lkeWord.GetColumnValue("StrWordId").ToString();
-            _LanguageWordModelNow.StrMean = txtMean.Text;
+            _LanguageWordModelNow.StrMean = lkeMean.GetColumnValue("StrWordName").ToString();
             _LanguageWordModelNow.StrModule = lkeModule.GetColumnValue("StrFormID").ToString();
             if (radAvailable.Checked)
             {
@@ -323,6 +324,11 @@ namespace ManageProjectStudent_View
             lkeModule.Properties.DataSource = _lstForm;
             lkeModule.Properties.Columns["colFormID"].FieldName = "StrFormID";
             lkeModule.Properties.Columns["colFormName"].FieldName = "StrFormName";
+
+            lkeMean.Properties.ValueMember = "StrWordName";
+            lkeMean.Properties.DisplayMember = "StrWordName";
+            lkeMean.Properties.DataSource = _lstWord;
+            lkeMean.Properties.Columns["colWordName"].FieldName = "StrWordName";
             ///*GridView*/
             _lstLanguageWord = _WL.loadLanguageWord();
 
@@ -355,14 +361,14 @@ namespace ManageProjectStudent_View
             _LanguageWordModelNow = null;
             _IStatusForm = 1;
             _setStatusForm();
-            txtMean.Focus();
+            //txtMean.Focus();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             _IStatusForm = 2;
             _setStatusForm();
-            txtMean.Focus();
+           // txtMean.Focus();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -397,10 +403,15 @@ namespace ManageProjectStudent_View
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn Từ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (txtMean.Text == "")
+            else if (lkeMean.EditValue == null)
             {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập Nghĩa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtMean.Focus();
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn Nghĩa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //txtMean.Focus();
+            }
+            else if (lkeModule.EditValue == null)
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa chọn Module", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               // txtMean.Focus();
             }
             else if (!(radAvailable.Checked) && !(radUnavailable.Checked))
             {

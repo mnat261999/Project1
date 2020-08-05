@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManageProject));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnExportList = new DevExpress.XtraEditors.SimpleButton();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
@@ -63,7 +64,6 @@
             this.lblStartDay = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
-            this.btnExportList = new DevExpress.XtraEditors.SimpleButton();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -94,6 +94,33 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(177, 502);
             this.panelMenu.TabIndex = 21;
+            // 
+            // btnExportList
+            // 
+            this.btnExportList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportList.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportList.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnExportList.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnExportList.Appearance.Options.UseBackColor = true;
+            this.btnExportList.Appearance.Options.UseFont = true;
+            this.btnExportList.Appearance.Options.UseForeColor = true;
+            this.btnExportList.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(71)))), ((int)(((byte)(100)))));
+            this.btnExportList.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnExportList.AppearanceHovered.ForeColor = System.Drawing.Color.White;
+            this.btnExportList.AppearanceHovered.Options.UseBackColor = true;
+            this.btnExportList.AppearanceHovered.Options.UseFont = true;
+            this.btnExportList.AppearanceHovered.Options.UseForeColor = true;
+            this.btnExportList.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.btnExportList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExportList.ImageOptions.Image")));
+            this.btnExportList.Location = new System.Drawing.Point(0, 434);
+            this.btnExportList.Name = "btnExportList";
+            this.btnExportList.Size = new System.Drawing.Size(177, 54);
+            this.btnExportList.TabIndex = 23;
+            this.btnExportList.TabStop = false;
+            this.btnExportList.Text = "Export Danh Sách";
+            this.btnExportList.Click += new System.EventHandler(this.btnExportList_Click);
             // 
             // btnUpdate
             // 
@@ -241,7 +268,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(782, 87);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Quản Lý Đồ Án ";
+            this.lblTitle.Text = "Quản Lý Đồ Án";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gcListProject
@@ -573,33 +600,6 @@
             this.lblID.Size = new System.Drawing.Size(67, 17);
             this.lblID.TabIndex = 0;
             this.lblID.Text = "Mã đồ án";
-            // 
-            // btnExportList
-            // 
-            this.btnExportList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExportList.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.btnExportList.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnExportList.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnExportList.Appearance.Options.UseBackColor = true;
-            this.btnExportList.Appearance.Options.UseFont = true;
-            this.btnExportList.Appearance.Options.UseForeColor = true;
-            this.btnExportList.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(71)))), ((int)(((byte)(100)))));
-            this.btnExportList.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnExportList.AppearanceHovered.ForeColor = System.Drawing.Color.White;
-            this.btnExportList.AppearanceHovered.Options.UseBackColor = true;
-            this.btnExportList.AppearanceHovered.Options.UseFont = true;
-            this.btnExportList.AppearanceHovered.Options.UseForeColor = true;
-            this.btnExportList.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.btnExportList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExportList.ImageOptions.Image")));
-            this.btnExportList.Location = new System.Drawing.Point(0, 434);
-            this.btnExportList.Name = "btnExportList";
-            this.btnExportList.Size = new System.Drawing.Size(177, 54);
-            this.btnExportList.TabIndex = 23;
-            this.btnExportList.TabStop = false;
-            this.btnExportList.Text = "Export Danh Sách";
-            this.btnExportList.Click += new System.EventHandler(this.btnExportList_Click);
             // 
             // frmManageProject
             // 

@@ -43,7 +43,12 @@ namespace ManageProjectStudent_View
         private DecentralizeModel _Decentralize = null;
         private BindingList<DecentralizeModel> _lstDecentralizeModels = new BindingList<DecentralizeModel>();
 
-
+        private LanguageModel Language = null;
+        private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
+        private BindingList<WordModel> _lstWord = null;
+        private IWord _Word = Config.Container.Resolve<IWord>();
+        private BindingList<LanguageWordModel> _lstLanWord = null;
+        private WordModel _wordModel = null;
         bool _BAdd = true;
         bool _BDelete = true;
         bool _BEdit = true;
@@ -92,6 +97,49 @@ namespace ManageProjectStudent_View
                     break;
                 }
             }
+
+            Language = frmHome.languageModel;
+            //_lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+            if (frmHome.lstLanguageWord != null)
+            {
+                _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+                foreach (LanguageWordModel lnword in _lstLanWord)
+                {
+                    _wordModel = _Word.getWordSelected(lnword.StrWordID);
+                    if (grpUsing.Text == _wordModel.StrWordName)
+                    {
+                        grpUsing.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lkeStaffType.Properties.NullText == _wordModel.StrWordName)
+                    {
+                        lkeStaffType.Properties.NullText = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (gvListFunction.ViewCaption == _wordModel.StrWordName)
+                    {
+                        gvListFunction.ViewCaption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colFunction.Caption == _wordModel.StrWordName)
+                    {
+                        colFunction.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colAdd.Caption == _wordModel.StrWordName)
+                    {
+                        colAdd.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colDelete.Caption == _wordModel.StrWordName)
+                    {
+                        colDelete.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colEdit.Caption == _wordModel.StrWordName)
+                    {
+                        colEdit.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colView.Caption == _wordModel.StrWordName)
+                    {
+                        colView.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                }    
+            }    
 
         }
 

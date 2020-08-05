@@ -41,7 +41,6 @@
             this.grpInformationWordLan = new DevExpress.XtraEditors.GroupControl();
             this.lkeModule = new DevExpress.XtraEditors.LookUpEdit();
             this.lblModule = new System.Windows.Forms.Label();
-            this.txtMean = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.radUnavailable = new System.Windows.Forms.RadioButton();
             this.radAvailable = new System.Windows.Forms.RadioButton();
@@ -66,6 +65,7 @@
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpEdit_Class = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.LookUpEdit_Mean = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.lkeMean = new DevExpress.XtraEditors.LookUpEdit();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationWordLan)).BeginInit();
@@ -80,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Word)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Class)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Mean)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkeMean.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -242,9 +243,9 @@
             // 
             // grpInformationWordLan
             // 
+            this.grpInformationWordLan.Controls.Add(this.lkeMean);
             this.grpInformationWordLan.Controls.Add(this.lkeModule);
             this.grpInformationWordLan.Controls.Add(this.lblModule);
-            this.grpInformationWordLan.Controls.Add(this.txtMean);
             this.grpInformationWordLan.Controls.Add(this.panel2);
             this.grpInformationWordLan.Controls.Add(this.lblStatus);
             this.grpInformationWordLan.Controls.Add(this.txtID);
@@ -279,6 +280,7 @@
             this.lkeModule.Properties.NullText = "Module";
             this.lkeModule.Size = new System.Drawing.Size(169, 24);
             this.lkeModule.TabIndex = 132;
+            this.lkeModule.Tag = "5";
             // 
             // lblModule
             // 
@@ -290,13 +292,6 @@
             this.lblModule.Size = new System.Drawing.Size(54, 17);
             this.lblModule.TabIndex = 131;
             this.lblModule.Text = "Module";
-            // 
-            // txtMean
-            // 
-            this.txtMean.Location = new System.Drawing.Point(477, 36);
-            this.txtMean.Name = "txtMean";
-            this.txtMean.Size = new System.Drawing.Size(169, 21);
-            this.txtMean.TabIndex = 127;
             // 
             // panel2
             // 
@@ -316,6 +311,7 @@
             this.radUnavailable.Size = new System.Drawing.Size(68, 21);
             this.radUnavailable.TabIndex = 1;
             this.radUnavailable.TabStop = true;
+            this.radUnavailable.Tag = "7";
             this.radUnavailable.Text = "Không";
             this.radUnavailable.UseVisualStyleBackColor = true;
             this.radUnavailable.CheckedChanged += new System.EventHandler(this.radUnavailable_CheckedChanged);
@@ -329,6 +325,7 @@
             this.radAvailable.Size = new System.Drawing.Size(82, 21);
             this.radAvailable.TabIndex = 0;
             this.radAvailable.TabStop = true;
+            this.radAvailable.Tag = "6";
             this.radAvailable.Text = "Sử dụng";
             this.radAvailable.UseVisualStyleBackColor = true;
             this.radAvailable.CheckedChanged += new System.EventHandler(this.radAvailable_CheckedChanged);
@@ -349,6 +346,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(169, 21);
             this.txtID.TabIndex = 128;
+            this.txtID.Tag = "1";
             // 
             // lblID
             // 
@@ -391,6 +389,7 @@
             this.lkeWord.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSearch;
             this.lkeWord.Size = new System.Drawing.Size(169, 24);
             this.lkeWord.TabIndex = 124;
+            this.lkeWord.Tag = "3";
             // 
             // lkeLanguage
             // 
@@ -410,6 +409,7 @@
             this.lkeLanguage.Properties.NullText = "Ngôn ngữ";
             this.lkeLanguage.Size = new System.Drawing.Size(169, 24);
             this.lkeLanguage.TabIndex = 123;
+            this.lkeLanguage.Tag = "2";
             // 
             // btnSave
             // 
@@ -432,6 +432,7 @@
             this.btnSave.Size = new System.Drawing.Size(140, 36);
             this.btnSave.TabIndex = 121;
             this.btnSave.TabStop = false;
+            this.btnSave.Tag = "8";
             this.btnSave.Text = "Lưu";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -612,6 +613,28 @@
             this.LookUpEdit_Mean.Name = "LookUpEdit_Mean";
             this.LookUpEdit_Mean.ValueMember = "StrWordName";
             // 
+            // lkeMean
+            // 
+            this.lkeMean.Location = new System.Drawing.Point(477, 33);
+            this.lkeMean.Name = "lkeMean";
+            this.lkeMean.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkeMean.Properties.Appearance.Options.UseFont = true;
+            this.lkeMean.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkeMean.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.lkeMean.Properties.AppearanceDropDownHeader.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkeMean.Properties.AppearanceDropDownHeader.Options.UseFont = true;
+            this.lkeMean.Properties.AutoSearchColumnIndex = 1;
+            this.lkeMean.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkeMean.Properties.CaseSensitiveSearch = true;
+            this.lkeMean.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colWordName", "Từ")});
+            this.lkeMean.Properties.NullText = "Nghĩa";
+            this.lkeMean.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSearch;
+            this.lkeMean.Size = new System.Drawing.Size(169, 24);
+            this.lkeMean.TabIndex = 133;
+            this.lkeMean.Tag = "3";
+            // 
             // frmAddWordForLanguage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -642,6 +665,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Word)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Class)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Mean)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkeMean.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -681,9 +705,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit_Mean;
-        private System.Windows.Forms.TextBox txtMean;
         private DevExpress.XtraEditors.LookUpEdit lkeModule;
         private System.Windows.Forms.Label lblModule;
         private DevExpress.XtraGrid.Columns.GridColumn colModule;
+        private DevExpress.XtraEditors.LookUpEdit lkeMean;
     }
 }
