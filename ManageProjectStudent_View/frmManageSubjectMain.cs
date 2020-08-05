@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ManageProjectStudent_Model;
+using ManageProjectStudent_Interface;
+using Unity;
 
 namespace ManageProjectStudent_View
 {
@@ -19,6 +21,13 @@ namespace ManageProjectStudent_View
         private Form activeForm;
         private int IStatus;
         private StaffModel StaffModel;
+
+        private LanguageModel Language = null;
+        private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
+        private BindingList<WordModel> _lstWord = null;
+        private IWord _Word = Config.Container.Resolve<IWord>();
+        private BindingList<LanguageWordModel> _lstLanWord = null;
+        private WordModel _wordModel = null;
         public frmManageSubjectMain()
         {
             InitializeComponent();
@@ -144,6 +153,43 @@ namespace ManageProjectStudent_View
             if (activeForm != null)
                 activeForm.Close();
             Reset();
+        }
+
+        private void frmManageSubjectMain_Load(object sender, EventArgs e)
+        {
+            #region Multi-Language
+            //string lan = Language.StrLanguageID;
+            // _lstWord = _Word.getLstWord(this.Name);
+            Language = frmHome.languageModel;
+            _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+            if (frmHome.lstLanguageWord != null)
+            {
+                foreach (LanguageWordModel lnword in _lstLanWord)
+                {
+                    _wordModel = _Word.getWordSelected(lnword.StrWordID);
+                    if (lblTitle.Text == _wordModel.StrWordName)
+                    {
+                        lblTitle.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnManageInformationSubject.Text == _wordModel.StrWordName)
+                    {
+                        btnManageInformationSubject.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnAddStudentSubject.Text == _wordModel.StrWordName)
+                    {
+                        btnAddStudentSubject.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnAddGroup.Text == _wordModel.StrWordName)
+                    {
+                        btnAddGroup.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnReturn.Text == _wordModel.StrWordName)
+                    {
+                        btnReturn.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    #endregion
+                }
+            }
         }
     }
 }

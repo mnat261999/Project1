@@ -244,6 +244,7 @@
             this.Name = "frmManageSubjectMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSubject";
+            this.Load += new System.EventHandler(this.frmManageSubjectMain_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
