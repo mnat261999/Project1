@@ -23,10 +23,13 @@ namespace ManageProjectStudent_View
         private int IStatus;  //1:student 2: Staff
         private StudentModel StudentModel;
         private StaffModel StaffModel;
+
         private LanguageModel Language = null;
         private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
         private BindingList<WordModel> _lstWord = null;
         private IWord _Word = Config.Container.Resolve<IWord>();
+        private BindingList<LanguageWordModel> _lstLanWord = null;
+        private WordModel _wordModel = null;
         public frmManageLanguageMain()
         {
             InitializeComponent();
@@ -170,23 +173,25 @@ namespace ManageProjectStudent_View
 
             if (frmHome.lstLanguageWord != null)
             {
-                foreach (WordModel word in _lstWord)
+                _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+                foreach (LanguageWordModel lnword in _lstLanWord)
                 {
-                    if (lblTitle.Text == word.StrWordName)
+                    _wordModel = _Word.getWordSelected(lnword.StrWordID);
+                    if (lblTitle.Text == _wordModel.StrWordName)
                     {
-                        lblTitle.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                        lblTitle.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (btnManageLanguage.Text == word.StrWordName)
+                    if (btnManageLanguage.Text == _wordModel.StrWordName)
                     {
-                        btnManageLanguage.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                        btnManageLanguage.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (btnManageWord.Text == word.StrWordName)
+                    if (btnManageWord.Text == _wordModel.StrWordName)
                     {
-                        btnManageWord.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                        btnManageWord.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (btnAddWord.Text == word.StrWordName)
+                    if (btnAddWord.Text == _wordModel.StrWordName)
                     {
-                        btnAddWord.Text = _WL.getMean(btnAddWord.Text, Language.StrLanguageID);
+                        btnAddWord.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
                 }
             }

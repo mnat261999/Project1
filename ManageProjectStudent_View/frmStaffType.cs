@@ -44,6 +44,8 @@ namespace ManageProjectStudent_View
         private IWord _Word = Config.Container.Resolve<IWord>();
         private BindingList<LanguageWordModel> _lstLanWord = null;
         private WordModel _wordModel = null;
+
+        private IForm _Form = Config.Container.Resolve<IForm>();
         #endregion
         #region Method
         private bool adddDecen(StaffTypeModel type)

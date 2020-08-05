@@ -43,31 +43,31 @@ namespace ManageProjectStudent_View
             Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
 
             #region Multi-Lan
-            Language = frmHome.languageModel;
-            _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
-            if (frmHome.lstLanguageWord != null)
-            {
-                foreach (LanguageWordModel lnword in _lstLanWord)
-                {
-                    _wordModel = _Word.getWordSelected(lnword.StrWordID);
-                    if (lblTitle.Text == _wordModel.StrWordName)
-                    {
-                        lblTitle.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
-                    }
-                    if (lblSetting.Text == _wordModel.StrWordName)
-                    {
-                        lblSetting.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
-                    }
-                    if (btnChange.Text == _wordModel.StrWordName)
-                    {
-                        btnChange.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
-                    }
-                    if (lkeLanguage.Properties.NullText == _wordModel.StrWordName)
-                    {
-                        lkeLanguage.Properties.NullText = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
-                    }
-                }    
-            }    
+            //Language = frmHome.languageModel;
+            //if (frmHome.lstLanguageWord != null)
+            //{
+            //    _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+            //    foreach (LanguageWordModel lnword in _lstLanWord)
+            //    {
+            //        _wordModel = _Word.getWordSelected(lnword.StrWordID);
+            //        if (lblTitle.Text == _wordModel.StrWordName)
+            //        {
+            //            lblTitle.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+            //        }
+            //        if (lblSetting.Text == _wordModel.StrWordName)
+            //        {
+            //            lblSetting.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+            //        }
+            //        if (btnChange.Text == _wordModel.StrWordName)
+            //        {
+            //            btnChange.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+            //        }
+            //        if (lkeLanguage.Properties.NullText == _wordModel.StrWordName)
+            //        {
+            //            lkeLanguage.Properties.NullText = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+            //        }
+            //    }    
+            //}    
                 #endregion
                 _lstLan = _Lan.loadLanguage();
             lkeLanguage.Properties.ValueMember = "StrLanguageID";

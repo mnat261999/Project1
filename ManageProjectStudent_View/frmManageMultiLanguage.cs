@@ -215,7 +215,7 @@ namespace ManageProjectStudent_View
 
             #region Multi-Lan
             Language = frmHome.languageModel;
-            _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+            //_lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
             if (frmHome.lstLanguageWord != null)
             {
                 foreach (LanguageWordModel lnword in _lstLanWord)

@@ -105,7 +105,7 @@
             this.btnManageProjectLecturer.Name = "btnManageProjectLecturer";
             this.btnManageProjectLecturer.Size = new System.Drawing.Size(162, 50);
             this.btnManageProjectLecturer.TabIndex = 7;
-            this.btnManageProjectLecturer.Text = "Quản Lý đồ án";
+            this.btnManageProjectLecturer.Text = "Quản lý đồ án";
             this.btnManageProjectLecturer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnManageProjectLecturer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnManageProjectLecturer.UseVisualStyleBackColor = true;

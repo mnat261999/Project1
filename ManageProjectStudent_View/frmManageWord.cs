@@ -170,53 +170,53 @@ namespace ManageProjectStudent_View
             }
             #endregion
 
-            #region Multi-Lan
-            Language = frmHome.languageModel;
-            _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
-            if (frmHome.lstLanguageWord != null)
-            {
-                foreach (LanguageWordModel lnword in _lstLanWord)
-                {
-                    _wordModel = _Word.getWordSelected(lnword.StrWordID);
-                    if (lblTitle.Text == _wordModel.StrWordName)
-                    {
-                        lblTitle.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
-                    }
-                    if (btnAdd.Text == _wordModel.StrWordName)
-                    {
-                        btnAdd.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
-                    }
-                    if (btnUpdate.Text == _wordModel.StrWordName)
-                    {
-                        btnUpdate.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
-                    }
-                    if (btnDelete.Text == _wordModel.StrWordName)
-                    {
-                        btnDelete.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
-                    }
-                    if (btnSave.Text == _wordModel.StrWordName)
-                    {
-                        btnSave.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
-                    }
-                    if (lblID.Text == _wordModel.StrWordName)
-                    {
-                        lblID.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
-                    }
-                    if (lblName.Text == _wordModel.StrWordName)
-                    {
-                        lblName.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
-                    }
-                    if (colWordID.Caption == _wordModel.StrWordName)
-                    {
-                        colWordID.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
-                    }
-                    if (colWordName.Caption == _wordModel.StrWordName)
-                    {
-                        colWordName.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
-                    }
-                }    
-            }    
-                #endregion
+            //#region Multi-Lan
+            //Language = frmHome.languageModel;
+            //_lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+            //if (frmHome.lstLanguageWord != null)
+            //{
+            //    foreach (LanguageWordModel lnword in _lstLanWord)
+            //    {
+            //        _wordModel = _Word.getWordSelected(lnword.StrWordID);
+            //        if (lblTitle.Text == _wordModel.StrWordName)
+            //        {
+            //            lblTitle.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+            //        }
+            //        if (btnAdd.Text == _wordModel.StrWordName)
+            //        {
+            //            btnAdd.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+            //        }
+            //        if (btnUpdate.Text == _wordModel.StrWordName)
+            //        {
+            //            btnUpdate.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+            //        }
+            //        if (btnDelete.Text == _wordModel.StrWordName)
+            //        {
+            //            btnDelete.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+            //        }
+            //        if (btnSave.Text == _wordModel.StrWordName)
+            //        {
+            //            btnSave.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+            //        }
+            //        if (lblID.Text == _wordModel.StrWordName)
+            //        {
+            //            lblID.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+            //        }
+            //        if (lblName.Text == _wordModel.StrWordName)
+            //        {
+            //            lblName.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+            //        }
+            //        if (colWordID.Caption == _wordModel.StrWordName)
+            //        {
+            //            colWordID.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+            //        }
+            //        if (colWordName.Caption == _wordModel.StrWordName)
+            //        {
+            //            colWordName.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+            //        }
+            //    }    
+            //}    
+            //    #endregion
                 //lookup-edit
 
                 _lstWord = _Word.loadWord();

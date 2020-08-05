@@ -7,7 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ManageProjectStudent_Interface;
+using Unity;
 using ManageProjectStudent_Model;
+using ManageProjectStudent_ViewModel;
 
 namespace ManageProjectStudent_View
 {
@@ -167,9 +170,10 @@ namespace ManageProjectStudent_View
             Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
 
             Language = frmHome.languageModel;
-            _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+            //_lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
             if (frmHome.lstLanguageWord != null)
             {
+                _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
                 foreach (LanguageWordModel lnword in _lstLanWord)
                 {
                     _wordModel = _Word.getWordSelected(lnword.StrWordID);
