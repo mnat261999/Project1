@@ -16,6 +16,7 @@ namespace ManageProjectStudent_Model
         private string _StrWordID;
         private string _StrMean;
         private string _StrStatus;
+        private string _StrModule;
 
         [Key]
         [Column("ID", TypeName = "varchar", Order = 0)]
@@ -38,6 +39,10 @@ namespace ManageProjectStudent_Model
 
         [Column("Status", Order = 4)]
         public string StrStatus { get => _StrStatus; set => _StrStatus = value; }
+
+        [Column("Module", TypeName = "nvarchar", Order = 5)]
+        [StringLength(100)]
+        public string StrModule { get => _StrModule; set => _StrModule = value; }
 
         // Khai bao khoa ngoai.
         public virtual LanguageModel LanguageModel { get; set; }

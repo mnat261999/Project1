@@ -13,7 +13,7 @@ namespace ManageProjectStudent_Model
     {
         private string _StrWordId;
         private string _StrWordName;
-        private string _StrModule;
+       
 
         [Key]
         [Column("WordID", TypeName = "varchar", Order = 0)]
@@ -23,10 +23,7 @@ namespace ManageProjectStudent_Model
         [Column("WordName", TypeName = "nvarchar", Order = 1)]
         [StringLength(100)]
         public string StrWordName { get => _StrWordName; set => _StrWordName = value; }
- 
-        [Column("Module", TypeName = "nvarchar", Order = 2)]
-        [StringLength(100)]
-        public string StrModule { get => _StrModule; set => _StrModule = value; }
+
 
         public ICollection<LanguageWordModel> LanguageWordModels { get; set; }
 

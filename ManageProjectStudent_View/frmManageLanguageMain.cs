@@ -166,7 +166,7 @@ namespace ManageProjectStudent_View
             this.Visible = false;
             Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
             Language = frmHome.languageModel;
-            _lstWord = _Word.getLstWord(this.Name);
+            //_lstWord = _Word.getLstWord(this.Name);
 
             if (frmHome.lstLanguageWord != null)
             {

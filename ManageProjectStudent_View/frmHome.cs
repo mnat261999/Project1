@@ -110,7 +110,7 @@ namespace ManageProjectStudent_View
                     else
                     {
                         DefaultLan = language.StrLanguageID;
-                        _lstWord = _Word.getLstWord(this.Name);
+                        //_lstWord = _Word.getLstWord(this.Name);
                         if (studentModel != null || staffModel != null)
                         {
                             foreach (WordModel word in _lstWord)
