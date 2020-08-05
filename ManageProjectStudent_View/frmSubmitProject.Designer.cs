@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSubmitProject));
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
@@ -45,22 +44,23 @@
             this.LookUpEdit_Project = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colFileName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcListTask = new DevExpress.XtraGrid.GridControl();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNoti = new System.Windows.Forms.Label();
             this.txtFilePath = new System.Windows.Forms.TextBox();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.lblStorageFile = new DevExpress.XtraEditors.LabelControl();
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.txtFolderPath = new System.Windows.Forms.TextBox();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.lblName = new DevExpress.XtraEditors.LabelControl();
+            this.lblSaveFile = new DevExpress.XtraEditors.LabelControl();
             this.btnChooseFolder = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnChoosFile = new DevExpress.XtraEditors.SimpleButton();
             this.grpSubmit = new DevExpress.XtraEditors.GroupControl();
             this.lkeProject = new DevExpress.XtraEditors.LookUpEdit();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblProject = new System.Windows.Forms.Label();
             this.lkeTask = new DevExpress.XtraEditors.LookUpEdit();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblTask = new System.Windows.Forms.Label();
+            this.btnExitFormManageStudent = new System.Windows.Forms.Button();
             this.panelTitleBar.SuspendLayout();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Subject)).BeginInit();
@@ -79,19 +79,19 @@
             // lblTitle
             // 
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(423, 31);
+            this.lblTitle.Location = new System.Drawing.Point(163, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(194, 22);
+            this.lblTitle.Size = new System.Drawing.Size(702, 87);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Nộp nhiệm vụ đồ án";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
-            this.panelTitleBar.Controls.Add(this.btnCloseChildForm);
+            this.panelTitleBar.Controls.Add(this.btnExitFormManageStudent);
             this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -99,20 +99,6 @@
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(999, 87);
             this.panelTitleBar.TabIndex = 32;
-            // 
-            // btnCloseChildForm
-            // 
-            this.btnCloseChildForm.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
-            this.btnCloseChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseChildForm.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCloseChildForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseChildForm.Image")));
-            this.btnCloseChildForm.Location = new System.Drawing.Point(0, 0);
-            this.btnCloseChildForm.Name = "btnCloseChildForm";
-            this.btnCloseChildForm.Size = new System.Drawing.Size(75, 87);
-            this.btnCloseChildForm.TabIndex = 1;
-            this.btnCloseChildForm.UseVisualStyleBackColor = true;
-            this.btnCloseChildForm.Click += new System.EventHandler(this.btnCloseChildForm_Click);
             // 
             // btnUpdate
             // 
@@ -189,7 +175,7 @@
             // 
             // colLinkFile
             // 
-            this.colLinkFile.Caption = "Link File";
+            this.colLinkFile.Caption = "Link file";
             this.colLinkFile.FieldName = "StrLinkFile";
             this.colLinkFile.Name = "colLinkFile";
             this.colLinkFile.Visible = true;
@@ -273,7 +259,7 @@
             // 
             // colFileName
             // 
-            this.colFileName.Caption = "Tên File";
+            this.colFileName.Caption = "Tên file";
             this.colFileName.FieldName = "StrFileName";
             this.colFileName.Name = "colFileName";
             this.colFileName.Visible = true;
@@ -294,15 +280,15 @@
             this.gcListTask.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvListLink});
             // 
-            // label1
+            // lblNoti
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(55, 127);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Chọn biểu tượng để thêm file";
+            this.lblNoti.AutoSize = true;
+            this.lblNoti.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblNoti.Location = new System.Drawing.Point(55, 127);
+            this.lblNoti.Name = "lblNoti";
+            this.lblNoti.Size = new System.Drawing.Size(197, 17);
+            this.lblNoti.TabIndex = 1;
+            this.lblNoti.Text = "Chọn biểu tượng để thêm file";
             // 
             // txtFilePath
             // 
@@ -313,15 +299,15 @@
             this.txtFilePath.Size = new System.Drawing.Size(265, 25);
             this.txtFilePath.TabIndex = 112;
             // 
-            // labelControl3
+            // lblStorageFile
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(531, 61);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(83, 17);
-            this.labelControl3.TabIndex = 111;
-            this.labelControl3.Text = "Nơi chứa file";
+            this.lblStorageFile.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStorageFile.Appearance.Options.UseFont = true;
+            this.lblStorageFile.Location = new System.Drawing.Point(531, 61);
+            this.lblStorageFile.Name = "lblStorageFile";
+            this.lblStorageFile.Size = new System.Drawing.Size(83, 17);
+            this.lblStorageFile.TabIndex = 111;
+            this.lblStorageFile.Text = "Nơi chứa file";
             // 
             // txtFileName
             // 
@@ -339,25 +325,25 @@
             this.txtFolderPath.Size = new System.Drawing.Size(265, 25);
             this.txtFolderPath.TabIndex = 109;
             // 
-            // labelControl2
+            // lblName
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(567, 121);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(47, 17);
-            this.labelControl2.TabIndex = 108;
-            this.labelControl2.Text = "Tên file";
+            this.lblName.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Appearance.Options.UseFont = true;
+            this.lblName.Location = new System.Drawing.Point(531, 118);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(47, 17);
+            this.lblName.TabIndex = 108;
+            this.lblName.Text = "Tên file";
             // 
-            // labelControl1
+            // lblSaveFile
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(544, 176);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(70, 17);
-            this.labelControl1.TabIndex = 107;
-            this.labelControl1.Text = "Nơi lưu file";
+            this.lblSaveFile.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaveFile.Appearance.Options.UseFont = true;
+            this.lblSaveFile.Location = new System.Drawing.Point(531, 177);
+            this.lblSaveFile.Name = "lblSaveFile";
+            this.lblSaveFile.Size = new System.Drawing.Size(70, 17);
+            this.lblSaveFile.TabIndex = 107;
+            this.lblSaveFile.Text = "Nơi lưu file";
             // 
             // btnChooseFolder
             // 
@@ -413,7 +399,7 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.lblNoti);
             this.panel4.Controls.Add(this.btnChoosFile);
             this.panel4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel4.Location = new System.Drawing.Point(24, 36);
@@ -435,15 +421,15 @@
             // grpSubmit
             // 
             this.grpSubmit.Controls.Add(this.lkeProject);
-            this.grpSubmit.Controls.Add(this.label2);
+            this.grpSubmit.Controls.Add(this.lblProject);
             this.grpSubmit.Controls.Add(this.lkeTask);
-            this.grpSubmit.Controls.Add(this.label4);
+            this.grpSubmit.Controls.Add(this.lblTask);
             this.grpSubmit.Controls.Add(this.txtFilePath);
-            this.grpSubmit.Controls.Add(this.labelControl3);
+            this.grpSubmit.Controls.Add(this.lblStorageFile);
             this.grpSubmit.Controls.Add(this.txtFileName);
             this.grpSubmit.Controls.Add(this.txtFolderPath);
-            this.grpSubmit.Controls.Add(this.labelControl2);
-            this.grpSubmit.Controls.Add(this.labelControl1);
+            this.grpSubmit.Controls.Add(this.lblName);
+            this.grpSubmit.Controls.Add(this.lblSaveFile);
             this.grpSubmit.Controls.Add(this.btnChooseFolder);
             this.grpSubmit.Controls.Add(this.btnSave);
             this.grpSubmit.Controls.Add(this.panel4);
@@ -469,15 +455,15 @@
             this.lkeProject.Size = new System.Drawing.Size(132, 24);
             this.lkeProject.TabIndex = 114;
             // 
-            // label2
+            // lblProject
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(314, 121);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 17);
-            this.label2.TabIndex = 113;
-            this.label2.Text = "Đồ án";
+            this.lblProject.AutoSize = true;
+            this.lblProject.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProject.Location = new System.Drawing.Point(314, 121);
+            this.lblProject.Name = "lblProject";
+            this.lblProject.Size = new System.Drawing.Size(47, 17);
+            this.lblProject.TabIndex = 113;
+            this.lblProject.Text = "Đồ án";
             // 
             // lkeTask
             // 
@@ -495,15 +481,29 @@
             this.lkeTask.Size = new System.Drawing.Size(132, 24);
             this.lkeTask.TabIndex = 98;
             // 
-            // label4
+            // lblTask
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(319, 61);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 17);
-            this.label4.TabIndex = 95;
-            this.label4.Text = " Task";
+            this.lblTask.AutoSize = true;
+            this.lblTask.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTask.Location = new System.Drawing.Point(314, 61);
+            this.lblTask.Name = "lblTask";
+            this.lblTask.Size = new System.Drawing.Size(42, 17);
+            this.lblTask.TabIndex = 95;
+            this.lblTask.Text = " Task";
+            // 
+            // btnExitFormManageStudent
+            // 
+            this.btnExitFormManageStudent.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExitFormManageStudent.FlatAppearance.BorderSize = 0;
+            this.btnExitFormManageStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExitFormManageStudent.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExitFormManageStudent.Image = ((System.Drawing.Image)(resources.GetObject("btnExitFormManageStudent.Image")));
+            this.btnExitFormManageStudent.Location = new System.Drawing.Point(924, 0);
+            this.btnExitFormManageStudent.Name = "btnExitFormManageStudent";
+            this.btnExitFormManageStudent.Size = new System.Drawing.Size(75, 87);
+            this.btnExitFormManageStudent.TabIndex = 2;
+            this.btnExitFormManageStudent.UseVisualStyleBackColor = true;
+            this.btnExitFormManageStudent.Click += new System.EventHandler(this.btnExitFormManageStudent_Click);
             // 
             // frmSubmitProject
             // 
@@ -520,7 +520,6 @@
             this.Text = "frmSubmitProject";
             this.Load += new System.EventHandler(this.frmSubmitProject_Load);
             this.panelTitleBar.ResumeLayout(false);
-            this.panelTitleBar.PerformLayout();
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Subject)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Lecturer)).EndInit();
@@ -543,7 +542,6 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panelTitleBar;
-        private System.Windows.Forms.Button btnCloseChildForm;
         private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelMenu;
@@ -553,25 +551,26 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gvListLink;
         private DevExpress.XtraGrid.Columns.GridColumn colFileName;
         private DevExpress.XtraGrid.GridControl gcListTask;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNoti;
         private System.Windows.Forms.TextBox txtFilePath;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl lblStorageFile;
         private System.Windows.Forms.TextBox txtFileName;
         private System.Windows.Forms.TextBox txtFolderPath;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl lblName;
+        private DevExpress.XtraEditors.LabelControl lblSaveFile;
         private DevExpress.XtraEditors.SimpleButton btnChooseFolder;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private System.Windows.Forms.Panel panel4;
         private DevExpress.XtraEditors.SimpleButton btnChoosFile;
         private DevExpress.XtraEditors.GroupControl grpSubmit;
         private DevExpress.XtraEditors.LookUpEdit lkeTask;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTask;
         private DevExpress.XtraEditors.LookUpEdit lkeProject;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblProject;
         private DevExpress.XtraGrid.Columns.GridColumn colTaskName;
         private DevExpress.XtraGrid.Columns.GridColumn colProjectName;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit_Project;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit_Task;
+        private System.Windows.Forms.Button btnExitFormManageStudent;
     }
 }

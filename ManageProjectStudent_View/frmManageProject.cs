@@ -40,6 +40,13 @@ namespace ManageProjectStudent_View
         private StaffModel StaffModel = null;
         private IDecentralize _Decen = Config.Container.Resolve<IDecentralize>();
         private DecentralizeModel Decentralize = null;
+
+        private LanguageModel Language = null;
+        private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
+        private BindingList<WordModel> _lstWord = null;
+        private IWord _Word = Config.Container.Resolve<IWord>();
+        private BindingList<LanguageWordModel> _lstLanWord = null;
+        private WordModel _wordModel = null;
         #endregion
         #region Method
         private void _setStatusForm()
@@ -165,7 +172,91 @@ namespace ManageProjectStudent_View
                 }
             }
 
-            dteStartDay.EditValue = DateTime.Now.Date;
+            #region Multi-Lan
+            Language = frmHome.languageModel;
+            _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+            if (frmHome.lstLanguageWord != null)
+            {
+                foreach (LanguageWordModel lnword in _lstLanWord)
+                {
+                    _wordModel = _Word.getWordSelected(lnword.StrWordID);
+                    if (lblTitle.Text == _wordModel.StrWordName)
+                    {
+                        lblTitle.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnAdd.Text == _wordModel.StrWordName)
+                    {
+                        btnAdd.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnUpdate.Text == _wordModel.StrWordName)
+                    {
+                        btnUpdate.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnDelete.Text == _wordModel.StrWordName)
+                    {
+                        btnDelete.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnExportList.Text == _wordModel.StrWordName)
+                    {
+                        btnExportList.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnSave.Text == _wordModel.StrWordName)
+                    {
+                        btnSave.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblID.Text == _wordModel.StrWordName)
+                    {
+                        lblID.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblName.Text == _wordModel.StrWordName)
+                    {
+                        lblName.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblSubject.Text == _wordModel.StrWordName)
+                    {
+                        lblSubject.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblLecturer.Text == _wordModel.StrWordName)
+                    {
+                        lblLecturer.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblStartDay.Text == _wordModel.StrWordName)
+                    {
+                        lblStartDay.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblEndDay.Text == _wordModel.StrWordName)
+                    {
+                        lblEndDay.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colIDProject.Caption == _wordModel.StrWordName)
+                    {
+                        colIDProject.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colProjectName.Caption == _wordModel.StrWordName)
+                    {
+                        colProjectName.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colSubjectName.Caption == _wordModel.StrWordName)
+                    {
+                        colSubjectName.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colLecturerName.Caption == _wordModel.StrWordName)
+                    {
+                        colLecturerName.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colStartDay.Caption == _wordModel.StrWordName)
+                    {
+                        colStartDay.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colEndday.Caption == _wordModel.StrWordName)
+                    {
+                        colEndday.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                }    
+            }    
+                #endregion
+
+                dteStartDay.EditValue = DateTime.Now.Date;
             dteEndDay.EditValue = DateTime.Now.Date;
 
             _lstSubject = _Subject.loadSubject();
@@ -321,7 +412,7 @@ namespace ManageProjectStudent_View
             this.Close();
         }
 
-        private void btnExport_Click(object sender, EventArgs e)
+        private void btnExportList_Click(object sender, EventArgs e)
         {
             try
             {

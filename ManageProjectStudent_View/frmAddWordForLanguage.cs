@@ -39,6 +39,9 @@ namespace ManageProjectStudent_View
         private BindingList<LanguageWordModel> _lstLanguageWord = new BindingList<LanguageWordModel>();
         private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
 
+        private IForm _Form = Config.Container.Resolve<IForm>();
+        BindingList<FormModel> _lstForm = new BindingList<FormModel>();
+
         private ILanguage _Lan = Config.Container.Resolve<ILanguage>();
         private BindingList<LanguageModel> _lstLan = new BindingList<LanguageModel>();
 
@@ -48,6 +51,13 @@ namespace ManageProjectStudent_View
         private StaffModel StaffModel = null;
         private IDecentralize _Decen = Config.Container.Resolve<IDecentralize>();
         private DecentralizeModel Decentralize = null;
+
+        private LanguageModel Language = null;
+        //private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
+        private BindingList<WordModel> _lstWordModel = null;
+        //private IWord _Word = Config.Container.Resolve<IWord>();
+        private BindingList<LanguageWordModel> _lstLanWord = null;
+        private WordModel _wordModel = null;
         #endregion
         #region Method
         private string getMaxID()
@@ -106,6 +116,7 @@ namespace ManageProjectStudent_View
                     lkeLanguage.EditValue = null;
                     lkeWord.EditValue = null;
                     txtMean.Text = string.Empty;
+                    lkeModule.EditValue = null;
                     radAvailable.Checked = false;
                     radUnavailable.Checked = false;
 
@@ -128,6 +139,7 @@ namespace ManageProjectStudent_View
                 lkeLanguage.EditValue = null;
                 lkeWord.EditValue = null;
                 txtMean.Text = string.Empty;
+                lkeModule.EditValue = null;
                 radAvailable.Checked = false;
                 radUnavailable.Checked = false;
             }
@@ -137,6 +149,7 @@ namespace ManageProjectStudent_View
                 lkeLanguage.EditValue = _LanguageWordModelNow.StrLanguageID;
                 lkeWord.EditValue = _LanguageWordModelNow.StrWordID;
                 txtMean.Text = _LanguageWordModelNow.StrMean;
+                lkeModule.EditValue = _LanguageWordModelNow.StrModule;
                 if (_LanguageWordModelNow.StrStatus == "Sử dụng")
                 {
                     radAvailable.Checked = true;
@@ -161,6 +174,7 @@ namespace ManageProjectStudent_View
             _LanguageWordModelNow.StrLanguageID = lkeLanguage.GetColumnValue("StrLanguageID").ToString();
             _LanguageWordModelNow.StrWordID = lkeWord.GetColumnValue("StrWordId").ToString();
             _LanguageWordModelNow.StrMean = txtMean.Text;
+            _LanguageWordModelNow.StrModule = lkeModule.GetColumnValue("StrFormID").ToString();
             if (radAvailable.Checked)
             {
                 _LanguageWordModelNow.StrStatus = radAvailable.Text;
@@ -193,8 +207,102 @@ namespace ManageProjectStudent_View
                     }
                 }
             }
-
-            _lstLan = _Lan.loadLanguage();
+            #region Multi-lan
+            Language = frmHome.languageModel;
+            _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+            if (frmHome.lstLanguageWord != null)
+            {
+                foreach (LanguageWordModel lnword in _lstLanWord)
+                {
+                    _wordModel = _Word.getWordSelected(lnword.StrWordID);
+                    if (lblTitle.Text == _wordModel.StrWordName)
+                    {
+                        lblTitle.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnAdd.Text == _wordModel.StrWordName)
+                    {
+                        btnAdd.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnUpdate.Text == _wordModel.StrWordName)
+                    {
+                        btnUpdate.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnDelete.Text == _wordModel.StrWordName)
+                    {
+                        btnDelete.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnSave.Text == _wordModel.StrWordName)
+                    {
+                        btnSave.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblID.Text == _wordModel.StrWordName)
+                    {
+                        lblID.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblLan.Text == _wordModel.StrWordName)
+                    {
+                        lblLan.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblWord.Text == _wordModel.StrWordName)
+                    {
+                        lblWord.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblMean.Text == _wordModel.StrWordName)
+                    {
+                        lblMean.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblModule.Text == _wordModel.StrWordName)
+                    {
+                        lblModule.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblStatus.Text == _wordModel.StrWordName)
+                    {
+                        lblStatus.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (radAvailable.Text == _wordModel.StrWordName)
+                    {
+                        radAvailable.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (radUnavailable.Text == _wordModel.StrWordName)
+                    {
+                        radUnavailable.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colID.Caption == _wordModel.StrWordName)
+                    {
+                        colID.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colLanguage.Caption == _wordModel.StrWordName)
+                    {
+                        colLanguage.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colWord.Caption == _wordModel.StrWordName)
+                    {
+                        colWord.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colMean.Caption == _wordModel.StrWordName)
+                    {
+                        colMean.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colModule.Caption == _wordModel.StrWordName)
+                    {
+                        colModule.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colStatus.Caption == _wordModel.StrWordName)
+                    {
+                        colStatus.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lkeLanguage.Properties.NullText == _wordModel.StrWordName)
+                    {
+                        lkeLanguage.Properties.NullText = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lkeWord.Properties.NullText == _wordModel.StrWordName)
+                    {
+                        lkeWord.Properties.NullText = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                }
+            }    
+                #endregion
+                _lstLan = _Lan.loadLanguage();
             lkeLanguage.Properties.ValueMember = "StrLanguageID";
             lkeLanguage.Properties.DisplayMember = "StrLanguageName";
             lkeLanguage.Properties.DataSource = _lstLan;
@@ -208,6 +316,12 @@ namespace ManageProjectStudent_View
             lkeWord.Properties.Columns["colWordID"].FieldName = "StrWordId";
             lkeWord.Properties.Columns["colWordName"].FieldName = "StrWordName";
 
+            _lstForm = _Form.loadForm();
+            lkeModule.Properties.ValueMember = "StrFormID";
+            lkeModule.Properties.DisplayMember = "StrFormName";
+            lkeModule.Properties.DataSource = _lstForm;
+            lkeModule.Properties.Columns["colFormID"].FieldName = "StrFormID";
+            lkeModule.Properties.Columns["colFormName"].FieldName = "StrFormName";
             ///*GridView*/
             _lstLanguageWord = _WL.loadLanguageWord();
 

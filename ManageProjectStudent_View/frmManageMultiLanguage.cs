@@ -41,6 +41,8 @@ namespace ManageProjectStudent_View
         private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
         private BindingList<WordModel> _lstWord = null;
         private IWord _Word = Config.Container.Resolve<IWord>();
+        private BindingList<LanguageWordModel> _lstLanWord = null;
+        private WordModel _wordModel = null;
         #endregion
         #region Method
         private string getMaxID()
@@ -213,63 +215,79 @@ namespace ManageProjectStudent_View
 
             #region Multi-Lan
             Language = frmHome.languageModel;
-            string lan = Language.StrLanguageID;
-           // _lstWord = _Word.getLstWord(this.Name);
+            _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
             if (frmHome.lstLanguageWord != null)
             {
-                foreach (WordModel word in _lstWord)
+                foreach (LanguageWordModel lnword in _lstLanWord)
                 {
-                    if (lblTitle.Text == word.StrWordName)
+                    _wordModel = _Word.getWordSelected(lnword.StrWordID);
+                    if (lblTitle.Text == _wordModel.StrWordName)
                     {
-                        lblTitle.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                        lblTitle.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (btnAdd.Text == word.StrWordName)
+                    if (btnAdd.Text == _wordModel.StrWordName)
                     {
-                        btnAdd.Text = _WL.getMean(btnAdd.Text, Language.StrLanguageID);
+                        btnAdd.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (btnUpdate.Text == word.StrWordName)
+                    if (btnUpdate.Text == _wordModel.StrWordName)
                     {
-                        btnUpdate.Text = _WL.getMean(btnUpdate.Text, Language.StrLanguageID);
+                        btnUpdate.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (btnDelete.Text == word.StrWordName)
+                    if (btnDelete.Text == _wordModel.StrWordName)
                     {
-                        btnDelete.Text = _WL.getMean(btnDelete.Text, Language.StrLanguageID);
+                        btnDelete.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (btnSave.Text == word.StrWordName)
+                    if (btnSave.Text == _wordModel.StrWordName)
                     {
-                        btnSave.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                        btnSave.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (lblID.Text == word.StrWordName)
+                    if (lblID.Text == _wordModel.StrWordName)
                     {
-                        lblID.Text = _WL.getMean(lblID.Text, Language.StrLanguageID);
+                        lblID.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (lblName.Text == word.StrWordName)
+                    if (lblName.Text == _wordModel.StrWordName)
                     {
-                        lblName.Text = _WL.getMean(lblName.Text, Language.StrLanguageID);
+                        lblName.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (lblDefault.Text == word.StrWordName)
+                    if (lblDefault.Text == _wordModel.StrWordName)
                     {
-                        lblDefault.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                        lblDefault.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (radDefault.Text == word.StrWordName)
+                    if (radDefault.Text == _wordModel.StrWordName)
                     {
-                        radDefault.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                        radDefault.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (radNoneDefault.Text == word.StrWordName)
+                    if (radNoneDefault.Text == _wordModel.StrWordName)
                     {
-                        radNoneDefault.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                        radNoneDefault.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (lblStatus.Text == word.StrWordName)
+                    if (lblStatus.Text == _wordModel.StrWordName)
                     {
-                        lblStatus.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                        lblStatus.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (radAvailable.Text == word.StrWordName)
+                    if (radAvailable.Text == _wordModel.StrWordName)
                     {
-                        radAvailable.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                        radAvailable.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (radUnavailable.Text == word.StrWordName)
+                    if (radUnavailable.Text == _wordModel.StrWordName)
                     {
-                        radUnavailable.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
+                        radUnavailable.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colLanguageID.Caption == _wordModel.StrWordName)
+                    {
+                        colLanguageID.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colLanguageName.Caption == _wordModel.StrWordName)
+                    {
+                        colLanguageName.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colDefault.Caption == _wordModel.StrWordName)
+                    {
+                        colDefault.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colStatus.Caption == _wordModel.StrWordName)
+                    {
+                        colStatus.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
                 }    
             }    

@@ -39,19 +39,21 @@
             this.btnExitForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.grpInformationWordLan = new DevExpress.XtraEditors.GroupControl();
+            this.lkeModule = new DevExpress.XtraEditors.LookUpEdit();
+            this.lblModule = new System.Windows.Forms.Label();
             this.txtMean = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.radUnavailable = new System.Windows.Forms.RadioButton();
             this.radAvailable = new System.Windows.Forms.RadioButton();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblMean = new System.Windows.Forms.Label();
             this.lkeWord = new DevExpress.XtraEditors.LookUpEdit();
             this.lkeLanguage = new DevExpress.XtraEditors.LookUpEdit();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblWord = new System.Windows.Forms.Label();
+            this.lblLan = new System.Windows.Forms.Label();
             this.gcListWordLan = new DevExpress.XtraGrid.GridControl();
             this.gvWordLanList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,6 +62,7 @@
             this.colWord = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpEdit_Word = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colMean = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colModule = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpEdit_Class = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.LookUpEdit_Mean = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -67,6 +70,7 @@
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationWordLan)).BeginInit();
             this.grpInformationWordLan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkeModule.Properties)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkeWord.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkeLanguage.Properties)).BeginInit();
@@ -227,33 +231,65 @@
             // lblTitle
             // 
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(282, 31);
+            this.lblTitle.Location = new System.Drawing.Point(76, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(224, 22);
+            this.lblTitle.Size = new System.Drawing.Size(612, 87);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Thêm từ cho ngôn ngữ";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // grpInformationWordLan
             // 
+            this.grpInformationWordLan.Controls.Add(this.lkeModule);
+            this.grpInformationWordLan.Controls.Add(this.lblModule);
             this.grpInformationWordLan.Controls.Add(this.txtMean);
             this.grpInformationWordLan.Controls.Add(this.panel2);
-            this.grpInformationWordLan.Controls.Add(this.label4);
+            this.grpInformationWordLan.Controls.Add(this.lblStatus);
             this.grpInformationWordLan.Controls.Add(this.txtID);
-            this.grpInformationWordLan.Controls.Add(this.label5);
-            this.grpInformationWordLan.Controls.Add(this.label1);
+            this.grpInformationWordLan.Controls.Add(this.lblID);
+            this.grpInformationWordLan.Controls.Add(this.lblMean);
             this.grpInformationWordLan.Controls.Add(this.lkeWord);
             this.grpInformationWordLan.Controls.Add(this.lkeLanguage);
             this.grpInformationWordLan.Controls.Add(this.btnSave);
-            this.grpInformationWordLan.Controls.Add(this.label3);
-            this.grpInformationWordLan.Controls.Add(this.label2);
+            this.grpInformationWordLan.Controls.Add(this.lblWord);
+            this.grpInformationWordLan.Controls.Add(this.lblLan);
             this.grpInformationWordLan.Location = new System.Drawing.Point(194, 103);
             this.grpInformationWordLan.Name = "grpInformationWordLan";
             this.grpInformationWordLan.Size = new System.Drawing.Size(732, 178);
             this.grpInformationWordLan.TabIndex = 50;
             this.grpInformationWordLan.Text = "Thông Tin";
+            // 
+            // lkeModule
+            // 
+            this.lkeModule.Location = new System.Drawing.Point(477, 63);
+            this.lkeModule.Name = "lkeModule";
+            this.lkeModule.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkeModule.Properties.Appearance.Options.UseFont = true;
+            this.lkeModule.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkeModule.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.lkeModule.Properties.AppearanceDropDownHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkeModule.Properties.AppearanceDropDownHeader.Options.UseFont = true;
+            this.lkeModule.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkeModule.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colFormName", "Tên Module"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colFormID", "Module")});
+            this.lkeModule.Properties.NullText = "Module";
+            this.lkeModule.Size = new System.Drawing.Size(169, 24);
+            this.lkeModule.TabIndex = 132;
+            // 
+            // lblModule
+            // 
+            this.lblModule.AccessibleDescription = "";
+            this.lblModule.AutoSize = true;
+            this.lblModule.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModule.Location = new System.Drawing.Point(396, 66);
+            this.lblModule.Name = "lblModule";
+            this.lblModule.Size = new System.Drawing.Size(54, 17);
+            this.lblModule.TabIndex = 131;
+            this.lblModule.Text = "Module";
             // 
             // txtMean
             // 
@@ -266,7 +302,7 @@
             // 
             this.panel2.Controls.Add(this.radUnavailable);
             this.panel2.Controls.Add(this.radAvailable);
-            this.panel2.Location = new System.Drawing.Point(477, 66);
+            this.panel2.Location = new System.Drawing.Point(477, 93);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(169, 31);
             this.panel2.TabIndex = 130;
@@ -297,15 +333,15 @@
             this.radAvailable.UseVisualStyleBackColor = true;
             this.radAvailable.CheckedChanged += new System.EventHandler(this.radAvailable_CheckedChanged);
             // 
-            // label4
+            // lblStatus
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(396, 69);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 17);
-            this.label4.TabIndex = 129;
-            this.label4.Text = "Trạng thái";
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(396, 95);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(72, 17);
+            this.lblStatus.TabIndex = 129;
+            this.lblStatus.Text = "Trạng thái";
             // 
             // txtID
             // 
@@ -314,25 +350,25 @@
             this.txtID.Size = new System.Drawing.Size(169, 21);
             this.txtID.TabIndex = 128;
             // 
-            // label5
+            // lblID
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(111, 39);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(22, 17);
-            this.label5.TabIndex = 127;
-            this.label5.Text = "ID";
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(59, 36);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(22, 17);
+            this.lblID.TabIndex = 127;
+            this.lblID.Text = "ID";
             // 
-            // label1
+            // lblMean
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(423, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
-            this.label1.TabIndex = 125;
-            this.label1.Text = "Nghĩa";
+            this.lblMean.AutoSize = true;
+            this.lblMean.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMean.Location = new System.Drawing.Point(396, 40);
+            this.lblMean.Name = "lblMean";
+            this.lblMean.Size = new System.Drawing.Size(45, 17);
+            this.lblMean.TabIndex = 125;
+            this.lblMean.Text = "Nghĩa";
             // 
             // lkeWord
             // 
@@ -399,25 +435,25 @@
             this.btnSave.Text = "Lưu";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label3
+            // lblWord
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(106, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Từ";
+            this.lblWord.AutoSize = true;
+            this.lblWord.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWord.Location = new System.Drawing.Point(59, 95);
+            this.lblWord.Name = "lblWord";
+            this.lblWord.Size = new System.Drawing.Size(27, 17);
+            this.lblWord.TabIndex = 2;
+            this.lblWord.Text = "Từ";
             // 
-            // label2
+            // lblLan
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(59, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Ngôn Ngữ";
+            this.lblLan.AutoSize = true;
+            this.lblLan.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLan.Location = new System.Drawing.Point(59, 65);
+            this.lblLan.Name = "lblLan";
+            this.lblLan.Size = new System.Drawing.Size(74, 17);
+            this.lblLan.TabIndex = 0;
+            this.lblLan.Text = "Ngôn Ngữ";
             // 
             // gcListWordLan
             // 
@@ -457,6 +493,7 @@
             this.colLanguage,
             this.colWord,
             this.colMean,
+            this.colModule,
             this.colStatus});
             this.gvWordLanList.DetailHeight = 377;
             this.gvWordLanList.GridControl = this.gcListWordLan;
@@ -536,13 +573,21 @@
             this.colMean.Visible = true;
             this.colMean.VisibleIndex = 3;
             // 
+            // colModule
+            // 
+            this.colModule.Caption = "Module";
+            this.colModule.FieldName = "StrModule";
+            this.colModule.Name = "colModule";
+            this.colModule.Visible = true;
+            this.colModule.VisibleIndex = 4;
+            // 
             // colStatus
             // 
             this.colStatus.Caption = "Trạng thái";
             this.colStatus.FieldName = "StrStatus";
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 4;
+            this.colStatus.VisibleIndex = 5;
             // 
             // LookUpEdit_Class
             // 
@@ -583,10 +628,10 @@
             this.Load += new System.EventHandler(this.frmAddWordForLanguage_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
-            this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationWordLan)).EndInit();
             this.grpInformationWordLan.ResumeLayout(false);
             this.grpInformationWordLan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkeModule.Properties)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkeWord.Properties)).EndInit();
@@ -613,12 +658,12 @@
         private System.Windows.Forms.Button btnExitForm;
         private System.Windows.Forms.Label lblTitle;
         private DevExpress.XtraEditors.GroupControl grpInformationWordLan;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMean;
         private DevExpress.XtraEditors.LookUpEdit lkeWord;
         private DevExpress.XtraEditors.LookUpEdit lkeLanguage;
         private DevExpress.XtraEditors.SimpleButton btnSave;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblWord;
+        private System.Windows.Forms.Label lblLan;
         private DevExpress.XtraGrid.GridControl gcListWordLan;
         private DevExpress.XtraGrid.Views.Grid.GridView gvWordLanList;
         private DevExpress.XtraGrid.Columns.GridColumn colLanguage;
@@ -628,14 +673,17 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit_Language;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit_Word;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton radUnavailable;
         private System.Windows.Forms.RadioButton radAvailable;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit_Mean;
         private System.Windows.Forms.TextBox txtMean;
+        private DevExpress.XtraEditors.LookUpEdit lkeModule;
+        private System.Windows.Forms.Label lblModule;
+        private DevExpress.XtraGrid.Columns.GridColumn colModule;
     }
 }

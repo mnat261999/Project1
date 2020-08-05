@@ -46,8 +46,10 @@ namespace ManageProjectStudent_View
         private ILanguage _Lan = Config.Container.Resolve<ILanguage>();
         public static string DefaultLan;
         public static BindingList<LanguageWordModel> lstLanguageWord = null;
-        private BindingList<WordModel> _lstWord = null;
+        private BindingList<LanguageWordModel> _lstLanWord = null;
         private IWord _Word = Config.Container.Resolve<IWord>();
+        private WordModel _wordModel = null;
+        private LanguageWordModel _languageModel = null;
         //public static string DefaultLan;
         #endregion
         #region Method
@@ -111,34 +113,109 @@ namespace ManageProjectStudent_View
                     {
                         DefaultLan = language.StrLanguageID;
                         //_lstWord = _Word.getLstWord(this.Name);
+                        _lstLanWord = _WL.getLstLanguageWord(DefaultLan, this.Name);
                         if (studentModel != null || staffModel != null)
                         {
-                            foreach (WordModel word in _lstWord)
+                            foreach (LanguageWordModel lnword in _lstLanWord)
                             {
-                                if(itemStatic.Text == word.StrWordName)
+                                _wordModel = _Word.getWordSelected(lnword.StrWordID);
+                                //_languageModel = _WL.getWordLanguageSelectedByID(lnword.StrID);
+                                if (itemStatic.Text == _wordModel.StrWordName)
                                 {
-                                    itemStatic.Text = _WL.getMeanByID(word.StrWordId, languageModel.StrLanguageID);
+                                    itemStatic.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
                                 }
-                                if (itemMulLan.Text == word.StrWordName)
+                                if (itemMulLan.Text == _wordModel.StrWordName)
                                 {
-                                    itemMulLan.Text = _WL.getMeanByID(word.StrWordId, languageModel.StrLanguageID);
+                                    itemMulLan.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
                                 }
-                            }    
-                            lblType.Text = _WL.getMean(lblType.Text, language.StrLanguageID);
-                            btnSetLan.Text = _WL.getMean(btnSetLan.Text, language.StrLanguageID);
-                            btnLogin.Text = _WL.getMean(btnLogin.Text, language.StrLanguageID);
-                            btnInformation.Text = _WL.getMean(btnInformation.Text, language.StrLanguageID);
-                            btnExit.Text = _WL.getMean(btnExit.Text, language.StrLanguageID);
-                            itemDecentralization.Text = _WL.getMean(itemDecentralization.Text, language.StrLanguageID);
+                                if (lblType.Text == _wordModel.StrWordName)
+                                {
+                                    lblType.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
+                                }
+                                if (btnSetLan.Text == _wordModel.StrWordName)
+                                {
+                                    btnSetLan.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
+                                }
+                                if (btnLogin.Text == _wordModel.StrWordName)
+                                {
+                                    btnLogin.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
+                                }
+                                if (btnInformation.Text == _wordModel.StrWordName)
+                                {
+                                    btnInformation.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
+                                }
+                                if (btnExit.Text == _wordModel.StrWordName)
+                                {
+                                    btnExit.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
+                                }
+                                if (itemDecentralization.Text == _wordModel.StrWordName)
+                                {
+                                    itemDecentralization.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
+                                }
+                                if (itemStatic.Text == _wordModel.StrWordName)
+                                {
+                                    itemStatic.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
+                                }
+                                if (itemMulLan.Text == _wordModel.StrWordName)
+                                {
+                                    itemMulLan.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
+                                }
+                                if (itemManageProject.Text == _wordModel.StrWordName)
+                                {
+                                    itemManageProject.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
+                                }
+                                if (itemManagStaffType.Text == _wordModel.StrWordName)
+                                {
+                                    itemManagStaffType.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
+                                }
+                                if (itemManageLecturer.Text == _wordModel.StrWordName)
+                                {
+                                    itemManageLecturer.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
+                                }
+                                if (itemManageStudent.Text == _wordModel.StrWordName)
+                                {
+                                    itemManageStudent.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
+                                }
+                                if (itemManageStudent.Text == _wordModel.StrWordName)
+                                {
+                                    itemManageStudent.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
+                                }
+                                if (itemManageFaculty.Text == _wordModel.StrWordName)
+                                {
+                                    itemManageFaculty.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
+                                }
+                                if (itemManageClass.Text == _wordModel.StrWordName)
+                                {
+                                    itemManageClass.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
+                                }
+                                if (itemManagSubject.Text == _wordModel.StrWordName)
+                                {
+                                    itemManagSubject.Text = _WL.getMeanByID(lnword.StrID, languageModel.StrLanguageID);
+                                }
+                            }
+                            //if(itemStatic.Text == word.StrWordName)
+                            //{
+                            //    itemStatic.Text = _WL.getMeanByID(word.StrWordId, languageModel.StrLanguageID);
+                            //}
+                            //if (itemMulLan.Text == word.StrWordName)
+                            //{
+                            //    itemMulLan.Text = _WL.getMeanByID(word.StrWordId, languageModel.StrLanguageID);
+                            //}
+                            //lblType.Text = _WL.getMean(lblType.Text, language.StrLanguageID);
+                            //btnSetLan.Text = _WL.getMean(btnSetLan.Text, language.StrLanguageID);
+                            //btnLogin.Text = _WL.getMean(btnLogin.Text, language.StrLanguageID);
+                            //btnInformation.Text = _WL.getMean(btnInformation.Text, language.StrLanguageID);
+                            //btnExit.Text = _WL.getMean(btnExit.Text, language.StrLanguageID);
+                            //itemDecentralization.Text = _WL.getMean(itemDecentralization.Text, language.StrLanguageID);
                             //itemStatic.Text= _WL.getMean(itemStatic.Text, language.StrLanguageID);
                             //itemMulLan.Text = _WL.getMean(itemMulLan.Text, language.StrLanguageID);
-                            itemManageProject.Text = _WL.getMean(itemManageProject.Text, language.StrLanguageID);
-                            itemManagStaffType.Text = _WL.getMean(itemManagStaffType.Text, language.StrLanguageID);
-                            itemManageLecturer.Text = _WL.getMean(itemManageLecturer.Text, language.StrLanguageID);
-                            itemManageStudent.Text = _WL.getMean(itemManageStudent.Text, language.StrLanguageID);
-                            itemManageFaculty.Text = _WL.getMean(itemManageFaculty.Text, language.StrLanguageID);
-                            itemManageClass.Text = _WL.getMean(itemManageClass.Text, language.StrLanguageID);
-                            itemManagSubject.Text = _WL.getMean(itemManagSubject.Text, language.StrLanguageID);
+                            //itemManageProject.Text = _WL.getMean(itemManageProject.Text, language.StrLanguageID);
+                            //itemManagStaffType.Text = _WL.getMean(itemManagStaffType.Text, language.StrLanguageID);
+                            //itemManageLecturer.Text = _WL.getMean(itemManageLecturer.Text, language.StrLanguageID);
+                            //itemManageStudent.Text = _WL.getMean(itemManageStudent.Text, language.StrLanguageID);
+                            //itemManageFaculty.Text = _WL.getMean(itemManageFaculty.Text, language.StrLanguageID);
+                            //itemManageClass.Text = _WL.getMean(itemManageClass.Text, language.StrLanguageID);
+                            //itemManagSubject.Text = _WL.getMean(itemManagSubject.Text, language.StrLanguageID);
                         }
                         lstLanguageWord = _WL.getListLanguageWord(language.StrLanguageID);
                     }
@@ -377,7 +454,7 @@ namespace ManageProjectStudent_View
         {
             if (ICheck == 1)
             {
-                frmManageProjectStudentMain frm = new frmManageProjectStudentMain();
+                frmSubmitProject frm = new frmSubmitProject();
                 frm.ShowDialog();
             }
             else

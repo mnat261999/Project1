@@ -32,7 +32,7 @@
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.btnExitForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSetting = new System.Windows.Forms.Label();
             this.lkeLanguage = new DevExpress.XtraEditors.LookUpEdit();
             this.btnChange = new DevExpress.XtraEditors.SimpleButton();
             this.panelTitleBar.SuspendLayout();
@@ -79,15 +79,15 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Cài đặt ngôn ngữ";
             // 
-            // label1
+            // lblSetting
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 18);
-            this.label1.TabIndex = 50;
-            this.label1.Text = "Thiết lập ngôn ngữ";
+            this.lblSetting.AutoSize = true;
+            this.lblSetting.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSetting.Location = new System.Drawing.Point(25, 77);
+            this.lblSetting.Name = "lblSetting";
+            this.lblSetting.Size = new System.Drawing.Size(137, 18);
+            this.lblSetting.TabIndex = 50;
+            this.lblSetting.Text = "Thiết lập ngôn ngữ";
             // 
             // lkeLanguage
             // 
@@ -135,7 +135,7 @@
             this.ClientSize = new System.Drawing.Size(379, 207);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.lkeLanguage);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSetting);
             this.Controls.Add(this.panelTitleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSettingLanguage";
@@ -155,7 +155,7 @@
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Button btnExitForm;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSetting;
         private DevExpress.XtraEditors.LookUpEdit lkeLanguage;
         private DevExpress.XtraEditors.SimpleButton btnChange;
     }

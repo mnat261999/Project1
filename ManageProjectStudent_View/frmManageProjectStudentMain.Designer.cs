@@ -32,12 +32,12 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnExitFormProjectStudent = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.btnViewDeadlineStudent = new System.Windows.Forms.Button();
             this.btnSubmitProject = new System.Windows.Forms.Button();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
+            this.btnViewDeadlineStudent = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             this.SuspendLayout();
@@ -81,23 +81,6 @@
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(174, 87);
             this.panelLogo.TabIndex = 5;
-            // 
-            // btnViewDeadlineStudent
-            // 
-            this.btnViewDeadlineStudent.FlatAppearance.BorderSize = 0;
-            this.btnViewDeadlineStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewDeadlineStudent.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewDeadlineStudent.ForeColor = System.Drawing.Color.White;
-            this.btnViewDeadlineStudent.Image = ((System.Drawing.Image)(resources.GetObject("btnViewDeadlineStudent.Image")));
-            this.btnViewDeadlineStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnViewDeadlineStudent.Location = new System.Drawing.Point(0, 149);
-            this.btnViewDeadlineStudent.Name = "btnViewDeadlineStudent";
-            this.btnViewDeadlineStudent.Size = new System.Drawing.Size(174, 50);
-            this.btnViewDeadlineStudent.TabIndex = 4;
-            this.btnViewDeadlineStudent.Text = "Xem hạn nộp";
-            this.btnViewDeadlineStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnViewDeadlineStudent.UseVisualStyleBackColor = true;
-            this.btnViewDeadlineStudent.Click += new System.EventHandler(this.btnViewDeadlineStudent_Click);
             // 
             // btnSubmitProject
             // 
@@ -163,6 +146,23 @@
             this.panelDesktopPane.Size = new System.Drawing.Size(999, 552);
             this.panelDesktopPane.TabIndex = 4;
             // 
+            // btnViewDeadlineStudent
+            // 
+            this.btnViewDeadlineStudent.FlatAppearance.BorderSize = 0;
+            this.btnViewDeadlineStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewDeadlineStudent.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewDeadlineStudent.ForeColor = System.Drawing.Color.White;
+            this.btnViewDeadlineStudent.Image = ((System.Drawing.Image)(resources.GetObject("btnViewDeadlineStudent.Image")));
+            this.btnViewDeadlineStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnViewDeadlineStudent.Location = new System.Drawing.Point(0, 149);
+            this.btnViewDeadlineStudent.Name = "btnViewDeadlineStudent";
+            this.btnViewDeadlineStudent.Size = new System.Drawing.Size(174, 50);
+            this.btnViewDeadlineStudent.TabIndex = 4;
+            this.btnViewDeadlineStudent.Text = "Xem hạn nộp";
+            this.btnViewDeadlineStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnViewDeadlineStudent.UseVisualStyleBackColor = true;
+            this.btnViewDeadlineStudent.Click += new System.EventHandler(this.btnViewDeadlineStudent_Click);
+            // 
             // frmManageProjectStudentMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,11 +187,11 @@
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button btnExitFormProjectStudent;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Button btnViewDeadlineStudent;
         private System.Windows.Forms.Button btnSubmitProject;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Button btnCloseChildForm;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panelDesktopPane;
+        private System.Windows.Forms.Button btnViewDeadlineStudent;
     }
 }

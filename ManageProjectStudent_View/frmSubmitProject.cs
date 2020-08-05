@@ -32,6 +32,13 @@ namespace ManageProjectStudent_View
         private IProjectTask _ProjectTk = Config.Container.Resolve<IProjectTask>();
         private ProjectTaskModel _ProjectTaskModelNow = null;
         private int _IStatusForm = 0;
+
+        private LanguageModel Language = null;
+        private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
+        private BindingList<WordModel> _lstWord = null;
+        private IWord _Word = Config.Container.Resolve<IWord>();
+        private BindingList<LanguageWordModel> _lstLanWord = null;
+        private WordModel _wordModel = null;
         #endregion
         #region Method
         private void _setStatusForm()
@@ -88,8 +95,87 @@ namespace ManageProjectStudent_View
         //load
         private void frmSubmitProject_Load(object sender, EventArgs e)
         {
-            //_lstTask = _ProjectTk.loadProjectTask();
-            _lstTask = _ProjectTk.getListProjectTaskForStudent(frmHome.studentModel.StrStudentID);
+            this.Visible = false;
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
+
+            #region Multi-Lan
+            Language = frmHome.languageModel;
+            _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+            if (frmHome.lstLanguageWord != null)
+            {
+                foreach (LanguageWordModel lnword in _lstLanWord)
+                {
+                    _wordModel = _Word.getWordSelected(lnword.StrWordID);
+                    if (lblTitle.Text == _wordModel.StrWordName)
+                    {
+                        lblTitle.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnUpdate.Text == _wordModel.StrWordName)
+                    {
+                        btnUpdate.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblNoti.Text == _wordModel.StrWordName)
+                    {
+                        lblNoti.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblProject.Text == _wordModel.StrWordName)
+                    {
+                        lblProject.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblTask.Text == _wordModel.StrWordName)
+                    {
+                        lblTask.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblStorageFile.Text == _wordModel.StrWordName)
+                    {
+                        lblStorageFile.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblName.Text == _wordModel.StrWordName)
+                    {
+                        lblName.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblSaveFile.Text == _wordModel.StrWordName)
+                    {
+                        lblSaveFile.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnChooseFolder.Text == _wordModel.StrWordName)
+                    {
+                        btnChooseFolder.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnSave.Text == _wordModel.StrWordName)
+                    {
+                        btnSave.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lkeProject.Properties.NullText == _wordModel.StrWordName)
+                    {
+                        lkeProject.Properties.NullText = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lkeTask.Properties.NullText == _wordModel.StrWordName)
+                    {
+                        lkeTask.Properties.NullText = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colTaskName.Caption == _wordModel.StrWordName)
+                    {
+                        colTaskName.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colProjectName.Caption == _wordModel.StrWordName)
+                    {
+                        colProjectName.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colFileName.Caption == _wordModel.StrWordName)
+                    {
+                        colFileName.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colLinkFile.Caption == _wordModel.StrWordName)
+                    {
+                        colLinkFile.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                }    
+            }    
+                #endregion
+
+                //_lstTask = _ProjectTk.loadProjectTask();
+                _lstTask = _ProjectTk.getListProjectTaskForStudent(frmHome.studentModel.StrStudentID);
             lkeTask.Properties.ValueMember = "StrTaskID";
             lkeTask.Properties.DisplayMember = "StrTaskName";
             lkeTask.Properties.DataSource = _lstTask;
@@ -218,11 +304,9 @@ namespace ManageProjectStudent_View
 
         #endregion
 
-        private void btnCloseChildForm_Click(object sender, EventArgs e)
+        private void btnExitFormManageStudent_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmManageProjectStudentMain frmManageProjectStudent = new frmManageProjectStudentMain();
-            frmManageProjectStudent.ShowDialog();
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 30);
             this.Close();
         }
     }

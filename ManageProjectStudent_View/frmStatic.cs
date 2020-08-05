@@ -25,6 +25,8 @@ namespace ManageProjectStudent_View
         private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
         private BindingList<WordModel> _lstWord = null;
         private IWord _Word = Config.Container.Resolve<IWord>();
+        private BindingList<LanguageWordModel> _lstLanWord = null;
+        private WordModel _wordModel = null;
         public frmStatic()
         {
             InitializeComponent();
@@ -156,20 +158,21 @@ namespace ManageProjectStudent_View
         {
             this.Visible = false;
             Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
-            Language = frmHome.languageModel;
-            //_lstWord = _Word.getLstWord(this.Name);
 
+            Language = frmHome.languageModel;
+            _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
             if (frmHome.lstLanguageWord != null)
             {
-                foreach (WordModel word in _lstWord)
+                foreach (LanguageWordModel lnword in _lstLanWord)
                 {
-                    if (lblTitle.Text == word.StrWordName)
+                    _wordModel = _Word.getWordSelected(lnword.StrWordID);
+                    if (lblTitle.Text == _wordModel.StrWordName)
                     {
-                        lblTitle.Text = _WL.getMeanByID(word.StrWordId,Language.StrLanguageID);
+                        lblTitle.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (btnAmountStudentCourse.Text == word.StrWordName)
+                    if (btnAmountStudentCourse.Text == _wordModel.StrWordName)
                     {
-                        btnAmountStudentCourse.Text = _WL.getMean(btnAmountStudentCourse.Text, Language.StrLanguageID);
+                        btnAmountStudentCourse.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
                 }    
             }    

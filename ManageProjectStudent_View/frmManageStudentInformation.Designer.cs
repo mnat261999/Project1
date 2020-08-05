@@ -883,6 +883,7 @@
             // 
             // btnExitFormManageStudent
             // 
+            this.btnExitFormManageStudent.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnExitFormManageStudent.FlatAppearance.BorderSize = 0;
             this.btnExitFormManageStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExitFormManageStudent.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

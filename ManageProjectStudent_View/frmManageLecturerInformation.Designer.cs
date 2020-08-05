@@ -58,15 +58,15 @@
             this.txtIDCard = new System.Windows.Forms.TextBox();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.lblSex = new System.Windows.Forms.Label();
-            this.lblFaculty = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblPhoneNumber = new System.Windows.Forms.Label();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.lbLFaculty = new System.Windows.Forms.Label();
+            this.lblMail = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
-            this.lblBirthday = new System.Windows.Forms.Label();
-            this.lblCardID = new System.Windows.Forms.Label();
+            this.lblBirthDay = new System.Windows.Forms.Label();
+            this.lblIdCard = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.lblStaffID = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             this.gcListLecturer = new DevExpress.XtraGrid.GridControl();
             this.gvLecturerList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colLecturerID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -85,12 +85,13 @@
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationLecturer)).BeginInit();
+            this.grpInformationLecturer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkeStaffType.Properties)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkeFaculty.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dteBirthday.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteBirthday.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dteBirthday.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcListLecturer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLecturerList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_StaffType)).BeginInit();
@@ -274,14 +275,14 @@
             // lblTitle
             // 
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(411, 31);
+            this.lblTitle.Location = new System.Drawing.Point(54, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(269, 22);
+            this.lblTitle.Size = new System.Drawing.Size(1012, 90);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Quản lý thông tin nhân viên ";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // grpInformationLecturer
             // 
@@ -303,15 +304,15 @@
             this.grpInformationLecturer.Controls.Add(this.txtIDCard);
             this.grpInformationLecturer.Controls.Add(this.txtFullName);
             this.grpInformationLecturer.Controls.Add(this.txtID);
-            this.grpInformationLecturer.Controls.Add(this.lblSex);
-            this.grpInformationLecturer.Controls.Add(this.lblFaculty);
-            this.grpInformationLecturer.Controls.Add(this.lblEmail);
-            this.grpInformationLecturer.Controls.Add(this.lblPhoneNumber);
+            this.grpInformationLecturer.Controls.Add(this.lblGender);
+            this.grpInformationLecturer.Controls.Add(this.lbLFaculty);
+            this.grpInformationLecturer.Controls.Add(this.lblMail);
+            this.grpInformationLecturer.Controls.Add(this.lblPhone);
             this.grpInformationLecturer.Controls.Add(this.lblAddress);
-            this.grpInformationLecturer.Controls.Add(this.lblBirthday);
-            this.grpInformationLecturer.Controls.Add(this.lblCardID);
+            this.grpInformationLecturer.Controls.Add(this.lblBirthDay);
+            this.grpInformationLecturer.Controls.Add(this.lblIdCard);
             this.grpInformationLecturer.Controls.Add(this.lblName);
-            this.grpInformationLecturer.Controls.Add(this.lblStaffID);
+            this.grpInformationLecturer.Controls.Add(this.lblID);
             this.grpInformationLecturer.Location = new System.Drawing.Point(192, 93);
             this.grpInformationLecturer.Name = "grpInformationLecturer";
             this.grpInformationLecturer.Size = new System.Drawing.Size(1124, 199);
@@ -322,9 +323,6 @@
             // 
             this.lkeStaffType.Location = new System.Drawing.Point(522, 88);
             this.lkeStaffType.Name = "lkeStaffType";
-            // 
-            // 
-            // 
             this.lkeStaffType.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lkeStaffType.Properties.Appearance.Options.UseFont = true;
             this.lkeStaffType.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -448,7 +446,7 @@
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblStatus.Location = new System.Drawing.Point(423, 122);
+            this.lblStatus.Location = new System.Drawing.Point(394, 124);
             this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(72, 17);
@@ -459,9 +457,6 @@
             // 
             this.lkeFaculty.Location = new System.Drawing.Point(887, 88);
             this.lkeFaculty.Name = "lkeFaculty";
-            // 
-            // 
-            // 
             this.lkeFaculty.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lkeFaculty.Properties.Appearance.Options.UseFont = true;
             this.lkeFaculty.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -479,18 +474,13 @@
             // 
             // dteBirthday
             // 
+            this.dteBirthday.EditValue = new System.DateTime(2020, 8, 5, 0, 0, 0, 0);
             this.dteBirthday.Location = new System.Drawing.Point(184, 57);
             this.dteBirthday.Name = "dteBirthday";
-            // 
-            // 
-            // 
             this.dteBirthday.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dteBirthday.Properties.Appearance.Options.UseFont = true;
             this.dteBirthday.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            // 
-            // 
-            // 
             this.dteBirthday.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dteBirthday.Size = new System.Drawing.Size(193, 24);
@@ -541,95 +531,95 @@
             this.txtID.Size = new System.Drawing.Size(193, 25);
             this.txtID.TabIndex = 97;
             // 
-            // lblSex
+            // lblGender
             // 
-            this.lblSex.AutoSize = true;
-            this.lblSex.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSex.Location = new System.Drawing.Point(90, 122);
-            this.lblSex.Name = "lblSex";
-            this.lblSex.Size = new System.Drawing.Size(67, 17);
-            this.lblSex.TabIndex = 16;
-            this.lblSex.Text = "Giới Tính";
+            this.lblGender.AutoSize = true;
+            this.lblGender.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Location = new System.Drawing.Point(61, 123);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(67, 17);
+            this.lblGender.TabIndex = 16;
+            this.lblGender.Text = "Giới Tính";
             // 
-            // lblFaculty
+            // lbLFaculty
             // 
-            this.lblFaculty.AutoSize = true;
-            this.lblFaculty.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFaculty.Location = new System.Drawing.Point(813, 87);
-            this.lblFaculty.Name = "lblFaculty";
-            this.lblFaculty.Size = new System.Drawing.Size(42, 17);
-            this.lblFaculty.TabIndex = 14;
-            this.lblFaculty.Text = "Khoa";
+            this.lbLFaculty.AutoSize = true;
+            this.lbLFaculty.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLFaculty.Location = new System.Drawing.Point(755, 90);
+            this.lbLFaculty.Name = "lbLFaculty";
+            this.lbLFaculty.Size = new System.Drawing.Size(42, 17);
+            this.lbLFaculty.TabIndex = 14;
+            this.lbLFaculty.Text = "Khoa";
             // 
-            // lblEmail
+            // lblMail
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(112, 90);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(45, 17);
-            this.lblEmail.TabIndex = 12;
-            this.lblEmail.Text = "Email";
+            this.lblMail.AutoSize = true;
+            this.lblMail.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMail.Location = new System.Drawing.Point(61, 91);
+            this.lblMail.Name = "lblMail";
+            this.lblMail.Size = new System.Drawing.Size(45, 17);
+            this.lblMail.TabIndex = 12;
+            this.lblMail.Text = "Email";
             // 
-            // lblPhoneNumber
+            // lblPhone
             // 
-            this.lblPhoneNumber.AutoSize = true;
-            this.lblPhoneNumber.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNumber.Location = new System.Drawing.Point(755, 60);
-            this.lblPhoneNumber.Name = "lblPhoneNumber";
-            this.lblPhoneNumber.Size = new System.Drawing.Size(100, 17);
-            this.lblPhoneNumber.TabIndex = 10;
-            this.lblPhoneNumber.Text = "Số Điện Thoại";
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Location = new System.Drawing.Point(755, 60);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(100, 17);
+            this.lblPhone.TabIndex = 10;
+            this.lblPhone.Text = "Số Điện Thoại";
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(439, 60);
+            this.lblAddress.Location = new System.Drawing.Point(394, 60);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(56, 17);
             this.lblAddress.TabIndex = 8;
             this.lblAddress.Text = "Địa Chỉ";
             // 
-            // lblBirthday
+            // lblBirthDay
             // 
-            this.lblBirthday.AutoSize = true;
-            this.lblBirthday.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBirthday.Location = new System.Drawing.Point(84, 60);
-            this.lblBirthday.Name = "lblBirthday";
-            this.lblBirthday.Size = new System.Drawing.Size(74, 17);
-            this.lblBirthday.TabIndex = 6;
-            this.lblBirthday.Text = "Ngày Sinh";
+            this.lblBirthDay.AutoSize = true;
+            this.lblBirthDay.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirthDay.Location = new System.Drawing.Point(61, 60);
+            this.lblBirthDay.Name = "lblBirthDay";
+            this.lblBirthDay.Size = new System.Drawing.Size(74, 17);
+            this.lblBirthDay.TabIndex = 6;
+            this.lblBirthDay.Text = "Ngày Sinh";
             // 
-            // lblCardID
+            // lblIdCard
             // 
-            this.lblCardID.AutoSize = true;
-            this.lblCardID.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCardID.Location = new System.Drawing.Point(804, 29);
-            this.lblCardID.Name = "lblCardID";
-            this.lblCardID.Size = new System.Drawing.Size(51, 17);
-            this.lblCardID.TabIndex = 4;
-            this.lblCardID.Text = "CMND";
+            this.lblIdCard.AutoSize = true;
+            this.lblIdCard.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdCard.Location = new System.Drawing.Point(755, 29);
+            this.lblIdCard.Name = "lblIdCard";
+            this.lblIdCard.Size = new System.Drawing.Size(51, 17);
+            this.lblIdCard.TabIndex = 4;
+            this.lblIdCard.Text = "CMND";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(440, 29);
+            this.lblName.Location = new System.Drawing.Point(394, 29);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(55, 17);
             this.lblName.TabIndex = 2;
             this.lblName.Text = "Họ Tên";
             // 
-            // lblStaffID
+            // lblID
             // 
-            this.lblStaffID.AutoSize = true;
-            this.lblStaffID.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffID.Location = new System.Drawing.Point(61, 29);
-            this.lblStaffID.Name = "lblStaffID";
-            this.lblStaffID.Size = new System.Drawing.Size(96, 17);
-            this.lblStaffID.TabIndex = 0;
-            this.lblStaffID.Text = "ID Giảng Viên";
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(61, 29);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(96, 17);
+            this.lblID.TabIndex = 0;
+            this.lblID.Text = "ID Giảng Viên";
             // 
             // gcListLecturer
             // 
@@ -862,8 +852,9 @@
             this.Load += new System.EventHandler(this.frmManageLecturerInformation_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
-            this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationLecturer)).EndInit();
+            this.grpInformationLecturer.ResumeLayout(false);
+            this.grpInformationLecturer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkeStaffType.Properties)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -888,13 +879,13 @@
         private System.Windows.Forms.Button btnExitFormManageLecturer;
         private System.Windows.Forms.Label lblTitle;
         private DevExpress.XtraEditors.GroupControl grpInformationLecturer;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblPhoneNumber;
+        private System.Windows.Forms.Label lblMail;
+        private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.Label lblBirthday;
-        private System.Windows.Forms.Label lblCardID;
+        private System.Windows.Forms.Label lblBirthDay;
+        private System.Windows.Forms.Label lblIdCard;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblStaffID;
+        private System.Windows.Forms.Label lblID;
         private DevExpress.XtraEditors.LookUpEdit lkeFaculty;
         private System.Windows.Forms.RadioButton radUnavailable;
         private System.Windows.Forms.RadioButton radAvailable;
@@ -909,8 +900,8 @@
         private System.Windows.Forms.TextBox txtIDCard;
         private System.Windows.Forms.RadioButton radNu;
         private System.Windows.Forms.RadioButton radNam;
-        private System.Windows.Forms.Label lblSex;
-        private System.Windows.Forms.Label lblFaculty;
+        private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.Label lbLFaculty;
         private DevExpress.XtraGrid.GridControl gcListLecturer;
         private DevExpress.XtraGrid.Views.Grid.GridView gvLecturerList;
         private DevExpress.XtraGrid.Columns.GridColumn colLecturerID;

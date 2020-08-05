@@ -20,6 +20,13 @@ namespace ManageProjectStudent_View
         private Form activeForm;
         private int IStatus;
         private StaffModel StaffModel;
+
+        private LanguageModel Language = null;
+        private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
+        private BindingList<WordModel> _lstWord = null;
+        private IWord _Word = Config.Container.Resolve<IWord>();
+        private BindingList<LanguageWordModel> _lstLanWord = null;
+        private WordModel _wordModel = null;
         public frmManageProjectMain()
         {
             InitializeComponent();
@@ -158,6 +165,28 @@ namespace ManageProjectStudent_View
         {
             this.Visible = false;
             Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
+
+            Language = frmHome.languageModel;
+            _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+            if (frmHome.lstLanguageWord != null)
+            {
+                foreach (LanguageWordModel lnword in _lstLanWord)
+                {
+                    _wordModel = _Word.getWordSelected(lnword.StrWordID);
+                    if (lblTitle.Text == _wordModel.StrWordName)
+                    {
+                        lblTitle.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnManageProjectLecturer.Text == _wordModel.StrWordName)
+                    {
+                        btnManageProjectLecturer.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnManageTask.Text == _wordModel.StrWordName)
+                    {
+                        btnManageTask.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                }    
+            }    
         }
     }
 }

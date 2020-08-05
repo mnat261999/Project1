@@ -39,24 +39,20 @@
             this.btnExitForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.grpInformationWord = new DevExpress.XtraEditors.GroupControl();
-            this.lkeModule = new DevExpress.XtraEditors.LookUpEdit();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             this.gcListWord = new DevExpress.XtraGrid.GridControl();
             this.gvWordList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colWordID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colWordName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colModule = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpEdit_Class = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationWord)).BeginInit();
             this.grpInformationWord.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lkeModule.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcListWord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvWordList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Class)).BeginInit();
@@ -211,58 +207,27 @@
             // lblTitle
             // 
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(322, 31);
+            this.lblTitle.Location = new System.Drawing.Point(76, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(106, 22);
+            this.lblTitle.Size = new System.Drawing.Size(618, 87);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Quản lý từ";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // grpInformationWord
             // 
-            this.grpInformationWord.Controls.Add(this.lkeModule);
-            this.grpInformationWord.Controls.Add(this.label1);
             this.grpInformationWord.Controls.Add(this.txtName);
             this.grpInformationWord.Controls.Add(this.btnSave);
             this.grpInformationWord.Controls.Add(this.txtID);
-            this.grpInformationWord.Controls.Add(this.label3);
-            this.grpInformationWord.Controls.Add(this.label2);
+            this.grpInformationWord.Controls.Add(this.lblName);
+            this.grpInformationWord.Controls.Add(this.lblID);
             this.grpInformationWord.Location = new System.Drawing.Point(193, 102);
             this.grpInformationWord.Name = "grpInformationWord";
-            this.grpInformationWord.Size = new System.Drawing.Size(733, 178);
+            this.grpInformationWord.Size = new System.Drawing.Size(733, 141);
             this.grpInformationWord.TabIndex = 49;
             this.grpInformationWord.Text = "Thông Tin";
-            // 
-            // lkeModule
-            // 
-            this.lkeModule.Location = new System.Drawing.Point(293, 90);
-            this.lkeModule.Name = "lkeModule";
-            this.lkeModule.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lkeModule.Properties.Appearance.Options.UseFont = true;
-            this.lkeModule.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lkeModule.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.lkeModule.Properties.AppearanceDropDownHeader.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lkeModule.Properties.AppearanceDropDownHeader.Options.UseFont = true;
-            this.lkeModule.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lkeModule.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colFormName", "Tên Module"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colFormID", "Module")});
-            this.lkeModule.Properties.NullText = "Module";
-            this.lkeModule.Size = new System.Drawing.Size(209, 24);
-            this.lkeModule.TabIndex = 124;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(193, 90);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 17);
-            this.label1.TabIndex = 123;
-            this.label1.Text = "Module";
             // 
             // txtName
             // 
@@ -287,7 +252,7 @@
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSave.Location = new System.Drawing.Point(285, 137);
+            this.btnSave.Location = new System.Drawing.Point(307, 100);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(156, 36);
             this.btnSave.TabIndex = 121;
@@ -302,34 +267,34 @@
             this.txtID.Size = new System.Drawing.Size(209, 21);
             this.txtID.TabIndex = 97;
             // 
-            // label3
+            // lblName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(193, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Tên Từ";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(193, 63);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(56, 17);
+            this.lblName.TabIndex = 2;
+            this.lblName.Text = "Tên Từ";
             // 
-            // label2
+            // lblID
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(204, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mã từ";
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(193, 36);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(45, 17);
+            this.lblID.TabIndex = 0;
+            this.lblID.Text = "Mã từ";
             // 
             // gcListWord
             // 
-            this.gcListWord.Location = new System.Drawing.Point(193, 286);
+            this.gcListWord.Location = new System.Drawing.Point(193, 249);
             this.gcListWord.MainView = this.gvWordList;
             this.gcListWord.Name = "gcListWord";
             this.gcListWord.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.LookUpEdit_Class});
-            this.gcListWord.Size = new System.Drawing.Size(733, 240);
+            this.gcListWord.Size = new System.Drawing.Size(733, 277);
             this.gcListWord.TabIndex = 50;
             this.gcListWord.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvWordList});
@@ -354,8 +319,7 @@
             this.gvWordList.AppearancePrint.Row.Options.UseFont = true;
             this.gvWordList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colWordID,
-            this.colWordName,
-            this.colModule});
+            this.colWordName});
             this.gvWordList.DetailHeight = 377;
             this.gvWordList.GridControl = this.gcListWord;
             this.gvWordList.Name = "gvWordList";
@@ -392,14 +356,6 @@
             this.colWordName.Visible = true;
             this.colWordName.VisibleIndex = 1;
             // 
-            // colModule
-            // 
-            this.colModule.Caption = "Module";
-            this.colModule.FieldName = "StrModule";
-            this.colModule.Name = "colModule";
-            this.colModule.Visible = true;
-            this.colModule.VisibleIndex = 2;
-            // 
             // LookUpEdit_Class
             // 
             this.LookUpEdit_Class.AutoHeight = false;
@@ -428,11 +384,9 @@
             this.Load += new System.EventHandler(this.frmManageWord_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
-            this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationWord)).EndInit();
             this.grpInformationWord.ResumeLayout(false);
             this.grpInformationWord.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lkeModule.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcListWord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvWordList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Class)).EndInit();
@@ -452,18 +406,15 @@
         private System.Windows.Forms.Button btnExitForm;
         private System.Windows.Forms.Label lblTitle;
         private DevExpress.XtraEditors.GroupControl grpInformationWord;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtName;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblID;
         private DevExpress.XtraGrid.GridControl gcListWord;
         private DevExpress.XtraGrid.Views.Grid.GridView gvWordList;
         private DevExpress.XtraGrid.Columns.GridColumn colWordID;
         private DevExpress.XtraGrid.Columns.GridColumn colWordName;
-        private DevExpress.XtraGrid.Columns.GridColumn colModule;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit_Class;
-        private DevExpress.XtraEditors.LookUpEdit lkeModule;
     }
 }

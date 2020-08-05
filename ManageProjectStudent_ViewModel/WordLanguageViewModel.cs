@@ -42,11 +42,22 @@ namespace ManageProjectStudent_ViewModel
             var result = _Context.LanguageWordModels.Where(x => x.StrLanguageID == LangID).ToList();
             return new BindingList<LanguageWordModel>(result);
         }
-
+        public BindingList<LanguageWordModel> getLstLanguageWord(string LangID, string Module)
+        {
+            var WL = _Context.LanguageWordModels.Where
+                   (x => x.StrLanguageID == LangID).Where(x => x.StrModule == Module).ToList();
+            return new BindingList<LanguageWordModel>(WL);
+        }
         public LanguageWordModel getWordLanguageSelectedByWordID(string StrWordID)
         {
             var WordLanguage = _Context.LanguageWordModels.SingleOrDefault
                    (x => x.StrWordID == StrWordID);
+            return WordLanguage;
+        }
+        public LanguageWordModel getWordLanguageSelectedByID(string StrID)
+        {
+            var WordLanguage = _Context.LanguageWordModels.SingleOrDefault
+                   (x => x.StrID == StrID);
             return WordLanguage;
         }
 
@@ -62,9 +73,14 @@ namespace ManageProjectStudent_ViewModel
             var Result = _Context.LanguageWordModels.Where(x => x.StrLanguageID == LangID).SingleOrDefault(x => x.StrWordID == Query.StrWordId);
             return Result.StrMean;
         }
-        public string getMeanByID(string WordID, string LangID)
+        public string getMeanByWordID(string WordID, string LangID)
         {
             var Result = _Context.LanguageWordModels.Where(x => x.StrLanguageID == LangID).SingleOrDefault(x => x.StrWordID == WordID);
+            return Result.StrMean;
+        }
+        public string getMeanByID(string ID, string LangID)
+        {
+            var Result = _Context.LanguageWordModels.Where(x => x.StrLanguageID == LangID).SingleOrDefault(x => x.StrID == ID);
             return Result.StrMean;
         }
         public List<string> lstID()

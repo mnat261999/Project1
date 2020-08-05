@@ -37,11 +37,13 @@ namespace ManageProjectStudent_View
         private StaffModel StaffModel = null;
         private IDecentralize _Decen = Config.Container.Resolve<IDecentralize>();
         private DecentralizeModel Decentralize = null;
+
         private LanguageModel Language = null;
         private IWordLanguage _WL = Config.Container.Resolve<IWordLanguage>();
         private BindingList<WordModel> _lstWord = null;
         private IWord _Word = Config.Container.Resolve<IWord>();
-        private IForm _Form = Config.Container.Resolve<IForm>();
+        private BindingList<LanguageWordModel> _lstLanWord = null;
+        private WordModel _wordModel = null;
         #endregion
         #region Method
         private bool adddDecen(StaffTypeModel type)
@@ -169,66 +171,57 @@ namespace ManageProjectStudent_View
                     }
                 }
             }
+            #region Multi-Language
+            Language = frmHome.languageModel;
+            _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+            if (frmHome.lstLanguageWord != null)
+            {
+                foreach (LanguageWordModel lnword in _lstLanWord)
+                {
+                    _wordModel = _Word.getWordSelected(lnword.StrWordID);
+                    if (lblTitle.Text == _wordModel.StrWordName)
+                    {
+                        lblTitle.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnAdd.Text == _wordModel.StrWordName)
+                    {
+                        btnAdd.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnUpdate.Text == _wordModel.StrWordName)
+                    {
+                        btnUpdate.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnDelete.Text == _wordModel.StrWordName)
+                    {
+                        btnDelete.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnSave.Text == _wordModel.StrWordName)
+                    {
+                        btnSave.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblID.Text == _wordModel.StrWordName)
+                    {
+                        lblID.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (lblName.Text == _wordModel.StrWordName)
+                    {
+                        lblName.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colStaffTypeID.Caption == _wordModel.StrWordName)
+                    {
+                        colStaffTypeID.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (colStaffTypeName.Caption == _wordModel.StrWordName)
+                    {
+                        colStaffTypeName.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
 
+                }
+            }
+            #endregion
             _lstStaffType = _StaffType.loadStaffType();
             gcListStaffType.DataSource = _lstStaffType;
             _setStatusForm();
-            #region Multi-Language
-            Language = frmHome.languageModel;
-            string lan = Language.StrLanguageID;
-            //_lstWord = _Word.getLstWord(this.Name);
-            if (frmHome.lstLanguageWord != null)
-            {
-                foreach (WordModel word in _lstWord)
-                {
-                    if (lblTitle.Text == word.StrWordName)
-                    {
-                        lblTitle.Text = _WL.getMean(lblTitle.Text, Language.StrLanguageID);
-                    }
-                    if (btnAdd.Text == word.StrWordName)
-                    {
-                        btnAdd.Text = _WL.getMean(btnAdd.Text, Language.StrLanguageID);
-                    }
-                    if (btnUpdate.Text == word.StrWordName)
-                    {
-                        btnUpdate.Text = _WL.getMean(btnUpdate.Text, Language.StrLanguageID);
-                    }
-                    if (btnDelete.Text == word.StrWordName)
-                    {
-                        btnDelete.Text = _WL.getMean(btnDelete.Text, Language.StrLanguageID);
-                    }
-                    if (btnSave.Text == word.StrWordName)
-                    {
-                        btnSave.Text = _WL.getMeanByID(word.StrWordId, Language.StrLanguageID);
-                    }
-                    if (lblStaffTypeID.Text == word.StrWordName)
-                    {
-                        lblStaffTypeID.Text = _WL.getMean(lblStaffTypeID.Text, Language.StrLanguageID);
-                    }
-                    if (lblStaffName.Text == word.StrWordName)
-                    {
-                        lblStaffName.Text = _WL.getMean(lblStaffName.Text, Language.StrLanguageID);
-                    }
-                    if (colStaffTypeID.Caption == word.StrWordName)
-                    {
-                        colStaffTypeID.Caption = _WL.getMean(colStaffTypeID.Caption, Language.StrLanguageID);
-                    }
-                    if (colStaffTypeName.Caption == word.StrWordName)
-                    {
-                        colStaffTypeName.Caption = _WL.getMean(colStaffTypeName.Caption, Language.StrLanguageID);
-                    }
-                    if (gcListStaffType.Text == word.StrWordName)
-                    {
-                        gcListStaffType.Text = _WL.getMean(gcListStaffType.Text, Language.StrLanguageID);
-                    }
-                    if (grpInformationStaffType.Text == word.StrWordName)
-                    {
-                        grpInformationStaffType.Text = _WL.getMean(grpInformationStaffType.Text, Language.StrLanguageID);
-                    }
-                    
-                }
-            }
-                #endregion
             }
 
         private void btnAdd_Click(object sender, EventArgs e)

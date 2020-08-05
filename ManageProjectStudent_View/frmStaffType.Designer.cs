@@ -35,14 +35,14 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.btnReLoad = new System.Windows.Forms.Button();
             this.btnExitFormManageLecturer = new System.Windows.Forms.Button();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.grpInformationStaffType = new DevExpress.XtraEditors.GroupControl();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.lblStaffName = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.lblStaffTypeID = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.gcListStaffType = new DevExpress.XtraGrid.GridControl();
             this.gvStaffTypeList = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -52,6 +52,7 @@
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationStaffType)).BeginInit();
+            this.grpInformationStaffType.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcListStaffType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvStaffTypeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Class)).BeginInit();
@@ -161,15 +162,27 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
+            this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Controls.Add(this.btnReLoad);
             this.panelTitleBar.Controls.Add(this.btnExitFormManageLecturer);
-            this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelTitleBar.Location = new System.Drawing.Point(174, 0);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(764, 94);
             this.panelTitleBar.TabIndex = 50;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(86, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(585, 94);
+            this.lblTitle.TabIndex = 8;
+            this.lblTitle.Text = "Quản Lý Loại Nhân Viên";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnReLoad
             // 
@@ -203,24 +216,12 @@
             this.btnExitFormManageLecturer.UseVisualStyleBackColor = true;
             this.btnExitFormManageLecturer.Click += new System.EventHandler(this.btnExitFormManageLecturer_Click);
             // 
-            // lblTitle
-            // 
-            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(282, 35);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(215, 22);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Quản lý loại nhân viên";
-            // 
             // grpInformationStaffType
             // 
             this.grpInformationStaffType.Controls.Add(this.txtName);
-            this.grpInformationStaffType.Controls.Add(this.lblStaffName);
+            this.grpInformationStaffType.Controls.Add(this.lblName);
             this.grpInformationStaffType.Controls.Add(this.txtID);
-            this.grpInformationStaffType.Controls.Add(this.lblStaffTypeID);
+            this.grpInformationStaffType.Controls.Add(this.lblID);
             this.grpInformationStaffType.Controls.Add(this.btnSave);
             this.grpInformationStaffType.Location = new System.Drawing.Point(194, 100);
             this.grpInformationStaffType.Name = "grpInformationStaffType";
@@ -235,15 +236,15 @@
             this.txtName.Size = new System.Drawing.Size(169, 21);
             this.txtName.TabIndex = 128;
             // 
-            // lblStaffName
+            // lblName
             // 
-            this.lblStaffName.AutoSize = true;
-            this.lblStaffName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffName.Location = new System.Drawing.Point(379, 53);
-            this.lblStaffName.Name = "lblStaffName";
-            this.lblStaffName.Size = new System.Drawing.Size(125, 17);
-            this.lblStaffName.TabIndex = 127;
-            this.lblStaffName.Text = "Tên loại nhân viên";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(379, 53);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(125, 17);
+            this.lblName.TabIndex = 127;
+            this.lblName.Text = "Tên loại nhân viên";
             // 
             // txtID
             // 
@@ -252,15 +253,15 @@
             this.txtID.Size = new System.Drawing.Size(169, 21);
             this.txtID.TabIndex = 126;
             // 
-            // lblStaffTypeID
+            // lblID
             // 
-            this.lblStaffTypeID.AutoSize = true;
-            this.lblStaffTypeID.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffTypeID.Location = new System.Drawing.Point(63, 53);
-            this.lblStaffTypeID.Name = "lblStaffTypeID";
-            this.lblStaffTypeID.Size = new System.Drawing.Size(119, 17);
-            this.lblStaffTypeID.TabIndex = 125;
-            this.lblStaffTypeID.Text = "Mã loại nhân viên";
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(63, 53);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(119, 17);
+            this.lblID.TabIndex = 125;
+            this.lblID.Text = "Mã loại nhân viên";
             // 
             // btnSave
             // 
@@ -378,8 +379,9 @@
             this.Load += new System.EventHandler(this.frmStaffType_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
-            this.panelTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationStaffType)).EndInit();
+            this.grpInformationStaffType.ResumeLayout(false);
+            this.grpInformationStaffType.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcListStaffType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvStaffTypeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Class)).EndInit();
@@ -397,17 +399,17 @@
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Button btnReLoad;
         private System.Windows.Forms.Button btnExitFormManageLecturer;
-        private System.Windows.Forms.Label lblTitle;
         private DevExpress.XtraEditors.GroupControl grpInformationStaffType;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label lblStaffName;
+        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Label lblStaffTypeID;
+        private System.Windows.Forms.Label lblID;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraGrid.GridControl gcListStaffType;
         private DevExpress.XtraGrid.Views.Grid.GridView gvStaffTypeList;
         private DevExpress.XtraGrid.Columns.GridColumn colStaffTypeID;
         private DevExpress.XtraGrid.Columns.GridColumn colStaffTypeName;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit_Class;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
