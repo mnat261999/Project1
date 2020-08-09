@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManageProjectTask));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnExportList = new DevExpress.XtraEditors.SimpleButton();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
@@ -68,7 +69,6 @@
             this.colLinkFile = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpEdit_Lecturer = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.LookUpEdit_Subject = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.btnExportList = new DevExpress.XtraEditors.SimpleButton();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -99,6 +99,33 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(187, 517);
             this.panelMenu.TabIndex = 2;
+            // 
+            // btnExportList
+            // 
+            this.btnExportList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportList.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportList.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnExportList.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnExportList.Appearance.Options.UseBackColor = true;
+            this.btnExportList.Appearance.Options.UseFont = true;
+            this.btnExportList.Appearance.Options.UseForeColor = true;
+            this.btnExportList.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(71)))), ((int)(((byte)(100)))));
+            this.btnExportList.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnExportList.AppearanceHovered.ForeColor = System.Drawing.Color.White;
+            this.btnExportList.AppearanceHovered.Options.UseBackColor = true;
+            this.btnExportList.AppearanceHovered.Options.UseFont = true;
+            this.btnExportList.AppearanceHovered.Options.UseForeColor = true;
+            this.btnExportList.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.btnExportList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExportList.ImageOptions.Image")));
+            this.btnExportList.Location = new System.Drawing.Point(-3, 451);
+            this.btnExportList.Name = "btnExportList";
+            this.btnExportList.Size = new System.Drawing.Size(196, 54);
+            this.btnExportList.TabIndex = 24;
+            this.btnExportList.TabStop = false;
+            this.btnExportList.Text = "Export Danh Sách";
+            this.btnExportList.Click += new System.EventHandler(this.btnExportList_Click);
             // 
             // btnUpdate
             // 
@@ -273,7 +300,7 @@
             this.grpInformationTask.Name = "grpInformationTask";
             this.grpInformationTask.Size = new System.Drawing.Size(987, 186);
             this.grpInformationTask.TabIndex = 4;
-            this.grpInformationTask.Text = "Nhập Thông Tin Task";
+            this.grpInformationTask.Text = "Thông Tin";
             // 
             // btnSave
             // 
@@ -357,7 +384,7 @@
             this.lblEndDay.Name = "lblEndDay";
             this.lblEndDay.Size = new System.Drawing.Size(96, 17);
             this.lblEndDay.TabIndex = 107;
-            this.lblEndDay.Text = "Ngày kết thúc";
+            this.lblEndDay.Text = "Ngày kết thúc";
             // 
             // dteStartDay
             // 
@@ -381,7 +408,7 @@
             this.lblStartDay.Name = "lblStartDay";
             this.lblStartDay.Size = new System.Drawing.Size(93, 17);
             this.lblStartDay.TabIndex = 105;
-            this.lblStartDay.Text = "Ngày bắt đầu";
+            this.lblStartDay.Text = "Ngày bắt đầu";
             // 
             // txtTaskName
             // 
@@ -582,33 +609,6 @@
             this.LookUpEdit_Subject.DisplayMember = "StrSubjectName";
             this.LookUpEdit_Subject.Name = "LookUpEdit_Subject";
             this.LookUpEdit_Subject.ValueMember = "StrSubjectID";
-            // 
-            // btnExportList
-            // 
-            this.btnExportList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExportList.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.btnExportList.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnExportList.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnExportList.Appearance.Options.UseBackColor = true;
-            this.btnExportList.Appearance.Options.UseFont = true;
-            this.btnExportList.Appearance.Options.UseForeColor = true;
-            this.btnExportList.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(71)))), ((int)(((byte)(100)))));
-            this.btnExportList.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnExportList.AppearanceHovered.ForeColor = System.Drawing.Color.White;
-            this.btnExportList.AppearanceHovered.Options.UseBackColor = true;
-            this.btnExportList.AppearanceHovered.Options.UseFont = true;
-            this.btnExportList.AppearanceHovered.Options.UseForeColor = true;
-            this.btnExportList.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.btnExportList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExportList.ImageOptions.Image")));
-            this.btnExportList.Location = new System.Drawing.Point(-3, 451);
-            this.btnExportList.Name = "btnExportList";
-            this.btnExportList.Size = new System.Drawing.Size(196, 54);
-            this.btnExportList.TabIndex = 24;
-            this.btnExportList.TabStop = false;
-            this.btnExportList.Text = "Export Danh Sách";
-            this.btnExportList.Click += new System.EventHandler(this.btnExportList_Click);
             // 
             // frmManageProjectTask
             // 

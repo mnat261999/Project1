@@ -118,7 +118,7 @@
             this.btnDelete.Size = new System.Drawing.Size(170, 41);
             this.btnDelete.TabIndex = 14;
             this.btnDelete.TabStop = false;
-            this.btnDelete.Text = "Xóa từ";
+            this.btnDelete.Text = "Xóa Từ";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // panelLogo
@@ -213,7 +213,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(618, 87);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Quản lý từ";
+            this.lblTitle.Text = "Quản Lý Từ";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // grpInformationWord
@@ -276,9 +276,9 @@
             this.lblName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(193, 63);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(56, 17);
+            this.lblName.Size = new System.Drawing.Size(51, 17);
             this.lblName.TabIndex = 2;
-            this.lblName.Text = "Tên Từ";
+            this.lblName.Text = "Tên từ";
             // 
             // lblID
             // 
@@ -326,7 +326,9 @@
             this.gvWordList.DetailHeight = 377;
             this.gvWordList.GridControl = this.gcListWord;
             this.gvWordList.Name = "gvWordList";
+            this.gvWordList.OptionsBehavior.AllowIncrementalSearch = true;
             this.gvWordList.OptionsBehavior.Editable = false;
+            this.gvWordList.OptionsFind.FindMode = DevExpress.XtraEditors.FindMode.Always;
             this.gvWordList.OptionsSelection.MultiSelect = true;
             this.gvWordList.OptionsView.EnableAppearanceEvenRow = true;
             this.gvWordList.OptionsView.EnableAppearanceOddRow = true;
@@ -373,6 +375,7 @@
             // 
             // frmManageWord
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 539);

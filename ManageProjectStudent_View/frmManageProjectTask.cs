@@ -263,6 +263,14 @@ namespace ManageProjectStudent_View
                     {
                         colLinkFile.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
+                    if (gvListTask.ViewCaption == _wordModel.StrWordName)
+                    {
+                        gvListTask.ViewCaption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (grpInformationTask.Text == _wordModel.StrWordName)
+                    {
+                        grpInformationTask.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
                 }    
             }    
                 #endregion

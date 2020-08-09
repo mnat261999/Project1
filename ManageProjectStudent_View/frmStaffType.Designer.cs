@@ -156,7 +156,7 @@
             this.btnAdd.Size = new System.Drawing.Size(171, 54);
             this.btnAdd.TabIndex = 13;
             this.btnAdd.TabStop = false;
-            this.btnAdd.Text = "Thêm ";
+            this.btnAdd.Text = "Thêm";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panelTitleBar

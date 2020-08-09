@@ -106,6 +106,10 @@ namespace ManageProjectStudent_View
                 foreach (LanguageWordModel lnword in _lstLanWord)
                 {
                     _wordModel = _Word.getWordSelected(lnword.StrWordID);
+                    if (lblTitle.Text == _wordModel.StrWordName)
+                    {
+                        lblTitle.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
                     if (grpUsing.Text == _wordModel.StrWordName)
                     {
                         grpUsing.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
@@ -117,6 +121,10 @@ namespace ManageProjectStudent_View
                     if (gvListFunction.ViewCaption == _wordModel.StrWordName)
                     {
                         gvListFunction.ViewCaption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (btnSave.Text == _wordModel.StrWordName)
+                    {
+                        btnSave.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
                     if (colFunction.Caption == _wordModel.StrWordName)
                     {

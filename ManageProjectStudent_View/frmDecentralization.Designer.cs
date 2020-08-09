@@ -328,14 +328,14 @@
             // lblTitle
             // 
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(419, 31);
+            this.lblTitle.Location = new System.Drawing.Point(22, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(124, 22);
+            this.lblTitle.Size = new System.Drawing.Size(895, 87);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Phân Quyền";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelTitleBar
             // 
@@ -462,7 +462,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grpUsing)).EndInit();
             this.grpUsing.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
-            this.panelTitleBar.PerformLayout();
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chkFull_Add.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkFull_Delete.Properties)).EndInit();

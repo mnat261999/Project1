@@ -86,8 +86,8 @@ namespace ManageProjectStudent_View
 
         private void _lstLoadListTask()
         {
-            //_lstTask = _ProjectTk.loadProjectTask();
-            _lstTask = _ProjectTk.getListProjectTaskForStudent(frmHome.studentModel.StrStudentID);
+            _lstTask = _ProjectTk.loadProjectTask();
+            //_lstTask = _ProjectTk.getListProjectTaskForStudent(frmHome.studentModel.StrStudentID);
             gcListTask.DataSource = _lstTask;
         }
         #endregion
@@ -100,9 +100,10 @@ namespace ManageProjectStudent_View
 
             #region Multi-Lan
             Language = frmHome.languageModel;
-            _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
+            //_lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
             if (frmHome.lstLanguageWord != null)
             {
+                _lstLanWord = _WL.getLstLanguageWord(Language.StrLanguageID, this.Name);
                 foreach (LanguageWordModel lnword in _lstLanWord)
                 {
                     _wordModel = _Word.getWordSelected(lnword.StrWordID);
@@ -191,7 +192,8 @@ namespace ManageProjectStudent_View
 
             ///*GridView*/
             //_lstTask = _ProjectTk.loadProjectTask();
-            _lstTask = _ProjectTk.getListProjectTaskForStudent(frmHome.studentModel.StrStudentID);
+            //_lstTask = _ProjectTk.getListProjectTaskForStudent(frmHome.studentModel.StrStudentID);
+            _lstTask = _ProjectTk.loadProjectTask();
 
             LookUpEdit_Task.DataSource = _lstTask;
             LookUpEdit_Task.Columns["colTaskID"].FieldName = "StrTaskID";
@@ -224,7 +226,7 @@ namespace ManageProjectStudent_View
         {
             _IStatusForm = 1;
             _setStatusForm();
-            txtFileName.Focus();
+            //txtFileName.Focus();
         }
 
         private void btnChoosFile_Click(object sender, EventArgs e)

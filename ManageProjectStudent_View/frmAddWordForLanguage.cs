@@ -237,10 +237,10 @@ namespace ManageProjectStudent_View
                     {
                         btnSave.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (lblID.Text == _wordModel.StrWordName)
-                    {
-                        lblID.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
-                    }
+                    //if (lblID.Text == _wordModel.StrWordName)
+                    //{
+                    //    lblID.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    //}
                     if (lblLan.Text == _wordModel.StrWordName)
                     {
                         lblLan.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
@@ -253,10 +253,10 @@ namespace ManageProjectStudent_View
                     {
                         lblMean.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
-                    if (lblModule.Text == _wordModel.StrWordName)
-                    {
-                        lblModule.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
-                    }
+                    //if (lblModule.Text == _wordModel.StrWordName)
+                    //{
+                    //    lblModule.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    //}
                     if (lblStatus.Text == _wordModel.StrWordName)
                     {
                         lblStatus.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
@@ -300,6 +300,14 @@ namespace ManageProjectStudent_View
                     if (lkeWord.Properties.NullText == _wordModel.StrWordName)
                     {
                         lkeWord.Properties.NullText = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (gvWordLanList.ViewCaption == _wordModel.StrWordName)
+                    {
+                        gvWordLanList.ViewCaption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (grpInformationWordLan.Text == _wordModel.StrWordName)
+                    {
+                        grpInformationWordLan.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
                 }
             }    

@@ -281,7 +281,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(1012, 90);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Quản lý thông tin nhân viên ";
+            this.lblTitle.Text = "Quản Lý Thông Tin Nhân Viên ";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // grpInformationLecturer
@@ -317,7 +317,7 @@
             this.grpInformationLecturer.Name = "grpInformationLecturer";
             this.grpInformationLecturer.Size = new System.Drawing.Size(1124, 199);
             this.grpInformationLecturer.TabIndex = 9;
-            this.grpInformationLecturer.Text = "Thông Tin Giảng Viên";
+            this.grpInformationLecturer.Text = "Thông Tin";
             // 
             // lkeStaffType
             // 
@@ -537,9 +537,9 @@
             this.lblGender.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.Location = new System.Drawing.Point(61, 123);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(67, 17);
+            this.lblGender.Size = new System.Drawing.Size(62, 17);
             this.lblGender.TabIndex = 16;
-            this.lblGender.Text = "Giới Tính";
+            this.lblGender.Text = "Giới tính";
             // 
             // lbLFaculty
             // 
@@ -567,9 +567,9 @@
             this.lblPhone.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.Location = new System.Drawing.Point(755, 60);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(100, 17);
+            this.lblPhone.Size = new System.Drawing.Size(92, 17);
             this.lblPhone.TabIndex = 10;
-            this.lblPhone.Text = "Số Điện Thoại";
+            this.lblPhone.Text = "Số điện thoại";
             // 
             // lblAddress
             // 
@@ -577,9 +577,9 @@
             this.lblAddress.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.Location = new System.Drawing.Point(394, 60);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(56, 17);
+            this.lblAddress.Size = new System.Drawing.Size(53, 17);
             this.lblAddress.TabIndex = 8;
-            this.lblAddress.Text = "Địa Chỉ";
+            this.lblAddress.Text = "Địa chỉ";
             // 
             // lblBirthDay
             // 
@@ -587,9 +587,9 @@
             this.lblBirthDay.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBirthDay.Location = new System.Drawing.Point(61, 60);
             this.lblBirthDay.Name = "lblBirthDay";
-            this.lblBirthDay.Size = new System.Drawing.Size(74, 17);
+            this.lblBirthDay.Size = new System.Drawing.Size(72, 17);
             this.lblBirthDay.TabIndex = 6;
-            this.lblBirthDay.Text = "Ngày Sinh";
+            this.lblBirthDay.Text = "Ngày sinh";
             // 
             // lblIdCard
             // 
@@ -607,9 +607,9 @@
             this.lblName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(394, 29);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(55, 17);
+            this.lblName.Size = new System.Drawing.Size(50, 17);
             this.lblName.TabIndex = 2;
-            this.lblName.Text = "Họ Tên";
+            this.lblName.Text = "Họ tên";
             // 
             // lblID
             // 
@@ -617,9 +617,9 @@
             this.lblID.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.Location = new System.Drawing.Point(61, 29);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(96, 17);
+            this.lblID.Size = new System.Drawing.Size(47, 17);
             this.lblID.TabIndex = 0;
-            this.lblID.Text = "ID Giảng Viên";
+            this.lblID.Text = "Mã số";
             // 
             // gcListLecturer
             // 
@@ -685,7 +685,7 @@
             this.colLecturerID.AppearanceCell.Options.UseFont = true;
             this.colLecturerID.AppearanceHeader.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colLecturerID.AppearanceHeader.Options.UseFont = true;
-            this.colLecturerID.Caption = "ID Giảng Viên";
+            this.colLecturerID.Caption = "Mã số";
             this.colLecturerID.FieldName = "StrStaffID";
             this.colLecturerID.Name = "colLecturerID";
             this.colLecturerID.Visible = true;
@@ -698,7 +698,7 @@
             this.colFullName.AppearanceCell.Options.UseFont = true;
             this.colFullName.AppearanceHeader.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colFullName.AppearanceHeader.Options.UseFont = true;
-            this.colFullName.Caption = "Họ Tên";
+            this.colFullName.Caption = "Họ tên";
             this.colFullName.FieldName = "StrStaffName";
             this.colFullName.Name = "colFullName";
             this.colFullName.Visible = true;
@@ -722,7 +722,7 @@
             // 
             this.colBirthday.AppearanceCell.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colBirthday.AppearanceCell.Options.UseFont = true;
-            this.colBirthday.Caption = "Ngày Sinh";
+            this.colBirthday.Caption = "Ngày sinh";
             this.colBirthday.FieldName = "DtBirthDay";
             this.colBirthday.Name = "colBirthday";
             this.colBirthday.Visible = true;
@@ -735,7 +735,7 @@
             this.colAddress.AppearanceCell.Options.UseFont = true;
             this.colAddress.AppearanceHeader.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colAddress.AppearanceHeader.Options.UseFont = true;
-            this.colAddress.Caption = "Địa Chỉ";
+            this.colAddress.Caption = "Địa chỉ";
             this.colAddress.FieldName = "StrAddress";
             this.colAddress.Name = "colAddress";
             this.colAddress.Visible = true;
@@ -748,7 +748,7 @@
             this.colPhoneNumber.AppearanceCell.Options.UseFont = true;
             this.colPhoneNumber.AppearanceHeader.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colPhoneNumber.AppearanceHeader.Options.UseFont = true;
-            this.colPhoneNumber.Caption = "Số Điện Thoại";
+            this.colPhoneNumber.Caption = "Số điện thoại";
             this.colPhoneNumber.FieldName = "StrPhone";
             this.colPhoneNumber.Name = "colPhoneNumber";
             this.colPhoneNumber.Visible = true;
@@ -821,7 +821,7 @@
             this.ColSex.AppearanceCell.Options.UseFont = true;
             this.ColSex.AppearanceHeader.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ColSex.AppearanceHeader.Options.UseFont = true;
-            this.ColSex.Caption = "Giới Tính";
+            this.ColSex.Caption = "Giới tính";
             this.ColSex.FieldName = "StrSex";
             this.ColSex.Name = "ColSex";
             this.ColSex.Visible = true;

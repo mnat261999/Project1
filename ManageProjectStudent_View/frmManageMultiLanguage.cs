@@ -290,6 +290,14 @@ namespace ManageProjectStudent_View
                     {
                         colStatus.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
+                    if (gvLanList.ViewCaption == _wordModel.StrWordName)
+                    {
+                        gvLanList.ViewCaption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (grpInformationLan.Text == _wordModel.StrWordName)
+                    {
+                        grpInformationLan.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
                 }    
             }    
             #endregion

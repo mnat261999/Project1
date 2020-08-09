@@ -248,7 +248,7 @@
             this.tileControl2.ItemCheckMode = DevExpress.XtraEditors.TileItemCheckMode.Single;
             this.tileControl2.ItemSize = 155;
             this.tileControl2.Location = new System.Drawing.Point(264, 0);
-            this.tileControl2.MaxId = 59;
+            this.tileControl2.MaxId = 60;
             this.tileControl2.Name = "tileControl2";
             this.tileControl2.ShowGroupText = true;
             this.tileControl2.Size = new System.Drawing.Size(901, 647);

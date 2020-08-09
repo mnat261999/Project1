@@ -309,44 +309,44 @@ namespace ManageProjectStudent_View
             _setStatusForm();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
+        //private void btnAdd_Click(object sender, EventArgs e)
+        //{
 
-            _ProjectModelNow = null;
-            _IStatusForm = 1;
-            _setStatusForm();
-            txtProjectName.Focus();
-        }
+        //    _ProjectModelNow = null;
+        //    _IStatusForm = 1;
+        //    _setStatusForm();
+        //    txtProjectName.Focus();
+        //}
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            _IStatusForm = 2;
-            _setStatusForm();
-            txtProjectName.Focus();
-        }
+        //private void btnUpdate_Click(object sender, EventArgs e)
+        //{
+        //    _IStatusForm = 2;
+        //    _setStatusForm();
+        //    txtProjectName.Focus();
+        //}
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
+        //private void btnDelete_Click(object sender, EventArgs e)
+        //{
 
-            if (_ProjectModelNow != null)
-            {
-                if (_Project.deleteCurrentProject(_ProjectModelNow))
-                {
-                    _lstLoadListProject();
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Xóa Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (_lstProject.Count == 0)
-                    {
-                        _ProjectModelNow = null;
-                        _IStatusForm = 0;
-                        _setStatusForm();
-                    }
-                }
-                else
-                {
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Xóa Thất Bại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-        }
+        //    if (_ProjectModelNow != null)
+        //    {
+        //        if (_Project.deleteCurrentProject(_ProjectModelNow))
+        //        {
+        //            _lstLoadListProject();
+        //            DevExpress.XtraEditors.XtraMessageBox.Show("Xóa Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //            if (_lstProject.Count == 0)
+        //            {
+        //                _ProjectModelNow = null;
+        //                _IStatusForm = 0;
+        //                _setStatusForm();
+        //            }
+        //        }
+        //        else
+        //        {
+        //            DevExpress.XtraEditors.XtraMessageBox.Show("Xóa Thất Bại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        }
+        //    }
+        //}
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -517,5 +517,43 @@ namespace ManageProjectStudent_View
             gridview.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 20;
         }
         #endregion
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            _ProjectModelNow = null;
+            _IStatusForm = 1;
+            _setStatusForm();
+            txtProjectName.Focus();
+        }
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            _IStatusForm = 2;
+            _setStatusForm();
+            txtProjectName.Focus();
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+
+            if (_ProjectModelNow != null)
+            {
+                if (_Project.deleteCurrentProject(_ProjectModelNow))
+                {
+                    _lstLoadListProject();
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Xóa Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (_lstProject.Count == 0)
+                    {
+                        _ProjectModelNow = null;
+                        _IStatusForm = 0;
+                        _setStatusForm();
+                    }
+                }
+                else
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Xóa Thất Bại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
     }
 }

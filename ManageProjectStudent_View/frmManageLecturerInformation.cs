@@ -452,6 +452,14 @@ namespace ManageProjectStudent_View
                     {
                         colStaffType.Caption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
                     }
+                    if (gvLecturerList.ViewCaption == _wordModel.StrWordName)
+                    {
+                        gvLecturerList.ViewCaption = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
+                    if (grpInformationLecturer.Text == _wordModel.StrWordName)
+                    {
+                        grpInformationLecturer.Text = _WL.getMeanByID(lnword.StrID, Language.StrLanguageID);
+                    }
                 }
             }
             #endregion

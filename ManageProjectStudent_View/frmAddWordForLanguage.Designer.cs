@@ -39,6 +39,7 @@
             this.btnExitForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.grpInformationWordLan = new DevExpress.XtraEditors.GroupControl();
+            this.lkeMean = new DevExpress.XtraEditors.LookUpEdit();
             this.lkeModule = new DevExpress.XtraEditors.LookUpEdit();
             this.lblModule = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -65,11 +66,11 @@
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpEdit_Class = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.LookUpEdit_Mean = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.lkeMean = new DevExpress.XtraEditors.LookUpEdit();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationWordLan)).BeginInit();
             this.grpInformationWordLan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkeMean.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkeModule.Properties)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkeWord.Properties)).BeginInit();
@@ -80,7 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Word)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Class)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Mean)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkeMean.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -181,7 +181,7 @@
             this.btnAdd.Size = new System.Drawing.Size(171, 54);
             this.btnAdd.TabIndex = 13;
             this.btnAdd.TabStop = false;
-            this.btnAdd.Text = "Thêm ";
+            this.btnAdd.Text = "Thêm";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panelTitleBar
@@ -261,6 +261,28 @@
             this.grpInformationWordLan.Size = new System.Drawing.Size(732, 178);
             this.grpInformationWordLan.TabIndex = 50;
             this.grpInformationWordLan.Text = "Thông Tin";
+            // 
+            // lkeMean
+            // 
+            this.lkeMean.Location = new System.Drawing.Point(477, 33);
+            this.lkeMean.Name = "lkeMean";
+            this.lkeMean.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkeMean.Properties.Appearance.Options.UseFont = true;
+            this.lkeMean.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkeMean.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.lkeMean.Properties.AppearanceDropDownHeader.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkeMean.Properties.AppearanceDropDownHeader.Options.UseFont = true;
+            this.lkeMean.Properties.AutoSearchColumnIndex = 1;
+            this.lkeMean.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkeMean.Properties.CaseSensitiveSearch = true;
+            this.lkeMean.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colWordName", "Từ")});
+            this.lkeMean.Properties.NullText = "Nghĩa";
+            this.lkeMean.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSearch;
+            this.lkeMean.Size = new System.Drawing.Size(169, 24);
+            this.lkeMean.TabIndex = 133;
+            this.lkeMean.Tag = "3";
             // 
             // lkeModule
             // 
@@ -452,9 +474,9 @@
             this.lblLan.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLan.Location = new System.Drawing.Point(59, 65);
             this.lblLan.Name = "lblLan";
-            this.lblLan.Size = new System.Drawing.Size(74, 17);
+            this.lblLan.Size = new System.Drawing.Size(72, 17);
             this.lblLan.TabIndex = 0;
-            this.lblLan.Text = "Ngôn Ngữ";
+            this.lblLan.Text = "Ngôn ngữ";
             // 
             // gcListWordLan
             // 
@@ -613,30 +635,9 @@
             this.LookUpEdit_Mean.Name = "LookUpEdit_Mean";
             this.LookUpEdit_Mean.ValueMember = "StrWordName";
             // 
-            // lkeMean
-            // 
-            this.lkeMean.Location = new System.Drawing.Point(477, 33);
-            this.lkeMean.Name = "lkeMean";
-            this.lkeMean.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lkeMean.Properties.Appearance.Options.UseFont = true;
-            this.lkeMean.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lkeMean.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.lkeMean.Properties.AppearanceDropDownHeader.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lkeMean.Properties.AppearanceDropDownHeader.Options.UseFont = true;
-            this.lkeMean.Properties.AutoSearchColumnIndex = 1;
-            this.lkeMean.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lkeMean.Properties.CaseSensitiveSearch = true;
-            this.lkeMean.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colWordName", "Từ")});
-            this.lkeMean.Properties.NullText = "Nghĩa";
-            this.lkeMean.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoSearch;
-            this.lkeMean.Size = new System.Drawing.Size(169, 24);
-            this.lkeMean.TabIndex = 133;
-            this.lkeMean.Tag = "3";
-            // 
             // frmAddWordForLanguage
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 552);
@@ -654,6 +655,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationWordLan)).EndInit();
             this.grpInformationWordLan.ResumeLayout(false);
             this.grpInformationWordLan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkeMean.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkeModule.Properties)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -665,7 +667,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Word)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Class)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Mean)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lkeMean.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

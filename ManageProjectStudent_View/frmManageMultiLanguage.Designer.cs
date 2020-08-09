@@ -225,7 +225,7 @@
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(99, 17);
             this.lblName.TabIndex = 2;
-            this.lblName.Text = "Tên ngôn ngữ";
+            this.lblName.Text = "Tên ngôn ngữ";
             // 
             // lblID
             // 
@@ -235,7 +235,7 @@
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(93, 17);
             this.lblID.TabIndex = 0;
-            this.lblID.Text = "Mã ngôn ngữ";
+            this.lblID.Text = "Mã ngôn ngữ";
             // 
             // gcListLan
             // 

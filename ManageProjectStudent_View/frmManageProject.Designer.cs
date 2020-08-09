@@ -145,6 +145,7 @@
             this.btnUpdate.TabIndex = 21;
             this.btnUpdate.TabStop = false;
             this.btnUpdate.Text = "Sửa Đồ Án";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
             // 
             // btnDelete
             // 
@@ -169,6 +170,7 @@
             this.btnDelete.TabIndex = 20;
             this.btnDelete.TabStop = false;
             this.btnDelete.Text = "Xóa Đồ Án";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
             // 
             // btnAdd
             // 
@@ -195,6 +197,7 @@
             this.btnAdd.TabIndex = 19;
             this.btnAdd.TabStop = false;
             this.btnAdd.Text = "Thêm Đồ Án";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panelLogo
             // 
